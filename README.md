@@ -12,7 +12,7 @@ En nuestra plataforma van a poder encontrar diseños de indumentaria tanto para 
 ### Webs en las que nos inspiramos...
 - [Digital House - Playground](https://digitalhouse.com/): Introducción de la Web con los idiomas.
 - [Dafiti](https://dafiti.cl/): Header.
-- [Modatex](https://www.modatex.com.ar/): Fonts
+- [Modatex](https://www.modatex.com.ar/): Fonts.
 - [Mercado Libre](https://mercadolibre.com.ar/): Detalle de producto.
 
 ### Tecnologías que se van a utilizar
