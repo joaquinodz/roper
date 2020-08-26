@@ -12,7 +12,7 @@ En nuestra plataforma van a poder encontrar diseños de indumentaria tanto para 
 ### Webs en las que nos inspiramos...
 - [Digital House - Playground](https://digitalhouse.com/): Introducción de la Web con los idiomas.
 - [Dafiti](https://dafiti.cl/): Header.
-- [Modatez](https://www.modatex.com.ar/): Fonts
+- [Modatex](https://www.modatex.com.ar/): Fonts
 - [Mercado Libre](https://mercadolibre.com.ar/): Detalle de producto.
 
 ### Tecnologías que se van a utilizar
@@ -27,4 +27,5 @@ En nuestra plataforma van a poder encontrar diseños de indumentaria tanto para 
  - [GitHub Proyects](https://github.com/jopiortiz/grupo_1_roper/projects/1)
 
 ### Instrucciones:
-Las instrucciones para la instalación de las dependencias necesarias para el funcionamiento del sitio se encuentran en la carpeta site. Puede acceder a las mismas por medio del siguiente link: [Instrucciones](#)
+Las instrucciones para la instalación de las dependencias necesarias para el funcionamiento del sitio se encuentran en la carpeta site. 
+Puede acceder a las mismas por medio del siguiente [link](#)
