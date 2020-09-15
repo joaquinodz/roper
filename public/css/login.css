@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */ /* Para fines de desarrollo */
+}
+
 /*  
     CSS-Only Technique #2
     Source: https://css-tricks.com/perfect-full-page-background-image/ 
@@ -23,8 +28,7 @@
 }
 
 .bg-layer {
-    background-color: black;
-    background-color: rgba(0, 0, 0, 0.54);
+    background: rgba(0, 0, 0, 0.54);
 }
 
 /* ---------------------------- Header ------------------------- */
@@ -39,7 +43,7 @@ header {
 
 .header__logo {
     display: flex;
-    justify-content: flex-start;
+    justify-content: left;
 }
 
 .header__logo img {
@@ -51,7 +55,7 @@ header {
 
 /* ------------------------ Login Form ------------------------- */
 
-.form__title {
+h2.form__title {
     font-size: 2.5em;
     color: white;
     font-weight: 300;
@@ -62,8 +66,9 @@ header {
 .form__container {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin: 0 5% ;
+    justify-content: start;
+    margin: 0% 5% ;
+    /* width: 24%; */
 }
 
 .form__container input {
@@ -71,6 +76,7 @@ header {
 }
 
 input {
+    outline: none;
     font-size: 14px;
     color: #888;
     border: none;
@@ -134,8 +140,13 @@ input {
     text-transform: uppercase;
     padding: 0.8em 2em;
     letter-spacing: 1px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
     display: inline-block;
     cursor: pointer;
+    outline: none;
     border: none;
 }
 
@@ -155,7 +166,7 @@ input {
         text-align: center;
     }
 
-    .form__title {
+    h2.form__title {
         margin-top: 10%;
         letter-spacing: normal;
         text-align: center;
@@ -178,12 +189,12 @@ input {
     }
 
     .form__remember input[type=checkbox] {
-        width: 0;
+        width: 0px;
         margin-left: 20px;
     }
 
     .form__container input {
-        width: auto;
+        width: 100%;
     }
 
     .form__links a {
