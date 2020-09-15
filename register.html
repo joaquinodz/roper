@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="public/css/register.css">
+
+    <title>Roper: Registrarse</title>
+</head>
+<body>
+
+    <!-- Wraps the whole content of the page -->
+    <div class="container fixed-fullscreen">
+
+        <!-- Shadowy effect on the background image -->
+        <div class="bg-layer fixed-fullscreen">
+
+            <!-- Header -->
+            <header>
+    
+                <div class="header__logo">
+                    <a href="index.html"><img src="public/assets/images/logo-roper.png" alt="logo"></a>
+                </div>
+                        
+            </header>
+            
+            <!-- Form Container -->
+            <section>
+    
+                <h2 class="form__title">¡Hazte una cuenta y empieza a vender!</h2>
+    
+                <div class="form__container">
+                    
+                    <!-- ¡This is where the ACTUAL magic happens! xD -->
+                    <form action="" method="post">
+    
+                        <div class="form__inputs">
+
+                            <input type="text" 
+                                   name="name"
+                                   id="form__name"
+                                   placeholder="Nombre/s"
+                                   required>
+
+                            <input type="text"
+                                   name="surname" 
+                                   id="form__surname"
+                                   placeholder="Apellido"
+                                   required>
+
+                                   <br>
+
+                            <input type="email" 
+                                   name="email" 
+                                   id="form__email" 
+                                   placeholder="Correo Electrónico" 
+                                   required>
+
+                                   <br>
+
+                            <input type="password" 
+                                   name="password" 
+                                   id="form__password" 
+                                   placeholder="Contraseña" 
+                                   required>
+
+                            <input type="password" 
+                                   name="confirm__password" 
+                                   id="form__confirm__password" 
+                                   placeholder="Confirmar Contraseña" 
+                                   required> 
+
+                        </div>
+        
+                        <div class="form__buttons">
+                            <button class="btn" type="submit">Registrarse</button>
+                            <button class="btn" type="reset">Limpiar Campos</button>
+                        </div>
+        
+                    </form>
+                    <!-- END - Register Form -->
+    
+                </div>
+                
+            </section>
+    
+        </div>
+
+    </div>
+
+</body>
+</html>
