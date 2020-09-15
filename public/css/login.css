@@ -49,8 +49,7 @@ header {
 
 /* ------------------------ Login Form ------------------------- */
 
-h2.form__title {    
-    
+h2.form__title {
     font-size: 2.5em;
     color: white;
     font-weight: 300;
@@ -81,6 +80,19 @@ input {
     background: #fff;
 }
 
+.form__remmeber {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form__remember label {
+    margin-right: 6px;
+}
+
+.form__remember input {
+    width: 4px;
+}
+
 .links {
     display: flex;
     flex-flow: column wrap;
@@ -96,7 +108,8 @@ input {
     margin-bottom: 20px;
 }
 
-.form__links a {
+.form__links a,
+.form__remember label {
     text-align: left;
     font: inherit;
     font-size: 0.7em;
