@@ -38,11 +38,13 @@ header {
     flex-flow: row wrap;
     justify-content: space-between;
     margin: 3% 5%;
+    margin-top: 10px;
 }
 
 .header__logo {
     display: flex;
     text-align: center;
+    font-family: 'Intro Cond Light Free';
 }
 
 /* ------------------------ End - Header ------------------------- */
@@ -157,7 +159,7 @@ input {
     }
 
     h2.form__title {
-        margin-top: 20%;
+        margin-top: 10%;
         letter-spacing: normal;
         text-align: center;
     }
