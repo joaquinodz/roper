@@ -44,7 +44,6 @@ header {
 .header__logo {
     display: flex;
     text-align: center;
-    font-family: 'Intro Cond Light Free';
 }
 
 /* ------------------------ End - Header ------------------------- */
