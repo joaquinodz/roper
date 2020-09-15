@@ -171,6 +171,18 @@ input {
         margin-bottom: 5%;
     }
 
+    .form__remember {
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+    .form__remember input[type=checkbox] {
+        width: 0px;
+        margin-left: 20px;
+    }
+
     .form__container input {
         width: 100%;
     }
