@@ -43,7 +43,12 @@ header {
 
 .header__logo {
     display: flex;
-    text-align: center;
+    justify-content: left;
+}
+
+.header__logo img {
+    padding-top: 60px;
+    width: 50%;
 }
 
 /* ------------------------ End - Header ------------------------- */
@@ -155,6 +160,10 @@ input {
         flex-flow: column wrap;
         justify-content: center;
         align-content: center;
+    }
+
+    .header__logo {
+        text-align: center;
     }
 
     h2.form__title {
