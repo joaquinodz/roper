@@ -1,0 +1,19 @@
+{
+  "name": "roper",
+  "version": "1.0.0",
+  "description": "*Proyecto integrador del Curso de Desarrollo Web Full Stack de Digital House. Grupo 1*",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jopiortiz/grupo_1_roper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jopiortiz/grupo_1_roper/issues"
+  },
+  "homepage": "https://github.com/jopiortiz/grupo_1_roper#readme"
+}
