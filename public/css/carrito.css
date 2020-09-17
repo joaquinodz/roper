@@ -1,7 +1,3 @@
-.cart-page {
-    
-    
-}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -49,5 +45,13 @@ td input {
       margin: 1px;
       display: flex;
       justify-content: flex-end;
+
+  }
+
+  @media all and (max-width: 992px) {
+      
+	.logo {
+			margin-left: 92px;
+	}
 
   }

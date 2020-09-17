@@ -8,13 +8,21 @@ app.listen(3000, (req, res) => {
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/index.html');
 })
 
 app.get('/register.html', (req, res) => {
-    res.sendFile(__dirname + '/register.html')
+    res.sendFile(__dirname + '/register.html');
 })
 
 app.get('/login.html', (req, res) => {
-    res.sendFile(__dirname + '/login.html')
+    res.sendFile(__dirname + '/login.html');
+})
+
+app.get('/productos.html', (req, res) => {
+    res.sendFile(__dirname + '/productos.html');
+})
+
+app.get('/carrito.html', (req, res) => {
+    res.sendFile(__dirname + '/carrito.html');
 })
