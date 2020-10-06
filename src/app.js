@@ -16,7 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-<<<<<<< HEAD
     res.render('users/register');
 });
 
@@ -30,21 +29,6 @@ app.get('/productos', (req, res) => {
 
 app.get('/carrito', (req, res) => {
     res.render('products/carrito');
-=======
-    res.render('register');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/productos', (req, res) => {
-    res.render('productos');
-});
-
-app.get('/carrito', (req, res) => {
-    res.render('carrito');
->>>>>>> 070e3577c3533e5f814ec79c5b1e0ed2b7e92fa4
 });
 
 app.listen(app.get('port'), (req, res) => {
