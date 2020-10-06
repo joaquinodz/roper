@@ -16,15 +16,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/register', (req, res) => {
-    res.render('register');
+    res.render('users/register');
 });
 
 app.get('/login', (req, res) => {
-    res.render('login');
+    res.render('users/login');
 });
 
 app.get('/productos', (req, res) => {
-    res.render('productos');
+    res.render('products/listado');
 });
 
 app.get('/carrito', (req, res) => {
