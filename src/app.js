@@ -28,7 +28,7 @@ app.get('/productos', (req, res) => {
 });
 
 app.get('/carrito', (req, res) => {
-    res.render('carrito');
+    res.render('products/carrito');
 });
 
 app.listen(app.get('port'), (req, res) => {
