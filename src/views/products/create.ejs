@@ -5,7 +5,62 @@
 </head>
 <body>
     <div class="todo">
-        <%- include ('../partials/header') %> 
+        <%- include ('../partials/header') %>
+        <div class="forms">
+            <form action="" name="nombre" method="post" >
+                Nombre del producto: <br>
+                <input type="text" name="nombre" id=""> <br>
+            </form> <br>
+            <form action="" name="precio" method="post">
+                Precio: <br>
+                <input type="number" name="precio" id="">
+            </form> <br>
+            <form action="" name="cantidad" method="post">
+                <label for="cantidad">Cantidad: </label> <br>
+                    <input type="number" name="cantidad" id="" max="99999"> 
+            </form> <br>
+                <label for="genero">Elige el género de tu producto:</label> <br>
+                <select name="genero" id="">
+                    <option value="unisex">Unisex</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+            <form action="" name="" method="post"> <br>
+                <label for="">¿Cuál es la condición?</label><br>
+                <select name="condicion" id=""> 
+                    <option value="nuevo">Nuevo</option>
+                    <option value="usado">Usado</option>
+                </select>
+            </form> <br>
+            <form action="" method="post">
+                <label for="">¿Cuál es el color?</label> <br>
+                <select name="color" id="">
+                    <option value="negro">Negro</option>
+                    <option value="blanco">Blanco</option>
+                    <option value="verde">Verde</option>
+                    <option value="rosa">Rosa</option>
+                    <option value="violeta">Violeta</option>
+                </select>
+            </form> <br>
+            <form action="" method="post">
+                <label for="">Sube hasta 4 imágenes de tu producto:</label> <br>
+                <input type="file" name="image" id="" style="width: 175px">
+            </form> <br>
+            <form action="" method="post">
+                <label for="">Talle:</label> <br>
+                <select name="talle" id="">
+                    <option value="xs">XS</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+            </form>
+            <form action="" method="post">
+                <button type="submit">Publicar</button>
+            </form>
+        </div>
     </div>
     <footer>
         <%- include ('../partials/footer') %> 
