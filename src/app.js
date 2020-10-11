@@ -31,6 +31,10 @@ app.get('/carrito', (req, res) => {
     res.render('products/carrito');
 });
 
+app.get('/create', (req, res) => {
+    res.render('products/create');
+});
+
 app.listen(app.get('port'), (req, res) => {
     console.log("Servidor iniciado en el puerto", app.get('port'));
 });
