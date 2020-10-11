@@ -55,6 +55,7 @@ input::-webkit-input-placeholder {
     background-color: #8080803d;
     font-family: "Roboto", "sans-serif";
     padding-bottom: 15px;
+    width: 300px;
 }
 
 .forms input {
@@ -228,7 +229,6 @@ button {
     font-size: 13px;
     border-style: none;
 }
-
 
 footer {
     margin-top: 20px;
@@ -422,3 +422,32 @@ td input {
   * {
     font-family: "Roboto", "sans-serif";
   } 
+
+  .botton {
+    margin-top: 20px;
+    display: inline-grid;
+    margin-left: 0px;
+    
+    font-size: 13px;
+    border-style: none;
+    width: 100px;
+    height: 25px;
+    padding-top: 5px;
+}
+
+.botton:active {
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.presio {
+    width: 75px;
+}
+
+.cantidad {
+    width: 75px;
+}
+
+.tests {
+    display: flex;
+    justify-content: center;
+}
