@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jopiortiz/grupo_1_roper#readme",
   "dependencies": {
+    "all": "0.0.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1"
   },
