@@ -1,85 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Primer partial, head -->
-    <%- include ('../partials/head') %> 
-    <title>Crear producto - Roper</title>
-</head>
-<body>
-    <div class="todo">
-        <!-- Segundo partial, header-->
-        <%- include ('../partials/header') %>
-        <div class="tests">
-            <div class="forms">
-                <!-- Todos los forms -->
-                    <!-- Form del nombre -->
-                        <form action="" name="nombre" method="post" >
-                            Nombre del producto: <br>
-                            <input type="text" name="nombre" id=""> <br>
-                        </form> <br>
-                    <!-- Form del precio -->
-                        <form action="" name="precio" method="post" >
-                            Precio: <br>
-                            $ <input type="number" name="precio" id="" class="presio" min= "1" max="99999">
-                        </form> <br>
-                    <!-- Form de la cantidad-->
-                        <form action="" name="cantidad" method="post">
-                            <label for="cantidad">Cantidad: </label> <br>
-                                <input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad"> 
-                        </form> <br>
-                    <!-- Form del género a elegir-->
-                        <label for="genero">Elige el género de tu producto:</label> <br>
-                        <select name="genero" id="">
-                            <option value="unisex">Unisex</option>
-                            <option value="hombre">Hombre</option>
-                            <option value="mujer">Mujer</option>
-                        </select>
-                    <!-- Form de la condición del producto -->
-                        <form action="" name="" method="post"> <br>
-                            <label for="">¿Cuál es la condición?</label><br>
-                            <select name="condicion" id=""> 
-                                <option value="nuevo">Nuevo</option>
-                                <option value="usado">Usado</option>
-                            </select>
-                        </form> <br>
-                    <!-- Form del color-->
-                        <form action="" method="post">
-                            <label for="">¿Cuál es el color?</label> <br>
-                            <select name="color" id="">
-                                <option value="negro">Negro</option>
-                                <option value="blanco">Blanco</option>
-                                <option value="verde">Verde</option>
-                                <option value="rosa">Rosa</option>
-                                <option value="violeta">Violeta</option>
-                            </select>
-                        </form> <br>
-                    <!-- Form de las imágenes -->
-                        <form action="" method="post">
-                            <label for="">Sube hasta 4 imágenes de tu producto:</label> <br>
-                                <input type="file" name="image" id="" style="width: 175px">
-                            </form> <br>
-                    <!-- Form de los talles -->
-                    <form action="" method="post">
-                        <label for="">Talle:</label> <br>
-                        <select name="talle" id="">
-                            <option value="xs">XS</option>
-                            <option value="s">S</option>
-                            <option value="m" selected>M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                    </form>
-                    <!-- Submit button-->
-                        <form action="" method="post">
-                            <button type="submit" class="botton">Publicar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-    <footer>
-        <!-- Footer -->
-        <%- include ('../partials/footer') %> 
-    </footer>
-</body>
+<html lang="es">
+	<head>
+		<!-- Primer partial, head -->
+		<%- include ('../partials/head') %> 
+		<title>Crear producto - Roper</title>
+	</head>
+	<body>
+		<div class="todo">
+			<!-- Segundo partial, header-->
+			<%- include ('../partials/header') %>
+			<div class="tests">
+				<div class="forms">
+					<!-- Todos los forms -->
+					<!-- Form del nombre -->
+					<form action="" name="nombre" method="post" >
+						Nombre del producto: <br>
+						<input type="text" name="nombre" id=""> <br>
+					</form>
+					<br>
+					<!-- Form del precio -->
+					<form action="" name="precio" method="post" >
+						Precio: <br>
+						$ <input type="number" name="precio" id="" class="presio" min= "1" max="99999">
+					</form>
+					<br>
+					<!-- Form de la cantidad-->
+					<form action="" name="cantidad" method="post">
+						<label for="cantidad">Cantidad: </label> <br>
+						<input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad"> 
+					</form>
+					<br>
+					<!-- Form del género a elegir-->
+					<label for="genero">Elige el género de tu producto:</label> <br>
+					<select name="genero" id="">
+						<option value="unisex">Unisex</option>
+						<option value="hombre">Hombre</option>
+						<option value="mujer">Mujer</option>
+					</select>
+					<!-- Form de la condición del producto -->
+					<form action="" name="" method="post">
+						<br>
+						<label for="">¿Cuál es la condición?</label><br>
+						<select name="condicion" id="">
+							<option value="nuevo">Nuevo</option>
+							<option value="usado">Usado</option>
+						</select>
+					</form>
+					<br>
+					<!-- Form del color-->
+					<form action="" method="post">
+						<label for="">¿Cuál es el color?</label> <br>
+						<select name="color" id="">
+							<option value="negro">Negro</option>
+							<option value="blanco">Blanco</option>
+							<option value="verde">Verde</option>
+							<option value="rosa">Rosa</option>
+							<option value="violeta">Violeta</option>
+						</select>
+					</form>
+					<br>
+					<!-- Form de las imágenes -->
+					<form action="" method="post">
+						<label for="">Sube hasta 4 imágenes de tu producto:</label> <br>
+						<input type="file" name="image" id="" style="width: 175px">
+					</form>
+					<br>
+					<!-- Form de los talles -->
+					<form action="" method="post">
+						<label for="">Talle:</label> <br>
+						<select name="talle" id="">
+							<option value="xs">XS</option>
+							<option value="s">S</option>
+							<option value="m" selected>M</option>
+							<option value="l">L</option>
+							<option value="xl">XL</option>
+							<option value="xxl">XXL</option>
+						</select>
+					</form>
+					<!-- Submit button-->
+					<form action="" method="post">
+						<button type="submit" class="botton">Publicar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<!-- Footer -->
+			<%- include ('../partials/footer') %> 
+		</footer>
+	</body>
 </html>

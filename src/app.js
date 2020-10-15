@@ -1,20 +1,41 @@
+const createError = require('http-errors');
 const express = require('express');
-const app = express();
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors')
 
-// set template engine.
-app.set('view engine', 'ejs');
+const app = express();
+
+// Configuracion del motor de vistas
 app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 
-// set current port.
-app.set('port', 3000);
-
+// Configuracion de los middlewares a nivel de aplicacion.
+app.use(logger('dev'));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
+// Declaracion de rutas.
 app.use('/', require('./routes/index'));
 app.use('/productos', require('./routes/products'));
-app.use('/users', require('./routes/users'));
+app.use('/user', require('./routes/users'));
 
-app.listen(app.get('port'), (req, res) => {
-    console.log("Servidor iniciado en el puerto", app.get('port'));
+// Middleware (a nivel de aplicacion) que maneja los errores 404.
+app.use((req, res, next) => next(createError(404)));
+
+// Middleware (a nivel de aplicacion) que maneja TODOS los errores.
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
 });
+
+module.exports = app;

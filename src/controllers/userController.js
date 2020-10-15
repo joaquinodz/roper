@@ -1,8 +1,4 @@
 
-exports.showRegisterForm = (req, res) => {
-    res.render('users/register');
-};
+exports.showRegister = (req, res) => res.render('users/register');
 
-exports.exports.showRegisterForm =(req, res) => {
-    res.render('users/login');
-};
+exports.showLogin = (req, res) => res.render('users/login');

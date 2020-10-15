@@ -28,7 +28,7 @@ input::-webkit-search-decoration, input::-webkit-search-cancel-button {
 
 
 input[type=search] {
-	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	background: #ededed url('https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png') no-repeat 9px center;
 	border: solid 1px #ccc;
 	padding: 9px 10px 9px 32px;
 	width: 511px;
@@ -162,7 +162,7 @@ li {
     width: 300px;
     height: 500px;
     border: solid gray 1px;
-    background-image: url(../../assets/images/male-model.jpeg);
+    background-image: url('../images/male-model.jpeg');
 }
 
 
@@ -170,7 +170,7 @@ li {
     width: 300px;
     height: 500px;
     border: solid gray 1px;
-    background-image: url(../../assets/images/female-model.png);
+    background-image: url('../images/female-model.png');
 }
 
 .boxes2 {
@@ -179,7 +179,7 @@ li {
     width: 510px;
     height: 200px;
     border: solid gray 1px;
-    background-image: url(../../assets/images/male-female-model.png);
+    background-image: url('../images/male-female-model.png');
 }
 
 .article2 {
@@ -351,7 +351,7 @@ footer p {
 
     .boxes2 {
         width: 300px;
-        background-image: url(../assets/images/male-female-model-responsive.png);
+        background-image: url('../images/male-female-model-responsive.png');
     }
 
     .boxes3 {
