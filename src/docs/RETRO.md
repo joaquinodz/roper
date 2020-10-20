@@ -1,20 +1,21 @@
-Grupo 1, Sprint 2 - Retrospectiva Starfish:
+Grupo 1, Sprint 3 - Retrospectiva Starfish:
+
 ·--------------------------------------------------------------------------------------------------------------------------------.
 
 ### Dejar de hacer:
 - [Posponer] el trabajo a último momento, siempre.
-- [Subestimar] la cantidad de horas que hay que meterle al proyecto.
+- [Procrastinar]. Eso es todo.
 
 ### Seguir haciendo:
 - [Comunicar] los problemas y pedir ayuda al grupo.
 - [Mantener] la comunicación grupal.
+- [Juntarnos], como venimos haciendo.
 
 ### Empezar a hacer:
-- [Mejorar] la división de trabajos.
-- [Juntarnos] más fuera de horario, para mejorar la dinámica de grupo.
 - [Coordinar] mejor las partes que cada uno desarrolla, mejorando así la fluidez de la integración del código.
 
 ### Hacer menos de:
-- Nada, por ahora nuestro rendimiento fue apurado, pero funcional. Mientras más avance el proyecto, más dudas y/o problemas habrá.
+- Tomarse a la ligera lo que hay que hacer. 
+- No poner pilas en general, hasta último momento.
 
 ·--------------------------------------------------------------------------------------------------------------------------------.

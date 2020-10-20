@@ -11,3 +11,9 @@
 - Mejoramos atributos de CSS, logrando así una armonía más obvia entre las distintas partes realizadas por los integrantes.
 - Agregamos create.ejs, para que el usuario pueda ingresar y agregar cualquier objeto para la venta que desee.
 - Agregamos edit.ejs, para que el usuario pueda editar cualquier objeto que ya tenía publicado.
+
+// 20 de Octubre - Entrega
+
+- Mejoramos create.ejs, ubicando un poco mejor el orden de las cosas.
+- Mejoramos edit.ejs, dejándolo con un diseño terminado.
+- Dejamos lista la funcionalidad de agregar users para el siguiente sprint.
