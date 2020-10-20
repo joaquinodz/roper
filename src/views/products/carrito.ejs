@@ -1,44 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<%- include ('../partials/head') %> 
+		<%- include('../partials/head') %> 
 		<title>Carrito de Compras - Roper</title>
 	</head>
 	<body>
 		<!--Header de la pagina-->
 		<div class="todo">
 			<div class="header">
-				<a href="/"><img src="images/logo-roper.svg" alt="" class="logo"></a>
-				<div class="line"></div>
-				<form action="" method="get" class="buscar">
-					<input type="search" name="search" id="search" placeholder="Buscar..." class="barra">
-				</form>
-				<div class="usuario">
-					<img src="images/user.png" style="width: 100%" alt="">
-					<div class="nologin">
-						<a href="/register">
-							<h4>Registrarse</h4>
-						</a>
-						<a href="/login">
-							<p>Ingresar</p>
-						</a>
-					</div>
-					<img src="images/arrow.png" alt="" class="arrow">
-					<a href="/carrito"><img src="images/cart.png" alt="" class="cart"></a>
-					<img src="images/arrow.png" alt="" class="arrow">
-				</div>
-				<hr>
-				</hr>
-				<nav class="menu">
-					<ul>
-						<li><a href="">Niños</a></li>
-						<li><a href="">Premium</a></li>
-						<li><a href="">Outlet</a></li>
-						<li><a href="">Hogar</a></li>
-					</ul>
-				</nav>
-				<hr>
-				</hr>
+				<%- include('../partials/header') %>
 			</div>
 			<!--carrito de compras-->
 			<div class="cart-page">
@@ -55,7 +25,7 @@
 					<tr>
 						<td>Zapatos Negros</td>
 						<td><input type="number" value="1"></td>
-						<td>$50.00</td>
+						<td>$999.999</td>
 					</tr>
 				</table>
 				<table>
@@ -71,11 +41,11 @@
 					<tr>
 						<td>Zapatos Blancos</td>
 						<td><input type="number" value="1"></td>
-						<td>$100.00</td>
+						<td>$999.999</td>
 					</tr>
 				</table>
 				<div class="buttons">
-					<p>Total : 150$</p>
+					<p>Total : $999.999</p>
 					<td><a class="boton_personalizado" href="buy">Comprar</a></td>
 					</td>
 				</div>

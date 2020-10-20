@@ -6,9 +6,61 @@
 </head>
 <body>
     <div class="todo">
-        <header>
-            <%- include('../partials/header') %> 
-        </header>
+        <!-- Segundo partial, header-->
+        <%- include('../partials/header') %>
+        <div class="tests">
+            <div class="forms">
+                <!-- Form -->
+                <form action="/create" method="post" >
+                    <div><img class="itemm" src="https://dafitistaticar-a.akamaihd.net/p/vizzano-8408-422194-1-zoom.jpg" alt="Zapato"></div>
+                    Nombre del producto: <br>
+                    <input type="text" name="nombre" id="" placeholder="Zapatos Negros"> <br>
+                    <label for=""> Precio: </label> <br>
+                    $ <input type="number" name="precio" id="" class="presio" min= "1" max="99999" placeholder="999.999"><br>
+                    <label for="cantidad">Cantidad: </label> <br>
+                    <input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad" placeholder="1"> <br>
+                <label for="genero">Elige el género de tu producto:</label> <br>
+                <select name="genero" id="">
+                    <option value="unisex">Unisex</option>
+                    <option value="hombre" selected>Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select>
+                    <br>
+                    <label for="">¿Cuál es la condición?</label><br>
+                    <select name="condicion" id="">
+                        <option value="nuevo" selected>Nuevo</option>
+                        <option value="usado">Usado</option>
+                    </select>
+                <br>
+                    <label for="">¿Cuál es el color?</label> <br>
+                    <select name="color" id="">
+                        <option value="negro" selected>Negro</option>
+                        <option value="blanco">Blanco</option>
+                        <option value="verde">Verde</option>
+                        <option value="rosa">Rosa</option>
+                        <option value="violeta">Violeta</option>
+                    </select>
+                <br>
+                    <label for="">Talle:</label> <br>
+                    <select name="talle" >
+						<option value="1">33</option>
+						<option value="2">34</option>
+						<option value="3">35</option>
+						<option value="4">36</option>
+						<option value="5">37</option>
+						<option value="6">38</option>
+						<option value="7">39</option>
+						<option value="8">40</option>
+						<option value="9">41</option>
+						<option value="10">42</option>
+						<option value="11">43</option>
+						<option value="12">44</option>
+					</select>
+                <!-- Submit button-->
+                <input type="submit" value="Subir">
+                </form>
+            </div>
+        </div>
     </div>
     <footer>
         <%- include('../partials/footer') %> 

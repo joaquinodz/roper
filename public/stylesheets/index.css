@@ -451,3 +451,7 @@ td input {
     display: flex;
     justify-content: center;
 }
+
+.itemm {
+    width: 100px;
+}
