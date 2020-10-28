@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.image-product {
+    width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+th{
+    text-align: left;
+    padding: 5px;
+    color: #fff;
+    background: #e1dada;
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td input {
+    width: 40px;
+    height: 25px;
+    padding: 5px;
+}
+
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #70e44d;
+    border-radius: 6px;
+	border: 2px solid #49d360;
+    width: 100px;
+    margin:43px;
+	
+  }
+
+  .buttons {
+      margin: 1px;
+      display: flex;
+      justify-content: flex-end;
+
+  }
+
+  @media all and (max-width: 992px) {
+      
+	.logo {
+			margin-left: 92px;
+	}
+
+  }
+

@@ -4,8 +4,7 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 
 let readJson = () => {
-    const leer = fs.readFileSync(path.resolve(__dirname + '/db-villera.json'));
-    return JSON.parse(leer);
+    return JSON.parse(fs.readFileSync(path.resolve(__dirname + '/data/usersDB.json')));
 }
 
 exports.showRegister = (req, res) => {
@@ -22,8 +21,8 @@ exports.processLogin = (req, res) => {
 
 exports.processRegister = (req, res) => {
     
-    // const errors = validationResult(req);
-    //if(errors.isEmpty()) {
+    const errors = validationResult(req);
+    if(errors.isEmpty()) {
         let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random() * 10));
 
         let errors = validationResult(req);
@@ -43,12 +42,12 @@ exports.processRegister = (req, res) => {
 
         usuarios = JSON.stringify(usuarios, null, " ");
 
-        fs.writeFileSync(path.resolve(__dirname + '/db-villera.json'), usuarios)
+        fs.writeFileSync(path.resolve(__dirname + '/data/usersDB.json'), usuarios)
 
         res.send(usuarios);
         
         res.redirect('/login');
-    // } else { 
-    // res.render('register', {errors: errors.errors})
-    // }
+     } else { 
+         res.render('register', {errors: errors.errors})
+     }
 };

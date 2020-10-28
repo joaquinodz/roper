@@ -1,0 +1,203 @@
+/*  
+    CSS-Only Technique #2
+    Source: https://css-tricks.com/perfect-full-page-background-image/ 
+*/
+.fixed-fullscreen {
+    /* Set up positioning */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+        
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.container {
+    background-image: url("../assets/images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    font-family: 'Raleway', sans-serif;
+}
+
+.bg-layer {
+    background-color: black;
+    background-color: rgba(0, 0, 0, 0.54);
+}
+
+/* ---------------------------- Header ------------------------- */
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 3% 5%;
+    margin-top: 10px;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header__logo img {
+    padding-top: 60px;
+    width: 50%;
+}
+
+/* ------------------------ End - Header ------------------------- */
+
+/* ------------------------ Login Form ------------------------- */
+
+.form__title {
+    font-size: 2.5em;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 7px;
+    margin: 3% 5%;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 5%;
+}
+
+.form__container input {
+    width: 24%;
+}
+
+input {
+    font-size: 14px;
+    color: #888;
+    border: none;
+    letter-spacing: 2px;
+    margin: 1% 0;
+    padding: 1em 1em;
+}
+
+.form__remmeber {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.form__remember label {
+    margin-right: 6px;
+}
+
+.form__remember input {
+    width: 4px;
+}
+
+.links {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 3% auto;
+}
+
+.form__container,
+.form__links,
+.form__inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form__links a,
+.form__remember label {
+    text-align: left;
+    font: inherit;
+    font-size: 0.7em;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.form__links :nth-child(2) {
+    margin-top: 2%;
+}
+
+.form__buttons {
+    padding-top: 10px;
+}
+
+.form__buttons button {
+    display: inline-block;
+    background: #f54785;
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0.8em 2em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+}
+
+/* ------------------------ End - Login Form ------------------------- */
+
+/* ------------------------ Responsive Magic ------------------------- */
+@media all and (max-width : 992px) {
+
+    header {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .header__logo {
+        text-align: center;
+    }
+
+    .form__title {
+        margin-top: 10%;
+        letter-spacing: normal;
+        text-align: center;
+    }
+
+    .form__container,
+    .form__links,
+    .form__inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form__remember {
+        display: flex;
+        flex-direction: row;
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+    input[type=checkbox] {
+        width: 0;
+        margin-left: 20px;
+    }
+
+    .form__container input {
+        width: auto;
+    }
+
+    .form__links a {
+        text-align: center;
+        padding-top: 15px;
+    }
+
+    .form__buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 10px;
+    }
+
+    .form__buttons button {
+        margin-bottom: 20px;
+    }
+
+}
+/* ------------------------ End - Responsive Magic ----------------------- */

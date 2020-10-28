@@ -28,8 +28,16 @@
             <!-- Form Container -->
             <section>
     
-                <h2 class="form__title">¡Hazte una cuenta y empieza a vender!</h2>
-    
+            <h2 class="form__title">¡Hazte una cuenta y empieza a vender!</h2>
+            <% if(typeof errors != "undefined") { %>
+                <% errors.forEach(error => { %>
+                    <ul>
+                        <li>
+                            <% error.errors %> 
+                        </li>
+                    </ul>
+                <% }) %>
+            <% } %>
                 <div class="form__container">
                     
                     <!-- ¡This is where the ACTUAL magic happens! xD -->
