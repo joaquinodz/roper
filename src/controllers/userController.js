@@ -35,9 +35,7 @@ exports.processRegister = (req, res) => {
         
         let usuarios = readJson();
         
-        console.log(usuario);
-        console.log(errors);
-
+    
         usuarios.push(usuario);
 
         usuarios = JSON.stringify(usuarios, null, " ");

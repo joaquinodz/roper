@@ -1,1 +1,24 @@
-[{"id":1,"nombre":"Remera","precio":36905,"cantidad":9579,"genero":"Mujer","condicion": "Nuevo","color":"Negro","image":"http://dummyimage.com/190x158.jpg/cc0000/ffffff","talle":"XS"}]
+[
+ {
+  "id": 1,
+  "nombre": "Remera",
+  "precio": 36905,
+  "cantidad": 9579,
+  "genero": "Mujer",
+  "condicion": "Nuevo",
+  "color": "Negro",
+  "image": "",
+  "talle": "XS"
+ },
+ {
+  "id": 2,
+  "nombre": "Buzo",
+  "precio": "1111",
+  "cantidad": "2",
+  "genero": "hombre",
+  "condicion": "nuevo",
+  "color": "violeta",
+  "image": "",
+  "talle": "xxl"
+ }
+]
