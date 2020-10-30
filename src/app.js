@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors')
-
+const methodOverride = require('method-override');
 const app = express();
 
 // Configuracion del motor de vistas
@@ -18,12 +18,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(methodOverride('_method'));
 
 // Declaracion de rutas.
 app.use('/', require('./routes/index'));
 app.use('/productos', require('./routes/products'));
 app.use('/user', require('./routes/users'));
-
 // Middleware (a nivel de aplicacion) que maneja los errores 404.
 app.use((req, res, next) => next(createError(404)));
 

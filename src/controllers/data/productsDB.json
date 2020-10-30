@@ -7,7 +7,7 @@
   "genero": "Mujer",
   "condicion": "Nuevo",
   "color": "Negro",
-  "image": "",
+  "image": "https://assets.reebok.com/images/w_600,f_auto,q_auto/5da1ffd7c4f74282ae2baa62009aaef2_9366/Remera_Classics_Vector_Blanco_FJ0734_15_standard.jpg",
   "talle": "XS"
  },
  {
@@ -18,7 +18,40 @@
   "genero": "hombre",
   "condicion": "nuevo",
   "color": "violeta",
-  "image": "",
+  "image": "https://i.pinimg.com/originals/3f/49/84/3f498462956bbec7f698f21746f306af.png",
   "talle": "xxl"
+ },
+ {
+  "id": 3,
+  "nombre": "Zapatillas",
+  "precio": "32",
+  "cantidad": "11",
+  "genero": "unisex",
+  "condicion": "nuevo",
+  "color": "negro",
+  "image": "https://i.pinimg.com/originals/bb/62/22/bb62222b63296daa9c6b735dc4a3f7fa.jpg",
+  "talle": "m"
+ },
+ {
+  "id": 4,
+  "nombre": "Brazalete",
+  "precio": "32",
+  "cantidad": "11",
+  "genero": "unisex",
+  "condicion": "nuevo",
+  "color": "negro",
+  "image": "",
+  "talle": "m"
+ },
+ {
+  "id": 5,
+  "nombre": "gsdfgsdfg",
+  "precio": "331",
+  "cantidad": "13",
+  "genero": "mujer",
+  "condicion": "nuevo",
+  "color": "negro",
+  "image": "",
+  "talle": "l"
  }
 ]
