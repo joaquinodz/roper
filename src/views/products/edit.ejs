@@ -11,34 +11,75 @@
         <div class="tests">
             <div class="forms">
                 <!-- Form -->
-                <form action="/create?_method=PUT" method="post" >
-                    <div><img class="itemm" src="https://dafitistaticar-a.akamaihd.net/p/vizzano-8408-422194-1-zoom.jpg" alt="Zapato"></div>
+                <form action="/productos/<%= productoEditar.id %>/modificar?_method=PUT" method="POST">
+                    <div><img class="itemm" src="<%= productoEditar.image %>" alt=""></div>
                     Nombre del producto: <br>
-                    <input type="text" name="nombre" id="" placeholder="Zapatos Negros"> <br>
+                    <input type="text" name="nombre" id="" placeholder="" value="<%- productoEditar.nombre %>"> <br>
                     <label for=""> Precio: </label> <br>
-                    $ <input type="number" name="precio" id="" class="presio" min= "1" max="99999" placeholder="999.999"><br>
+                    $ <input type="number" name="precio" id="" class="presio" min= "1" max="99999" value="<%- productoEditar.precio %>"><br>
                     <label for="cantidad">Cantidad: </label> <br>
-                    <input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad" placeholder="1"> <br>
+                    <input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad" value="<%- productoEditar.cantidad %>"> <br>
                 <label for="genero">Elige el género de tu producto:</label> <br>
                 <select name="genero" id="">
+                <% if(productoEditar.genero == "Unisex") { %>
+                    <option value="unisex"selected>Unisex</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                <% } else if (productoEditar.genero == "Hombre") { %>
                     <option value="unisex">Unisex</option>
                     <option value="hombre" selected>Hombre</option>
                     <option value="mujer">Mujer</option>
+                <% } else { %>
+                    <option value="unisex">Unisex</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer"selected>Mujer</option>
+                <% } %>
                 </select>
                     <br>
                     <label for="">¿Cuál es la condición?</label><br>
                     <select name="condicion" id="">
-                        <option value="nuevo" selected>Nuevo</option>
-                        <option value="usado">Usado</option>
+                        <% if(productoEditar.condicion == "Nuevo") { %> 
+                            <option value="nuevo" selected>Nuevo</option>
+                            <option value="usado">Usado</option>
+                        <% } else { %>
+                            <option value="nuevo">Nuevo</option>
+                            <option value="usado" selected>Usado</option>
+                        <% } %>
                     </select>
                 <br>
                     <label for="">¿Cuál es el color?</label> <br>
                     <select name="color" id="">
-                        <option value="negro" selected>Negro</option>
-                        <option value="blanco">Blanco</option>
-                        <option value="verde">Verde</option>
-                        <option value="rosa">Rosa</option>
-                        <option value="violeta">Violeta</option>
+                        <% if(productoEditar.color == "Negro") { %> 
+                        <option value="Negro" selected>Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Violeta">Violeta</option>
+                        <% } else if (productoEditar.color == "Blanco"){ %>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco" selected>Blanco</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Violeta">Violeta</option>
+                        <% } else if (productoEditar.color == "Verde") { %>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Verde" selected>Verde</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Violeta">Violeta</option>
+                        <% } else if (productoEditar.color == "Rosa") { %>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa" selected>Rosa</option>
+                        <option value="Violeta">Violeta</option>
+                        <% } else if (productoEditar.color == "Violeta") { %>
+                        <option value="Negro">Negro</option>
+                        <option value="Blanco">Blanco</option>
+                        <option value="Verde">Verde</option>
+                        <option value="Rosa" >Rosa</option>
+                        <option value="Violeta" selected>Violeta</option>
+                        <% } %>
                     </select>
                 <br>
                     <label for="">Talle:</label> <br>
@@ -57,7 +98,7 @@
 						<option value="12">44</option>
 					</select>
                 <!-- Submit button-->
-                <input type="submit" value="Subir">
+                <input type="submit" value="Editar">
                 </form>
             </div>
         </div>

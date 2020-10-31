@@ -55,13 +55,29 @@
 
   .item-product {
     margin: 1px;
-    height: 306px;
+    height: 251px;
 }
   
 .mini-photo {
 	display: flex;
 	justify-content: column;
 	flex-direction: column;
+}
+
+form {
+	margin-left: 14px;
+}
+
+h3 {
+	margin-left: 14px;
+}
+
+h4 {
+	margin-left: 14px;
+}
+
+h2 {
+	margin-left: 14px;
 }
 
 .boton_personalizado{

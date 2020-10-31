@@ -7,15 +7,15 @@
     <div class="todo">
         <%- include("../partials/header") %>
 
-        <article class="banner">
+        <a href=""><article class="banner">
             
-        </article>
+        </article></a>
         <div class="products">
             <% homeProductos.forEach(product => { %>
                 <article class="product">
-                    <img src="<%= product.image %>" alt="">
-                    <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
+                    <a href="/productos/<%= product.id %>"><img src="<%= product.image %>" alt=""></a>
                     <p>$ <%= product.precio %></p>
+                    <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
                 </article>
                 <% }) %>
         </div>

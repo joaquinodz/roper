@@ -1,3 +1,43 @@
+.banner {
+    height: 290px;
+    width: 960px;
+    margin-top: 20px;
+    background-image: url(https://dafitistaticar-a.akamaihd.net/cms/banner_main_30offseleccionados_020118.jpg);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 92px;
+}
+
+.products p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.products a {
+    text-decoration: none;
+    color: rgb(134, 130, 130);
+}
+
+.products img {
+    width: 200px;
+    height: 170px;
+}
+
+.products {
+	display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+    border-radius: 10%;
+    border-color: black;
+}
+
+.product{
+    margin-top: 20px;
+    justify-content: center;
+}
+
 .header {
     display: flex;
     margin-top: 30px;
@@ -63,8 +103,6 @@ input::-webkit-input-placeholder {
     margin-right: 0px;
     margin-bottom: 0px;
 }
-
-
 
 ::placeholder{
     margin-left: 5px;

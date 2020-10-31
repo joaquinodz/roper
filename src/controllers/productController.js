@@ -12,7 +12,7 @@ exports.obtenerProductos = (req, res) => {
     let productos = readJSON();
     let id = req.params.id;
     let encontradeng = productos.find(producto => producto.id == id);
-    res.send(encontradeng);
+    res.render('products/listado', {productoEspecifico: encontradeng, toThousand});
 };
 
 exports.listarProductos = (req, res) => {
@@ -39,13 +39,34 @@ exports.eliminarProducto = (req, res) => {
     let productos = readJSON();
     let id = req.params.id;
     let productoElim = productos.filter(producto => producto.id != id);
-    res.send(productoElim);
+    res.render('products/list', {homeProductos: productoElim, toThousand});
+    
 };
 
 exports.editarProducto = (req, res) => {
-    res.render('products/edit');
+    let productos = readJSON();
+    let id = req.params.id;
+    let encontradeng = productos.find(producto => producto.id == id);
+    res.render('products/edit', {productoEditar: encontradeng, toThousand});
 };
 
 exports.modificarProducto = (req, res) => {
-    console.log(req.body);
+    let productos = readJSON();
+    let productoModificado = req.body;
+    if(productos.id == productoModificado.id){
+        let nuevoProducto = [
+            productos.id = productoModificado.id,
+            productos.nombre = productoModificado.nombre,
+            productos.precio = productoModificado.precio,
+            productos.cantidad = productoModificado.cantidad,
+            productos.genero = productoModificado.genero,
+            productos.condicion = productoModificado.condicion,
+            productos.color = productoModificado.color,
+            productos.image = productoModificado.image,
+            productos.talle = productoModificado.talle
+        ]
+        res.send(nuevoProducto);
+    } else {
+        res.send('Producto no encontrado.');
+    }
 };
