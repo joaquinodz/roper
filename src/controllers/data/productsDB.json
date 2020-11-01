@@ -9,16 +9,5 @@
   "color": "Blanco",
   "image": "https://assets.reebok.com/images/w_600,f_auto,q_auto/5da1ffd7c4f74282ae2baa62009aaef2_9366/Remera_Classics_Vector_Blanco_FJ0734_15_standard.jpg",
   "talle": "1"
- },
- {
-  "id": 2,
-  "nombre": "Buzo",
-  "precio": "1",
-  "cantidad": "2",
-  "genero": "Hombre",
-  "condicion": "Nuevo",
-  "color": "Blanco",
-  "image": "https://www.guantexindustrial.com.ar/2504/buzo-algodon-friza-gris-talle-xl.jpg",
-  "talle": "1"
  }
 ]
