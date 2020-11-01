@@ -51,11 +51,13 @@ exports.editarProducto = (req, res) => {
 };
 
 exports.modificarProducto = (req, res) => {
-    let productos = readJSON(); // agarro el db en una variable
-    let productoModificado = req.body; // agarro valores de body
-    productos.forEach(producto => { // foreach para buscar en todos los objetos de db
+     // agarro el db en una variable
+    let productos = readJSON();
+     // agarro valores de body
+    let productoModificado = req.body;
+    // foreach para buscar en todos los objetos de db
+    productos.forEach(producto => { 
         if(producto.id == req.params.id) {
-            let newDB = [
                 id = req.params.id,
                 producto.nombre = productoModificado.nombre,
                 producto.precio = productoModificado.precio,
@@ -65,7 +67,6 @@ exports.modificarProducto = (req, res) => {
                 producto.color = productoModificado.color,
                 producto.image,
                 producto.talle = productoModificado.talle
-            ]
                 productos = JSON.stringify(productos, null, " ");
                 fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
                 res.render('products/list', {homeProductos: readJSON(), toThousand});

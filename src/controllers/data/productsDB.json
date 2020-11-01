@@ -24,11 +24,11 @@
  {
   "id": 3,
   "nombre": "Zapatillas",
-  "precio": "500",
+  "precio": "2300",
   "cantidad": "1",
   "genero": "Hombre",
-  "condicion": "usado",
-  "color": "Verde",
+  "condicion": "Usado",
+  "color": "Negro",
   "image": "https://i.imgur.com/q1P2XAt.png",
   "talle": "1"
  },
