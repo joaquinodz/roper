@@ -5,6 +5,8 @@
 	flex-direction: row;
 	flex-wrap: wrap;
   }
+
+  
   
   .item {
 	width: 200px;
@@ -91,6 +93,8 @@ h2 {
 	width: 132px;
 	margin-left: 62px;
 	margin-top: 32px;
+	margin-right: 0px;
+    margin-bottom: 0px;
   }
   
 .hr-market {

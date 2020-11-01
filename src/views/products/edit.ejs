@@ -22,17 +22,17 @@
                 <label for="genero">Elige el género de tu producto:</label> <br>
                 <select name="genero" id="">
                 <% if(productoEditar.genero == "Unisex") { %>
-                    <option value="unisex"selected>Unisex</option>
-                    <option value="hombre">Hombre</option>
-                    <option value="mujer">Mujer</option>
+                    <option value="Unisex"selected>Unisex</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer">Mujer</option>
                 <% } else if (productoEditar.genero == "Hombre") { %>
-                    <option value="unisex">Unisex</option>
-                    <option value="hombre" selected>Hombre</option>
-                    <option value="mujer">Mujer</option>
+                    <option value="Unisex">Unisex</option>
+                    <option value="Hombre" selected>Hombre</option>
+                    <option value="Mujer">Mujer</option>
                 <% } else { %>
-                    <option value="unisex">Unisex</option>
-                    <option value="hombre">Hombre</option>
-                    <option value="mujer"selected>Mujer</option>
+                    <option value="Unisex">Unisex</option>
+                    <option value="Hombre">Hombre</option>
+                    <option value="Mujer"selected>Mujer</option>
                 <% } %>
                 </select>
                     <br>

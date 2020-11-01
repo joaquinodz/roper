@@ -51,22 +51,24 @@ exports.editarProducto = (req, res) => {
 };
 
 exports.modificarProducto = (req, res) => {
-    let productos = readJSON();
-    let productoModificado = req.body;
-    if(productos.id == productoModificado.id){
-        let nuevoProducto = [
-            productos.id = productoModificado.id,
-            productos.nombre = productoModificado.nombre,
-            productos.precio = productoModificado.precio,
-            productos.cantidad = productoModificado.cantidad,
-            productos.genero = productoModificado.genero,
-            productos.condicion = productoModificado.condicion,
-            productos.color = productoModificado.color,
-            productos.image = productoModificado.image,
-            productos.talle = productoModificado.talle
-        ]
-        res.send(nuevoProducto);
-    } else {
-        res.send('Producto no encontrado.');
-    }
+    let productos = readJSON(); // agarro el db en una variable
+    let productoModificado = req.body; // agarro valores de body
+    productos.forEach(producto => { // foreach para buscar en todos los objetos de db
+        if(producto.id == req.params.id) {
+            let newDB = [
+                id = req.params.id,
+                producto.nombre = productoModificado.nombre,
+                producto.precio = productoModificado.precio,
+                producto.cantidad =  productoModificado.cantidad,
+                producto.genero = productoModificado.genero,
+                producto.condicion = productoModificado.condicion,
+                producto.color = productoModificado.color,
+                producto.image,
+                producto.talle = productoModificado.talle
+            ]
+                productos = JSON.stringify(productos, null, " ");
+                fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
+                res.render('products/list', {homeProductos: readJSON(), toThousand});
+        }
+    })
 };
