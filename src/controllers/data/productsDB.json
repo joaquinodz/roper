@@ -5,7 +5,7 @@
   "precio": "100",
   "cantidad": "1",
   "genero": "Unisex",
-  "condicion": "usado",
+  "condicion": "Usado",
   "color": "Blanco",
   "image": "https://assets.reebok.com/images/w_600,f_auto,q_auto/5da1ffd7c4f74282ae2baa62009aaef2_9366/Remera_Classics_Vector_Blanco_FJ0734_15_standard.jpg",
   "talle": "1"
@@ -16,31 +16,9 @@
   "precio": "1",
   "cantidad": "2",
   "genero": "Hombre",
-  "condicion": "usado",
+  "condicion": "Nuevo",
   "color": "Blanco",
   "image": "https://www.guantexindustrial.com.ar/2504/buzo-algodon-friza-gris-talle-xl.jpg",
   "talle": "1"
- },
- {
-  "id": 3,
-  "nombre": "Zapatillas",
-  "precio": "2300",
-  "cantidad": "1",
-  "genero": "Hombre",
-  "condicion": "Usado",
-  "color": "Negro",
-  "image": "https://i.imgur.com/q1P2XAt.png",
-  "talle": "1"
- },
- {
-  "id": 4,
-  "nombre": "Brazalete",
-  "precio": "32",
-  "cantidad": "11",
-  "genero": "Unisex",
-  "condicion": "Nuevo",
-  "color": "Negro",
-  "image": "https://images-na.ssl-images-amazon.com/images/I/61pICnAtWvL._AC_UX385_.jpg",
-  "talle": "m"
  }
 ]

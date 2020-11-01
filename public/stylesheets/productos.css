@@ -108,3 +108,16 @@ h2 {
 * {
     font-family: "Roboto", "sans-serif";
   }
+
+.test {
+	display: flex;
+	justify-content: center;
+}
+
+.especifico {
+	margin: 30px ;
+}
+
+.especifico a {
+	color: white;
+}

@@ -37,10 +37,10 @@ exports.generarProducto = (req, res) => {
 
 exports.eliminarProducto = (req, res) => {
     let productos = readJSON();
-    let id = req.params.id;
-    let productoElim = productos.filter(producto => producto.id != id);
-    res.render('products/list', {homeProductos: productoElim, toThousand});
-    
+    let newDB = productos.filter(producto => producto.id != req.params.id);
+    productos = JSON.stringify(newDB, null, " ");
+    fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
+    res.render('products/list', {homeProductos: readJSON(), toThousand});
 };
 
 exports.editarProducto = (req, res) => {
@@ -58,6 +58,7 @@ exports.modificarProducto = (req, res) => {
     // foreach para buscar en todos los objetos de db
     productos.forEach(producto => { 
         if(producto.id == req.params.id) {
+            // reemplazo todos las variables del producto encontrado con las que vienen por body
                 id = req.params.id,
                 producto.nombre = productoModificado.nombre,
                 producto.precio = productoModificado.precio,
@@ -67,8 +68,11 @@ exports.modificarProducto = (req, res) => {
                 producto.color = productoModificado.color,
                 producto.image,
                 producto.talle = productoModificado.talle
+                // stringify al db con los nuevos datos
                 productos = JSON.stringify(productos, null, " ");
+                // sobreescribo la db
                 fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
+                // rendereo productos nuevos con el producto modificado
                 res.render('products/list', {homeProductos: readJSON(), toThousand});
         }
     })
