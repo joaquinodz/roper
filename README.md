@@ -26,7 +26,7 @@ Nuestro target se compone de cualquier género y edad, partiendo desde la preado
 - MySQL
 
 ### Tablero de trabajo:
- - [GitHub Proyects](https://github.com/jopiortiz/grupo_1_roper/projects/2)
+ - [GitHub Proyects](https://github.com/jopiortiz/grupo_1_roper/projects/3)
 
 ### Instrucciones:
 Las instrucciones para la instalación de las dependencias necesarias para el funcionamiento del sitio se encuentran en la carpeta site. 
