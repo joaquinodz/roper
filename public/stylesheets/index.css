@@ -143,7 +143,7 @@ input::-webkit-input-placeholder {
 }
 
 .cart{
-    width: 43px;
+    width: 37px;
     height: 37px;
     margin-left: 85px;
 }
@@ -315,6 +315,10 @@ footer p {
 }
 
 @media all and (max-width: 992px) {
+    article.banner {
+        display: none;
+    }
+
     .forms {
         padding-top: 15px;
         padding-bottom: 50px;

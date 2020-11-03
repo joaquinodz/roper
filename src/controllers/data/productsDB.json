@@ -2,10 +2,10 @@
  {
   "id": 1,
   "nombre": "Remera",
-  "precio": "100",
+  "precio": "1",
   "cantidad": "1",
-  "genero": "Unisex",
-  "condicion": "Usado",
+  "genero": "Hombre",
+  "condicion": "Nuevo",
   "color": "Blanco",
   "image": "https://assets.reebok.com/images/w_600,f_auto,q_auto/5da1ffd7c4f74282ae2baa62009aaef2_9366/Remera_Classics_Vector_Blanco_FJ0734_15_standard.jpg",
   "talle": "1"

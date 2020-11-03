@@ -1,4 +1,4 @@
-Grupo 1, Sprint 2 - Retrospectiva Starfish:
+Grupo 1, Sprint 4 - Retrospectiva Starfish:
 ·--------------------------------------------------------------------------------------------------------------------------------.
 
 ### Dejar de hacer:

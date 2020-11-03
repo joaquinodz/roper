@@ -8,7 +8,6 @@ let readJSON = () => {
 };
 
 exports.obtenerProductos = (req, res) => {
-    // res.render('products/listado');
     let productos = readJSON();
     let id = req.params.id;
     let encontradeng = productos.find(producto => producto.id == id);
@@ -32,13 +31,17 @@ exports.generarProducto = (req, res) => {
     productos.push(producto);
     productos = JSON.stringify(productos, null, " ");
     fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
-    res.send(productos);
+    res.render('productos/list', {homeProductos: readJSON(), toThousand});
 };
 
 exports.eliminarProducto = (req, res) => {
+    // agarro el db en una variable
     let productos = readJSON();
+    // filter con el id que viene por barra de búsqueda para sacar el producto encontrado
     let newDB = productos.filter(producto => producto.id != req.params.id);
+    // stringify al newdb
     productos = JSON.stringify(newDB, null, " ");
+    // sobreescribo la db con la variable nueva
     fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
     res.render('products/list', {homeProductos: readJSON(), toThousand});
 };
