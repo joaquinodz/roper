@@ -24,14 +24,14 @@ exports.crearProducto = (req, res) => {
 
 exports.generarProducto = (req, res) => {
     let productos = readJSON();
-    let producto = {
-        id: productos[productos.length-1].id + 1,
+    producto = {
+        id: productos[productos.length-1].id + 0 + 1,
         ...req.body
-    };
+    }; 
     productos.push(producto);
     productos = JSON.stringify(productos, null, " ");
     fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
-    res.render('productos/list', {homeProductos: readJSON(), toThousand});
+    res.render('products/list', {homeProductos: readJSON(), toThousand});
 };
 
 exports.eliminarProducto = (req, res) => {

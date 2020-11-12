@@ -2,12 +2,12 @@
  {
   "id": 1,
   "nombre": "Remera",
-  "precio": "1",
+  "precio": "5423",
   "cantidad": "1",
-  "genero": "Hombre",
+  "genero": "Unisex",
   "condicion": "Nuevo",
-  "color": "Blanco",
-  "image": "https://assets.reebok.com/images/w_600,f_auto,q_auto/5da1ffd7c4f74282ae2baa62009aaef2_9366/Remera_Classics_Vector_Blanco_FJ0734_15_standard.jpg",
+  "color": "Negro",
+  "image": "https://d26lpennugtm8s.cloudfront.net/stores/163/864/products/remera-negra-lisa-negra-espalda1-e75b1ddd13b94c708415049052115677-1024-1024.jpg",
   "talle": "1"
  }
 ]
