@@ -10,7 +10,7 @@ router.post('/create', controller.generarProducto)
 
 router.get('/:id', controller.obtenerProductos);
 
-router.get('/:id/eliminar', controller.eliminarProducto);
+router.delete('/:id/eliminar', controller.eliminarProducto);
 
 router.get('/:id/editar', controller.editarProducto);
 

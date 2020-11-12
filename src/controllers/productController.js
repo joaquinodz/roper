@@ -25,7 +25,7 @@ exports.crearProducto = (req, res) => {
 exports.generarProducto = (req, res) => {
     let productos = readJSON();
     producto = {
-        id: productos[productos.length-1].id + 0 + 1,
+        id: productos[productos.length-1].id + 1,
         ...req.body
     }; 
     productos.push(producto);
