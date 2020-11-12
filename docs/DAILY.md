@@ -1,13 +1,27 @@
-// 6 de Octubre - Inicio de Sprint 
+// 27 de Octubre - Inicio de Sprint 
 
-- Creamos un proyecto en Express Generator e integramos los archivos del proyecto antiguo, así utilizando todas las ventajas de este mismo.
-- Compartimentamos el head, header y footer, para unirlo a las vistas que hagan falta sin gastar lineas de código innecesarias.
-- Pasamos todas los HTML a EJS, modificando la extensión.
-- Unimos los partials con sus respectivos EJS, ordenando el código.
-- Modificamos las dependencies en el package.json.
+- Empezamos con el Browse y Read.
+- Arreglamos las vistas estáticas.
+- Dejamos todo listo para el Sprint 4.
+- Se agregó la función de agregar productos, Add.
 
-// 11 de Octubre
+// 30 de Octubre
 
-- Mejoramos atributos de CSS, logrando así una armonía más obvia entre las distintas partes realizadas por los integrantes.
-- Agregamos create.ejs, para que el usuario pueda ingresar y agregar cualquier objeto para la venta que desee.
-- Agregamos edit.ejs, para que el usuario pueda editar cualquier objeto que ya tenía publicado.
+- Empezamos lógica de Delete y Edit.
+- Terminamos lógica de Browse y Read.
+- Arreglamos vistas nuevas para Editar y Crear artículos.
+
+// 1 de Noviembre
+
+- Seguimos peleando con lógica de Delete.
+- Lógica de Edit terminada.
+
+// 3 de Noviembre
+
+- Vistas de Editar y Crear se hicieron Responsive.
+- Lógica de Delete terminada.
+
+// 12 de Noviembre
+
+- Modificamos DAILY.md.
+- Dejamos todo el repo listo para entrega.
