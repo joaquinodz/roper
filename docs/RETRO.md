@@ -1,4 +1,4 @@
 Grupo 1, Sprint 4 - Retrospectiva Starfish:
 ·--------------------------------------------------------------------------------------------------------------------------------.
 
-son las 3 am y tengo hambre
+son las 3 am y tengo hambre.
