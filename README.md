@@ -21,13 +21,12 @@ Nuestro target se compone de cualquier género y edad, partiendo desde la preado
 - HTML
 - CSS
 - JavaScript
-- Node 
+- Node
+- Express
 - React
 - MySQL
+- APIs
+- Sequelize
 
 ### Tablero de trabajo:
  - [GitHub Proyects](https://github.com/jopiortiz/grupo_1_roper/projects/3)
-
-### Instrucciones:
-Las instrucciones para la instalación de las dependencias necesarias para el funcionamiento del sitio se encuentran en la carpeta site. 
-Puede acceder a las mismas por medio del siguiente [link](#)
