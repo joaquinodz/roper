@@ -83,8 +83,10 @@ exports.modificarProducto = (req, res) => {
 };
 exports.jsontest = async (req, res) => {
     try {
-        let generos = await db.Productos.findAll()
-        res.json(generos);
+        let productos = await db.Productos.findAll({
+            include: ['categoria', 'condicion', 'color', 'talle', 'users']
+        })
+        res.json(productos);
     } catch(error) {
         console.log(error);
     }
