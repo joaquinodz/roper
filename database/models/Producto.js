@@ -8,9 +8,23 @@ module.exports = (sequelize, dataTypes) => {
         categoria_id: dataTypes.INTEGER,
         condicion_id: dataTypes.INTEGER,
         color_id: dataTypes.INTEGER,
-        image_id: dataTypes.INTEGER
+        image_id: dataTypes.INTEGER,
+        talle_id: dataTypes.INTEGER
     }, {
+        tableName: 'productos',
         timestamps: false
     })
+    producto.associate = (models => {
+        producto.belongsTo(models.Categoria);
+        producto.belongsTo(models.Condicion);
+        producto.belongsTo(models.Color);
+        producto.belongsTo(models.Talle);
+        producto.belongsTo(models.Image);
+        producto.belongsToMany(models.User, {
+            as: 'users',
+            through: 'producto_user',
+            foreignKey: "producto_id"
+        })
+    });
     return producto;
 }

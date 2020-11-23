@@ -6,5 +6,11 @@ module.exports = (sequelize, dataTypes) => {
     }, {
         timestamps: false
     })
+    condicion.associate = (models => {
+        condicion.hasMany(models.Producto, {
+            as: "productos",
+            foreignKey: "condicion_id"
+        });
+    })
     return condicion;
 }

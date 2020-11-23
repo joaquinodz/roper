@@ -9,5 +9,12 @@ module.exports = (sequelize, dataTypes) => {
     }, {
         timestamps: false
     })
-    return talle;
+    user.associate = (models => {
+        user.hasMany(models.Producto, {
+            as: "productos",
+            through: 'producto_user',
+            foreignKey: "user_id"
+        });
+    })
+    return user;
 }
