@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
             as: "categoria",
             foreignKey: "categoria_id"
         });
-        producto.belongsTo(models.Condicion, {
+        producto.belongsTo(models.Condiciones, {
             as: "condicion",
             foreignKey: "condicion_id"
         });
@@ -27,15 +27,15 @@ module.exports = (sequelize, dataTypes) => {
             as: "color",
             foreignKey: "color_id"
         });
-        producto.belongsTo(models.Image, {
+        producto.belongsTo(models.Images, {
             as: "image",
             foreignKey: "image_id"
         });
-        producto.belongsTo(models.Talle, {
+        producto.belongsTo(models.Talles, {
             as: "talle",
             foreignKey: "talle_id"
         });
-        producto.belongsToMany(models.User, {
+        producto.belongsToMany(models.Users, {
             as: 'users',
             through: 'producto_user',
             foreignKey: "producto_id",

@@ -1,7 +1,7 @@
 const { sequelize, dataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-    const condicion = sequelize.define('Condicion', {
+    const condicion = sequelize.define('Condiciones', {
         estado: dataTypes.STRING
     }, {
         timestamps: false

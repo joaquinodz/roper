@@ -1,7 +1,7 @@
 const { sequelize, dataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-    const talle = sequelize.define('Talle', {
+    const talle = sequelize.define('Talles', {
         numero: dataTypes.INTEGER
     }, {
         timestamps: false
