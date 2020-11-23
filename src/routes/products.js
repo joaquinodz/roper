@@ -8,6 +8,8 @@ router.get('/create', controller.crearProducto);
 
 router.post('/create', controller.generarProducto)
 
+router.get('/json', controller.jsontest);
+
 router.get('/:id', controller.obtenerProductos);
 
 router.delete('/:id/eliminar', controller.eliminarProducto);

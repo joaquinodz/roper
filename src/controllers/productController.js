@@ -1,3 +1,4 @@
+let db = require("../../database/models")
 const fs = require('fs');
 const { body } = require('express-validator');
 const path = require('path');
@@ -80,3 +81,11 @@ exports.modificarProducto = (req, res) => {
         }
     })
 };
+exports.jsontest = async (req, res) => {
+    try {
+        let generos = await db.Categorias.findAll()
+        res.json(generos);
+    } catch(error) {
+        console.log(error);
+    }
+}

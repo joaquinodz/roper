@@ -15,15 +15,32 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
     producto.associate = (models => {
-        producto.belongsTo(models.Categoria);
-        producto.belongsTo(models.Condicion);
-        producto.belongsTo(models.Color);
-        producto.belongsTo(models.Talle);
-        producto.belongsTo(models.Image);
+        producto.belongsTo(models.Categorias, {
+            as: "categoria",
+            foreignKey: "categoria_id"
+        });
+        producto.belongsTo(models.Condicion, {
+            as: "condicion",
+            foreignKey: "condicion_id"
+        });
+        producto.belongsTo(models.Colores, {
+            as: "color",
+            foreignKey: "color_id"
+        });
+        producto.belongsTo(models.Image, {
+            as: "image",
+            foreignKey: "image_id"
+        });
+        producto.belongsTo(models.Talle, {
+            as: "talle",
+            foreignKey: "talle_id"
+        });
         producto.belongsToMany(models.User, {
             as: 'users',
             through: 'producto_user',
-            foreignKey: "producto_id"
+            foreignKey: "producto_id",
+            otherKey: "user_id",
+            timestamps: false
         })
     });
     return producto;
