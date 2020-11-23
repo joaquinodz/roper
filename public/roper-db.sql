@@ -152,8 +152,9 @@ CREATE TABLE `productos` (
   `condicion_id` int(10) unsigned DEFAULT NULL,
   `color_id` int(10) unsigned DEFAULT NULL,
   `image_id` int(10) unsigned DEFAULT NULL,
+  `talle_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,33 +163,8 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Zapatillas','500','2',1,2,4,1);
+INSERT INTO `productos` VALUES (1,'Zapatillas','500','2',1,2,4,1,NULL),(2,'','','',NULL,NULL,NULL,NULL,1),(3,'Buzo','1000','4',1,2,4,1,3);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `talle_producto`
---
-
-DROP TABLE IF EXISTS `talle_producto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `talle_producto` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `talle_id` int(10) unsigned NOT NULL,
-  `producto_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `talle_producto`
---
-
-LOCK TABLES `talle_producto` WRITE;
-/*!40000 ALTER TABLE `talle_producto` DISABLE KEYS */;
-INSERT INTO `talle_producto` VALUES (1,5,1);
-/*!40000 ALTER TABLE `talle_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -211,7 +187,7 @@ CREATE TABLE `talles` (
 
 LOCK TABLES `talles` WRITE;
 /*!40000 ALTER TABLE `talles` DISABLE KEYS */;
-INSERT INTO `talles` VALUES (1,'33'),(2,'34'),(3,'35'),(4,'36'),(5,'37'),(6,'38'),(7,'39'),(8,'40'),(9,'41'),(10,'42'),(11,'43'),(12,'44');
+INSERT INTO `talles` VALUES (2,'34'),(3,'35'),(4,'36'),(5,'37'),(6,'38'),(7,'39'),(8,'40'),(9,'41'),(10,'42'),(11,'43'),(12,'44');
 /*!40000 ALTER TABLE `talles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -251,4 +227,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-21 18:48:49
+-- Dump completed on 2020-11-23 16:57:47
