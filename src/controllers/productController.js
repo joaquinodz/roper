@@ -83,7 +83,7 @@ exports.modificarProducto = (req, res) => {
 };
 exports.jsontest = async (req, res) => {
     try {
-        let generos = await db.Categorias.findAll()
+        let generos = await db.Productos.findAll()
         res.json(generos);
     } catch(error) {
         console.log(error);

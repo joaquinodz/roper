@@ -10,7 +10,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
     user.associate = (models => {
-        user.belongsToMany(models.Producto, {
+        user.belongsToMany(models.Productos, {
             as: "productos",
             through: 'producto_user',
             foreignKey: "user_id"

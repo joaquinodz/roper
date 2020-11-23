@@ -1,7 +1,7 @@
 const { sequelize, dataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
-    const producto = sequelize.define('Producto', {
+    const producto = sequelize.define('Productos', {
         nombre: dataTypes.STRING,
         precio: dataTypes.INTEGER,
         cantidad: dataTypes.INTEGER,

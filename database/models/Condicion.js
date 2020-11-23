@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
     condicion.associate = (models => {
-        condicion.hasMany(models.Producto, {
+        condicion.hasMany(models.Productos, {
             as: "productos",
             foreignKey: "condicion_id"
         });

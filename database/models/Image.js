@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
     image.associate = (models => {
-        image.hasOne(models.Producto, {
+        image.hasOne(models.Productos, {
             as: 'productos',
             foreignKey: 'image_id'
         })
