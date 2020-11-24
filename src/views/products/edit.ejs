@@ -21,225 +21,225 @@
                     <input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad" value="<%- productoEditar.cantidad %>"> <br>
                 <label for="genero">Elige el género de tu producto:</label> <br>
                 <select name="genero" id="">
-                <% if(productoEditar.genero == "Unisex") { %>
-                    <option value="Unisex"selected>Unisex</option>
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer">Mujer</option>
-                <% } else if (productoEditar.genero == "Hombre") { %>
-                    <option value="Unisex">Unisex</option>
-                    <option value="Hombre" selected>Hombre</option>
-                    <option value="Mujer">Mujer</option>
+                <% if(productoEditar.categoria_id == "1") { %>
+                    <option value="1"selected>Unisex</option>
+                    <option value="2">Hombre</option>
+                    <option value="3">Mujer</option>
+                <% } else if (productoEditar.categoria_id == "2") { %>
+                    <option value="1">Unisex</option>
+                    <option value="2" selected>Hombre</option>
+                    <option value="3">Mujer</option>
                 <% } else { %>
-                    <option value="Unisex">Unisex</option>
-                    <option value="Hombre">Hombre</option>
-                    <option value="Mujer"selected>Mujer</option>
+                    <option value="1">Unisex</option>
+                    <option value="2">Hombre</option>
+                    <option value="3"selected>Mujer</option>
                 <% } %>
                 </select>
                     <br>
                     <label for="">¿Cuál es la condición?</label><br>
                     <select name="condicion" id="">
-                        <% if(productoEditar.condicion == "Nuevo") { %> 
-                            <option value="Nuevo" selected>Nuevo</option>
-                            <option value="Usado">Usado</option>
+                        <% if(productoEditar.condicion_id == "1") { %> 
+                            <option value="1" selected>Nuevo</option>
+                            <option value="2">Usado</option>
                         <% } else { %>
-                            <option value="Nuevo">Nuevo</option>
-                            <option value="Usado" selected>Usado</option>
+                            <option value="1">Nuevo</option>
+                            <option value="2" selected>Usado</option>
                         <% } %>
                     </select>
                 <br>
                     <label for="">¿Cuál es el color?</label> <br>
                     <select name="color" id="">
-                    <% if(productoEditar.color == "Negro") { %> 
-                        <option value="Negro" selected>Negro</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Violeta">Violeta</option>
-                    <% } else if (productoEditar.color == "Blanco"){ %>
-                        <option value="Negro">Negro</option>
-                        <option value="Blanco" selected>Blanco</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Violeta">Violeta</option>
-                    <% } else if (productoEditar.color == "Verde") { %>
-                        <option value="Negro">Negro</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Verde" selected>Verde</option>
-                        <option value="Rosa">Rosa</option>
-                        <option value="Violeta">Violeta</option>
-                    <% } else if (productoEditar.color == "Rosa") { %>
-                        <option value="Negro">Negro</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Rosa" selected>Rosa</option>
-                        <option value="Violeta">Violeta</option>
-                    <% } else if (productoEditar.color == "Violeta") { %>
-                        <option value="Negro">Negro</option>
-                        <option value="Blanco">Blanco</option>
-                        <option value="Verde">Verde</option>
-                        <option value="Rosa" >Rosa</option>
-                        <option value="Violeta" selected>Violeta</option>
+                    <% if(productoEditar.color_id == "1") { %> 
+                        <option value="1" selected>Negro</option>
+                        <option value="2">Blanco</option>
+                        <option value="3">Verde</option>
+                        <option value="4">Rosa</option>
+                        <option value="5">Violeta</option>
+                    <% } else if (productoEditar.color_id == "2"){ %>
+                        <option value="1">Negro</option>
+                        <option value="2" selected>Blanco</option>
+                        <option value="3">Verde</option>
+                        <option value="4">Rosa</option>
+                        <option value="5">Violeta</option>
+                    <% } else if (productoEditar.color_id == "3") { %>
+                        <option value="1">Negro</option>
+                        <option value="2">Blanco</option>
+                        <option value="3" selected>Verde</option>
+                        <option value="4">Rosa</option>
+                        <option value="5">Violeta</option>
+                    <% } else if (productoEditar.color_id == "4") { %>
+                        <option value="1">Negro</option>
+                        <option value="2">Blanco</option>
+                        <option value="3">Verde</option>
+                        <option value="4" selected>Rosa</option>
+                        <option value="5">Violeta</option>
+                    <% } else if (productoEditar.color_id == "5") { %>
+                        <option value="1">Negro</option>
+                        <option value="2">Blanco</option>
+                        <option value="3">Verde</option>
+                        <option value="4" >Rosa</option>
+                        <option value="5" selected>Violeta</option>
                     <% } %>
                     </select>
                 <br>
                     <label for="">Talle:</label> <br>
                     <select name="talle" >
-                <% if (productoEditar.talle == "33") { %>                  
-						<option value="33" selected>33</option>
-						<option value="34">34</option>
-						<option value="35">35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-						<option value="44">44</option>
-                <%  } else if(productoEditar.talle == "34") {  %>                     
-						<option value="33" >33</option>
-						<option value="34" selected>34</option>
-						<option value="35">35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-						<option value="44">44</option>
-                <%  } else if (productoEditar.talle == "35") {  %>                      
-						<option value="33" >33</option>
-						<option value="34">34</option>
-						<option value="35" selected>35</option>
-						<option value="36">36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-						<option value="44">44</option>
-                <% } else if (productoEditar.talle == "36") {%>
-                        <option value="33" >33</option>
-						<option value="34">34</option>
-						<option value="35" >35</option>
-						<option value="36"selected>36</option>
-						<option value="37">37</option>
-						<option value="38">38</option>
-						<option value="39">39</option>
-						<option value="40">40</option>
-						<option value="41">41</option>
-						<option value="42">42</option>
-						<option value="43">43</option>
-                        <option value="44">44</option>
-                <% } else if (productoEditar.talle == "37") {%>
-                    <option value="33" >33</option>
-                    <option value="34">34</option>
-                    <option value="35" >35</option>
-                    <option value="36">36</option>
-                    <option value="37"selected>37</option>
-                    <option value="38">38</option>
-                    <option value="39">39</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
-                    <option value="43">43</option>
-                    <option value="44">44</option>
-                <% } else if (productoEditar.talle == "38") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38"selected>38</option>
-                   <option value="39">39</option>
-                   <option value="40">40</option>
-                   <option value="41">41</option>
-                   <option value="42">42</option>
-                   <option value="43">43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "39") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39"selected>39</option>
-                   <option value="40">40</option>
-                   <option value="41">41</option>
-                   <option value="42">42</option>
-                   <option value="43">43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "40") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39">39</option>
-                   <option value="40"selected>40</option>
-                   <option value="41">41</option>
-                   <option value="42">42</option>
-                   <option value="43">43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "41") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39">39</option>
-                   <option value="40">40</option>
-                   <option value="41"selected>41</option>
-                   <option value="42">42</option>
-                   <option value="43">43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "42") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39">39</option>
-                   <option value="40">40</option>
-                   <option value="41">41</option>
-                   <option value="42"selected>42</option>
-                   <option value="43">43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "43") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39">39</option>
-                   <option value="40">40</option>
-                   <option value="41">41</option>
-                   <option value="42">42</option>
-                   <option value="43"selected>43</option>
-                   <option value="44">44</option>
-                <% } else if (productoEditar.talle == "44") {%>
-                   <option value="33" >33</option>
-                   <option value="34">34</option>
-                   <option value="35" >35</option>
-                   <option value="36">36</option>
-                   <option value="37">37</option>
-                   <option value="38">38</option>
-                   <option value="39">39</option>
-                   <option value="40">40</option>
-                   <option value="41">41</option>
-                   <option value="42">42</option>
-                   <option value="43">43</option>
-                   <option value="44"selected>44</option>
+                <% if (productoEditar.talle_id == "1") { %>                  
+						<option value="1" selected>33</option>
+						<option value="2">34</option>
+						<option value="3">35</option>
+						<option value="4">36</option>
+						<option value="5">37</option>
+						<option value="6">38</option>
+						<option value="7">39</option>
+						<option value="8">40</option>
+						<option value="9">41</option>
+						<option value="10">42</option>
+						<option value="11">43</option>
+						<option value="12">44</option>
+                <%  } else if(productoEditar.talle_id == "2") {  %>                     
+                    <option value="1" >33</option>
+                    <option value="2"selected>34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <%  } else if (productoEditar.talle_id == "3") {  %>                      
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3"selected>35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "4") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4"selected>36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "5") {%>
+                    <option value="1" >33</option>
+						<option value="2">34</option>
+						<option value="3">35</option>
+						<option value="4">36</option>
+						<option value="5"selected>37</option>
+						<option value="6">38</option>
+						<option value="7">39</option>
+						<option value="8">40</option>
+						<option value="9">41</option>
+						<option value="10">42</option>
+						<option value="11">43</option>
+						<option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "6") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6"selected>38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "7") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7"selected>39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "8") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8"selected>40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "9") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9"selected>41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "10") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10"selected>42</option>
+                    <option value="11">43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "11") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11"selected>43</option>
+                    <option value="12">44</option>
+                <% } else if (productoEditar.talle_id == "12") {%>
+                    <option value="1" >33</option>
+                    <option value="2">34</option>
+                    <option value="3">35</option>
+                    <option value="4">36</option>
+                    <option value="5">37</option>
+                    <option value="6">38</option>
+                    <option value="7">39</option>
+                    <option value="8">40</option>
+                    <option value="9">41</option>
+                    <option value="10">42</option>
+                    <option value="11">43</option>
+                    <option value="12"selected>44</option>
                 <% } %>
 				</select>
                 <!-- Submit button-->

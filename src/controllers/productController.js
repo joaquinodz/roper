@@ -3,6 +3,7 @@ const fs = require('fs');
 const { body } = require('express-validator');
 const path = require('path');
 const { json } = require('express');
+const moviesController = require("../../../da/30 de octubre/controllers/moviesController");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let readJSON = () => {
     return JSON.parse(fs.readFileSync(path.resolve(__dirname + '/data/productsDB.json')));
@@ -35,63 +36,64 @@ exports.crearProducto = (req, res) => {
     res.render('products/create');
 };
 
-exports.generarProducto = (req, res) => {
+exports.generarProducto = async (req, res) => {
+    try {
+        const allProducts = await db.Productos.findAll();
+        const newProducto = await db.Productos.create({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            cantidad: req.body.cantidad,
+            categoria_id: req.body.genero,
+            condicion_id: req.body.condicion,
+            color_id: req.body.color,
+            talle_id: req.body.talle
+        })
+        res.render(await 'products/list', {homeProductos: allProducts, toThousand});
+    } catch(error) {
+        console.log(error);
+    }
     let productos = readJSON();
-    producto = {
-        id: productos[productos.length-1].id + 1,
-        ...req.body
-    }; 
-    productos.push(producto);
-    productos = JSON.stringify(productos, null, " ");
-    fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
-    res.render('products/list', {homeProductos: readJSON(), toThousand});
 };
 
-exports.eliminarProducto = (req, res) => {
+exports.eliminarProducto = async (req, res) => {
+    const productos = await db.Productos.findAll();
     // agarro el db en una variable
-    let productos = readJSON();
+    const productoEncontrado = await db.Productos.findByPk(req.params.id, {
+        include:["image"]
+    })
     // filter con el id que viene por barra de búsqueda para sacar el producto encontrado
-    let newDB = productos.filter(producto => producto.id != req.params.id);
-    // stringify al newdb
-    productos = JSON.stringify(newDB, null, " ");
-    // sobreescribo la db con la variable nueva
-    fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
-    res.render('products/list', {homeProductos: readJSON(), toThousand});
-};
-
-exports.editarProducto = (req, res) => {
-    let productos = readJSON();
-    let id = req.params.id;
-    let encontradeng = productos.find(producto => producto.id == id);
-    res.render('products/edit', {productoEditar: encontradeng, toThousand});
-};
-
-exports.modificarProducto = (req, res) => {
-     // agarro el db en una variable
-    let productos = readJSON();
-     // agarro valores de body
-    let productoModificado = req.body;
-    // foreach para buscar en todos los objetos de db
-    productos.forEach(producto => { 
-        if(producto.id == req.params.id) {
-            // reemplazo todos las variables del producto encontrado con las que vienen por body
-                id = req.params.id,
-                producto.nombre = productoModificado.nombre,
-                producto.precio = productoModificado.precio,
-                producto.cantidad =  productoModificado.cantidad,
-                producto.genero = productoModificado.genero,
-                producto.condicion = productoModificado.condicion,
-                producto.color = productoModificado.color,
-                producto.image,
-                producto.talle = productoModificado.talle
-                // stringify al db con los nuevos datos
-                productos = JSON.stringify(productos, null, " ");
-                // sobreescribo la db
-                fs.writeFileSync(path.resolve(__dirname + "/data/productsDB.json"), productos)
-                // rendereo productos nuevos con el producto modificado
-                res.render('products/list', {homeProductos: readJSON(), toThousand});
+    await db.Productos.destroy({
+        where: {
+            id: req.params.id
         }
     })
+    res.render(await'products/list', {homeProductos: productos, toThousand});
+};
+
+exports.editarProducto = async (req, res) => {
+    let id = req.params.id;
+    let producto = await db.Productos.findByPk(id, {
+        include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+    })
+    res.render('products/edit', {productoEditar: producto, toThousand});
+};
+
+exports.modificarProducto = async (req, res) => {
+    let id = req.params.id;
+    let productosAll = await db.Productos.findAll();
+    let productoCambiado = await db.Productos.findByPk(id, {
+        include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+    });
+    await productoCambiado.update({
+        nombre: req.body.nombre,
+        precio: req.body.precio,
+        cantidad: req.body.cantidad,
+        categoria_id: req.body.genero,
+        condicion_id: req.body.condicion,
+        color_id: req.body.color,
+        talle_id: req.body.talle
+    })
+    res.render('products/list', {homeProductos: productosAll, toThousand});
 };
 exports.jsontest = async (req, res) => {
     try {

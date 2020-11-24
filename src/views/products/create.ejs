@@ -12,7 +12,7 @@
 			<div class="tests">
 				<div class="forms">
 					<!-- Form -->
-					<form action="/productos/create" method="post" >
+					<form action="/productos/create" method="post" enctype="multipart/form-data">
 						Nombre del producto: <br>
 						<input type="text" name="nombre" id=""> <br>
 						<label for=""> Precio: </label> <br>
@@ -21,24 +21,24 @@
 						<input type="number" name="cantidad" id="cantidad" min= "1" max="9999" class="cantidad"><br>
 					<label for="genero">Elige el género de tu producto:</label> <br>
 					<select name="genero" id=""> 
-						<option value="Unisex">Unisex</option>
-						<option value="Hombre">Hombre</option>
-						<option value="Mujer">Mujer</option>
+						<option value="1">Unisex</option>
+						<option value="2">Hombre</option>
+						<option value="3">Mujer</option>
 					</select>
 						<br>
 						<label for="">¿Cuál es la condición?</label><br>
 						<select name="condicion" id="">
-							<option value="Nuevo">Nuevo</option>
-							<option value="Usado">Usado</option>
+							<option value="1">Nuevo</option>
+							<option value="2">Usado</option>
 						</select>
 					<br>
 						<label for="">¿Cuál es el color?</label> <br>
 						<select name="color" id="">
-							<option value="Negro">Negro</option>
-							<option value="Blanco">Blanco</option>
-							<option value="Verde">Verde</option>
-							<option value="Rosa">Rosa</option>
-							<option value="Violeta">Violeta</option>
+							<option value="1">Negro</option>
+							<option value="2">Blanco</option>
+							<option value="3">Verde</option>
+							<option value="4">Rosa</option>
+							<option value="5">Violeta</option>
 						</select>
 					<br>
 						<label for="">Sube una imagen de tu producto:</label> <br>
@@ -46,18 +46,18 @@
 					<br>
 						<label for="">Talle:</label> <br>
 						<select name="talle" id="">
-							<option value="33">33</option>
-							<option value="34">34</option>
-							<option value="35">35</option>
-							<option value="36">36</option>
-							<option value="37">37</option>
-							<option value="38">38</option>
-							<option value="39">39</option>
-							<option value="40">40</option>
-							<option value="41">41</option>
-							<option value="42">42</option>
-							<option value="43">43</option>
-							<option value="44">44</option>
+							<option value="1">33</option>
+							<option value="2">34</option>
+							<option value="3">35</option>
+							<option value="4">36</option>
+							<option value="5">37</option>
+							<option value="6">38</option>
+							<option value="7">39</option>
+							<option value="8">40</option>
+							<option value="9">41</option>
+							<option value="10">42</option>
+							<option value="11">43</option>
+							<option value="12">44</option>
 						</select>
 					<!-- Submit button-->
 					<input type="submit" value="Subir">

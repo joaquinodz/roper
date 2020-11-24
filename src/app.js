@@ -7,6 +7,7 @@ const cors = require('cors')
 const app = express();
 const methodOverride = require('method-override');
 
+
 // Configuracion del motor de vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
