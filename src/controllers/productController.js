@@ -8,15 +8,27 @@ let readJSON = () => {
     return JSON.parse(fs.readFileSync(path.resolve(__dirname + '/data/productsDB.json')));
 };
 
-exports.obtenerProductos = (req, res) => {
-    let productos = readJSON();
-    let id = req.params.id;
-    let encontradeng = productos.find(producto => producto.id == id);
-    res.render('products/listado', {productoEspecifico: encontradeng, toThousand});
+exports.obtenerProductos = async (req, res) => {
+    try {
+        let id = req.params.id;
+        let search = await db.Productos.findByPk(id, {
+            include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+        })
+        res.render('products/listado', {productoEspecifico: search});
+    } catch(error) {
+        console.log(error);
+    }
 };
 
-exports.listarProductos = (req, res) => {
-    res.render('products/list', {homeProductos: readJSON(), toThousand});
+exports.listarProductos = async (req, res) => {
+    try {
+        const productos = await db.Productos.findAll({
+            include:['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+        })
+        res.render('products/list', {homeProductos: productos});
+    } catch(error) {
+        console.log(error);
+    }
 }
 
 exports.crearProducto = (req, res) => {
