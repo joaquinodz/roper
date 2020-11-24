@@ -53,9 +53,21 @@
 				<div class="Details">
 					<hr color="grey" class="hr-market">
 					<h2>Información</h3>
+					<% if(productoEspecifico.categoria.genero == null) { %>
+					<h4>Género: </h4>
+					<% } else {%>
 					<h4>Género: <%= productoEspecifico.categoria.genero %></h4>
+					<% } %>
+					<% if(productoEspecifico.color.nombre == null) { %>
+					<h4>Color: </h4>
+					<% } else { %>
 					<h4>Color: <%= productoEspecifico.color.nombre %></h4>
+					<% } %>
+					<% if(productoEspecifico.condicion.estado == null) { %>
+					<h4>Condición: </h4>
+					<% } else { %>
 					<h4>Condición: <%= productoEspecifico.condicion.estado %></h4>
+					<% };%>
 				</div>
 			</div>
 			
