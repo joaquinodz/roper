@@ -17,7 +17,7 @@ exports.buscar = async(req, res) => {
                 nombre: {[Op.like]: '%' + buscar + '%'}
             }
         })
-        res.json(result);
+        res.render('searchResult', {result, buscar});
     } catch(error) {
         console.log(error);
     }

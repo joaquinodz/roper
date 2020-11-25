@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('partials/head'); %> 
+    <body>
+        <div class="todo">
+            <%- include('partials/header'); %> 
+            <p>Resultados de la busqueda <%= buscar %></p>
+            <div class="products">
+                <% result.forEach(product => { %>
+                    <article class="product">
+                        <a href="/productos/<%= product.id %>"><img src="<%= product.image %>" alt=""></a>
+                        <p>$ <%= product.precio %></p>
+                        <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
+                    </article>
+                    <% }) %>
+                </div>
+            <%- include('partials/footer'); %> 
+        </div>
+    </body>
+
+</html>
