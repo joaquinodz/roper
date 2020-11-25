@@ -48,11 +48,13 @@ exports.generarProducto = async (req, res) => {
             color_id: req.body.color,
             talle_id: req.body.talle
         })
+        const newImage = await db.Images.create({
+            nombre: req.file.filename
+        })
         res.render(await 'products/list', {homeProductos: allProducts, toThousand});
     } catch(error) {
         console.log(error);
     }
-    let productos = readJSON();
 };
 
 exports.eliminarProducto = async (req, res) => {
