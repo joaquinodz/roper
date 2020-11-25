@@ -13,7 +13,7 @@ exports.showLogin = (req, res) => {
 };
 
 exports.processLogin = (req, res) => {
-
+    
 };
 
 exports.processRegister = async (req, res) => {
@@ -28,6 +28,6 @@ exports.processRegister = async (req, res) => {
         })
     res.json(usuario);
      } else { 
-        res.render('register', {errors: errors.errors})
+        res.render('users/register', {errors: errors.errors})
      }
 };

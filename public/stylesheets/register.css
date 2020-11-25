@@ -88,6 +88,10 @@ input {
     margin-right: 6px;
 }
 
+.errores {
+    color: red;
+}
+
 .form__remember input {
     width: 4px;
 }
