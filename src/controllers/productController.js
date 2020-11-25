@@ -95,13 +95,4 @@ exports.modificarProducto = async (req, res) => {
     })
     res.render('products/list', {homeProductos: productosAll, toThousand});
 };
-exports.jsontest = async (req, res) => {
-    try {
-        let productos = await db.Productos.findAll({
-            include: ['categoria', 'condicion', 'color', 'talle', 'users']
-        })
-        res.json(productos);
-    } catch(error) {
-        console.log(error);
-    }
-}
+
