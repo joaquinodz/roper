@@ -9,7 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         condicion_id: dataTypes.INTEGER,
         color_id: dataTypes.INTEGER,
         image_id: dataTypes.INTEGER,
-        talle_id: dataTypes.INTEGER
+        talle_id: dataTypes.INTEGER,
+        image: dataTypes.STRING
     }, {
         tableName: 'productos',
         timestamps: false
@@ -26,10 +27,6 @@ module.exports = (sequelize, dataTypes) => {
         producto.belongsTo(models.Colores, {
             as: "color",
             foreignKey: "color_id"
-        });
-        producto.belongsTo(models.Images, {
-            as: "image",
-            foreignKey: "image_id"
         });
         producto.belongsTo(models.Talles, {
             as: "talle",

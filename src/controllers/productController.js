@@ -13,7 +13,7 @@ exports.obtenerProductos = async (req, res) => {
     try {
         let id = req.params.id;
         let search = await db.Productos.findByPk(id, {
-            include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+            include: ['categoria', 'condicion', 'color', 'talle', 'users']
         })
         res.render('products/listado', {productoEspecifico: search});
     } catch(error) {
@@ -24,7 +24,7 @@ exports.obtenerProductos = async (req, res) => {
 exports.listarProductos = async (req, res) => {
     try {
         const productos = await db.Productos.findAll({
-            include:['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+            include:['categoria', 'condicion', 'color', 'talle', 'users']
         })
         res.render('products/list', {homeProductos: productos});
     } catch(error) {
@@ -46,11 +46,10 @@ exports.generarProducto = async (req, res) => {
             categoria_id: req.body.genero,
             condicion_id: req.body.condicion,
             color_id: req.body.color,
-            talle_id: req.body.talle
+            talle_id: req.body.talle,
+            image: req.file.filename
         })
-        const newImage = await db.Images.create({
-            nombre: req.file.filename
-        })
+        console.log(newProducto.image);
         res.render(await 'products/list', {homeProductos: allProducts, toThousand});
     } catch(error) {
         console.log(error);
@@ -59,23 +58,26 @@ exports.generarProducto = async (req, res) => {
 
 exports.eliminarProducto = async (req, res) => {
     const productos = await db.Productos.findAll();
-    // agarro el db en una variable
-    const productoEncontrado = await db.Productos.findByPk(req.params.id, {
-        include:["image"]
+    const productoEncontrado = await db.Productos.findByPk(req.params.id)
+    const path = './public/images/productos/' + productoEncontrado.image;
+    fs.unlink(path, (err) => {
+        if(err) {
+            console.error(err);
+            return;
+        }
     })
-    // filter con el id que viene por barra de búsqueda para sacar el producto encontrado
     await db.Productos.destroy({
         where: {
             id: req.params.id
         }
     })
-    res.render(await'products/list', {homeProductos: productos, toThousand});
+    res.render(await 'products/list', {homeProductos: productos, toThousand});
 };
 
 exports.editarProducto = async (req, res) => {
     let id = req.params.id;
     let producto = await db.Productos.findByPk(id, {
-        include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+        include: ['categoria', 'condicion', 'color', 'talle', 'users']
     })
     res.render('products/edit', {productoEditar: producto, toThousand});
 };
@@ -84,7 +86,7 @@ exports.modificarProducto = async (req, res) => {
     let id = req.params.id;
     let productosAll = await db.Productos.findAll();
     let productoCambiado = await db.Productos.findByPk(id, {
-        include: ['categoria', 'condicion', 'color', 'talle', 'users', 'image']
+        include: ['categoria', 'condicion', 'color', 'talle', 'users']
     });
     await productoCambiado.update({
         nombre: req.body.nombre,
