@@ -98,7 +98,7 @@ CREATE TABLE `images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,8 +107,32 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (1,'jg8nsao12834nxzz.png');
+INSERT INTO `images` VALUES (1,'jg8nsao12834nxzz.png'),(2,''),(3,'image-1606328714271.jpg');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `producto_image`
+--
+
+DROP TABLE IF EXISTS `producto_image`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `producto_image` (
+  `id` int(10) unsigned NOT NULL,
+  `producto_id` int(10) unsigned NOT NULL,
+  `image_id` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `producto_image`
+--
+
+LOCK TABLES `producto_image` WRITE;
+/*!40000 ALTER TABLE `producto_image` DISABLE KEYS */;
+/*!40000 ALTER TABLE `producto_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -154,7 +178,7 @@ CREATE TABLE `productos` (
   `image_id` int(10) unsigned DEFAULT NULL,
   `talle_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +187,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Zapatillas','500','2',1,2,4,1,NULL),(2,'','','',NULL,NULL,NULL,NULL,1),(3,'Buzo','1000','4',1,2,4,1,3);
+INSERT INTO `productos` VALUES (35,'Zapatillas','2500','1',1,1,1,NULL,5);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -205,7 +229,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `pw_hash` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,7 +238,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$10$TfkISUZaNr.iMVkC0yhg/OOAZBGrq96w4yoxT8BxBBzZNiiz9/pnS');
+INSERT INTO `users` VALUES (1,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$10$TfkISUZaNr.iMVkC0yhg/OOAZBGrq96w4yoxT8BxBBzZNiiz9/pnS'),(2,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$04$gzEy0pL11CvgZ18NpxE0i.LJlNAwlOhN1ttAuMLI6PYfwch3YZbs.'),(3,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$04$bv2UcDu5Ls6Mrm1/keekxeQP3bJ8qe6JAFNv4SWUcs8g8YVDZxG2m'),(4,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$04$SdiB7i7pRB0F97.J9HO/herybc85GOqpGxEhIGbXhwxKrfQzdxrKC'),(5,'Carlos','Brasolin','carlosbrasolin@gmail.com','$2a$10$Ogfr6i0o5hbZzM/tE.9qyOCRZeGEZ2ua0o5vv17kblAfTiCu.FhRu'),(6,'Italo','Brasolin','brasolinlisandro0@gmail.com','$2a$07$wgszW.xKsBaXcC8IFD7FdeiBMzGKhqFo.WkNw9P9SFIHeRervT9uC'),(7,'Italo','Brasolin','brasolinlisandro0@gmail.com','$2a$09$Wwz8yfq7LemOQzA6cknCIemcPrPir..25tQmV7NRrnD0kzKpgi74a'),(8,'Italo','Brasolin','brasolinlisandro0@gmail.com','$2a$09$stZ5CFiRlI.9C5ZiWi9b8u/B5XJP7nU8JkcR7ydwTwg/yU/U4zlTG');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -227,4 +251,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-23 16:57:47
+-- Dump completed on 2020-11-27 20:03:34
