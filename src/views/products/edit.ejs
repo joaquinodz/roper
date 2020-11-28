@@ -12,7 +12,7 @@
             <div class="forms">
                 <!-- Form -->
                 <form action="/productos/<%= productoEditar.id %>/modificar?_method=PUT" method="POST">
-                    <div><img class="itemm" src="<%= productoEditar.image %>" alt=""></div>
+                    <div><img class="itemm" src="../../../images/productos/<%= productoEditar.image %>" alt=""></div>
                     Nombre del producto: <br>
                     <input type="text" name="nombre" id="" placeholder="" value="<%- productoEditar.nombre %>"> <br>
                     <label for=""> Precio: </label> <br>

@@ -8,7 +8,6 @@ module.exports = (sequelize, dataTypes) => {
         categoria_id: dataTypes.INTEGER,
         condicion_id: dataTypes.INTEGER,
         color_id: dataTypes.INTEGER,
-        image_id: dataTypes.INTEGER,
         talle_id: dataTypes.INTEGER,
         image: dataTypes.STRING
     }, {
