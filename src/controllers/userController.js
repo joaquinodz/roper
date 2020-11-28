@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 let db = require("../../database/models")
+let {Op} = require('sequelize')
 
 exports.showRegister = (req, res) => {
     res.render('users/register');
@@ -12,8 +13,19 @@ exports.showLogin = (req, res) => {
     res.render('users/login');
 };
 
-exports.processLogin = (req, res) => {
-    
+exports.processLogin = async (req, res) => {
+    let usuarioLogueado = await db.Users.findAll({
+        where: {
+            email: {[Op.like]: req.body.email}
+        }
+    })
+
+    if(usuarioLogueado) {
+        console.log('bien!');
+    } else {
+        console.log('pfft');
+    }
+    // código súper, súper en proceso
 };
 
 exports.processRegister = async (req, res) => {
