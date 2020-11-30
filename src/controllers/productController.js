@@ -15,7 +15,8 @@ exports.obtenerProductos = async (req, res) => {
         let search = await db.Productos.findByPk(id, {
             include: ['categoria', 'condicion', 'color', 'talle', 'users']
         })
-        res.render('products/listado', {productoEspecifico: search});
+        let title = search.nombre
+        res.render('products/listado', {productoEspecifico: search, title});
     } catch(error) {
         console.log(error);
     }
@@ -88,6 +89,7 @@ exports.modificarProducto = async (req, res) => {
     let productoCambiado = await db.Productos.findByPk(id, {
         include: ['categoria', 'condicion', 'color', 'talle', 'users']
     });
+    let nombre = productoCambiado.nombre;
     await productoCambiado.update({
         nombre: req.body.nombre,
         precio: req.body.precio,
@@ -97,6 +99,6 @@ exports.modificarProducto = async (req, res) => {
         color_id: req.body.color,
         talle_id: req.body.talle
     })
-    res.render('products/list', {homeProductos: productosAll, toThousand});
+    res.render('products/list', {homeProductos: productosAll, title: nombre, toThousand});
 };
 

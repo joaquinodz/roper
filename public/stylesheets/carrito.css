@@ -37,12 +37,12 @@ td input {
     border-radius: 6px;
 	border: 2px solid #49d360;
     width: 100px;
-    margin:43px;
+
 	
   }
 
   .buttons {
-      margin: 1px;
+
       display: flex;
       justify-content: flex-end;
 

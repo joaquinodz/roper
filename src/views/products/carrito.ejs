@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<%- include('../partials/head') %> 
-		<title>Carrito de Compras - Roper</title>
+		<%- include('../partials/head', {title: 'Carrito de Compras'}) %> 
 	</head>
 	<body>
 		<!--Header de la pagina-->
@@ -15,52 +14,21 @@
 				<table>
 					<tr>
 						<th>
-							<div class="product-info">
-								<a href="/productos"><img src="https://dafitistaticar-a.akamaihd.net/p/vizzano-8408-422194-1-zoom.jpg " class="image-product"></a>
-							</div>
+
 						</th>
 						<th>Cantidad</th>
 						<th>subtotal</th>
-					</tr>
-					<tr>
-						<td>Zapatos Negros</td>
-						<td><input type="number" value="1"></td>
-						<td>$999.999</td>
 					</tr>
 				</table>
-				<table>
-					<tr>
-						<th>
-							<div class="product-info">
-								<img src="https://i.pinimg.com/originals/b8/b0/41/b8b041b34346fe400cd9922997e94854.jpg" class="image-product">
-							</div>
-						</th>
-						<th>Cantidad</th>
-						<th>subtotal</th>
-					</tr>
-					<tr>
-						<td>Zapatos Blancos</td>
-						<td><input type="number" value="1"></td>
-						<td>$999.999</td>
-					</tr>
 				</table>
 				<div class="buttons">
-					<p>Total : $999.999</p>
+					<p>Total: $0</p>
 					<td><a class="boton_personalizado" href="buy">Comprar</a></td>
 					</td>
 				</div>
 			</div>
 			<!--Footer de la página-->
-			<footer>
-				<ul>
-					<li><a href="">Términos · </a></li>
-					<li><a href="">· Privacidad ·</a></li>
-					<li><a href="">· Contáctenos ·</a></li>
-					<li><a href="">· API ·</a></li>
-					<li><a href="">· Trabajos</a></li>
-				</ul>
-				<p>Ⓒ 2020 Roper, Inc.</p>
-			</footer>
+			<%- include('../partials/footer') %>
 		</div>
 	</body>
 </html>
