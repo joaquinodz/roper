@@ -19,11 +19,10 @@ exports.processLogin = async (req, res) => {
             email: {[Op.like]: req.body.email}
         }
     })
-
-    if(usuarioLogueado) {
-        console.log('bien!');
+    if(usuarioLogueado != "") {
+        res.send('bene');
     } else {
-        console.log('pfft');
+        res.send('male')
     }
     // código súper, súper en proceso
 };

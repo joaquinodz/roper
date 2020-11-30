@@ -8,14 +8,13 @@
             <div class="products">
                 <% result.forEach(product => { %>
                     <article class="product">
-                        <a href="/productos/<%= product.id %>"><img src="<%= product.image %>" alt=""></a>
+                        <a href="/productos/<%= product.id %>"><img src="../../images/productos/<%= product.image %>" alt=""></a>
                         <p>$ <%= product.precio %></p>
                         <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
                     </article>
                     <% }) %>
                 </div>
-            <%- include('partials/footer'); %> 
-        </div>
-    </body>
-
+            </div>
+        </body>
+        <%- include('partials/footer'); %> 
 </html>
