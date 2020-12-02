@@ -1,27 +1,48 @@
-// 27 de Octubre - Inicio de Sprint 
+// 20 de Noviembre - Inicio de Sprint 
 
-- Empezamos con el Browse y Read.
-- Arreglamos las vistas estáticas.
-- Dejamos todo listo para el Sprint 4.
-- Se agregó la función de agregar productos, Add.
+- Agregamos diagrama de DB.
+- Sumé primera versión de DB en MySQL.
 
-// 30 de Octubre
+// 21 de Noviembre
 
-- Empezamos lógica de Delete y Edit.
-- Terminamos lógica de Browse y Read.
-- Arreglamos vistas nuevas para Editar y Crear artículos.
+- Dependencias necesarias para trabajar con Sequelize.
 
-// 1 de Noviembre
+// 22 de Noviembre
 
-- Seguimos peleando con lógica de Delete.
-- Lógica de Edit terminada.
+- Agregué Bcrypt.
+- Agregué modelos.
 
-// 3 de Noviembre
+// 23 de Noviembre
 
-- Vistas de Editar y Crear se hicieron Responsive.
-- Lógica de Delete terminada.
+- Primera versión de relaciones.
 
-// 12 de Noviembre
+// 24 de Noviembre
 
-- Modificamos DAILY.md.
-- Dejamos todo el repo listo para entrega.
+- Empezamos browse/read de BREAD.
+- Cambié background de Login/Register.
+
+// 25 de Noviembre
+
+- Agregué script de front-end para validar.
+- Agregamos Multer.
+- Agregué Search.
+
+// 26 de Noviembre 
+
+- Modificamos Header.
+
+// 27 de Noviembre
+
+- Tercera versión de relaciones.
+- Empecé Login.
+
+// 30 de Noviembre
+
+- Login terminado.
+- Arreglados ciertos temas de CSS.
+- Finalización de Sprint.
+
+// 2 de Diciembre
+
+- Modificación de DAILY.md y README.md
+- Mejoré ubicación de archivos necesarios para la DB.
