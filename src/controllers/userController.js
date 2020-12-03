@@ -19,6 +19,7 @@ exports.processLogin = async (req, res) => {
             email: {[Op.like]: req.body.email}
         }
     })
+    req.session.usuario = usuarioLogueado;
     if(usuarioLogueado != "") {
         res.send('bene');
     } else {
@@ -30,7 +31,7 @@ exports.processLogin = async (req, res) => {
 exports.processRegister = async (req, res) => {
     const errors = validationResult(req);
     if(errors.isEmpty()) {
-        let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random() * 10));
+        let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random(1) * 10));
         let usuario = await db.Users.create({
             name: req.body.name,
             surname: req.body.surname,
@@ -38,7 +39,7 @@ exports.processRegister = async (req, res) => {
             pw_hash: passwordHash,
             image: req.file.filename
         })
-    res.json(usuario);
+    res.redirect('users/login');
      } else { 
         res.render('users/register', {errors: errors.errors})
      }

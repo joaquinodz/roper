@@ -96,7 +96,11 @@ input {
 }
 
 .form__remember input {
-    width: 4px;
+    width: 14px;
+}
+
+label {
+    color: white;
 }
 
 .links {

@@ -6,14 +6,20 @@ const logger = require('morgan');
 const cors = require('cors')
 const app = express();
 const methodOverride = require('method-override');
-
-
+const session = require('express-session');
+const midSession = require('./middlewares/session');
 // Configuracion del motor de vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Configuracion de los middlewares a nivel de aplicacion.
+app.use(session({
+  secret: 'roper',
+  resave: false,
+  saveUninitialized: true
+})); 
 app.use(logger('dev'));
+app.use(midSession);
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
