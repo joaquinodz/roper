@@ -1,4 +1,3 @@
-const moviesController = require("../../../da/30 de octubre/controllers/moviesController");
 let db = require("../../database/models")
 const {Op} = require('sequelize');
 
