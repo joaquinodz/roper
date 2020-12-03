@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/userController');
+const { body } = require('express-validator');
 
 // Yerbas para subir fotitos
 const path = require('path');
 const multer = require('multer');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, path.join(__dirname + '../../../public/images/users'))
+      cb(null, path.join(__dirname + '../../../public/images/users'))
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
-})  
-const { body } = require('express-validator');
+  })  
 var upload = multer({storage: storage});
 
 router.get('/login', controller.showLogin);

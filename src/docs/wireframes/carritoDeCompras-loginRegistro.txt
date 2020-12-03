@@ -1,5 +1,0 @@
-Vamos a utilizar templates para estos dos items.
-
-Login/Registro: https://w3layouts.com/utilizer-login-form-flat-responsive-widget-template/
-
-Carrito de Compras: https://bootstrapious.com/p/bootstrap-shopping-cart
