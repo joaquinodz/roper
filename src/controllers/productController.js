@@ -3,7 +3,6 @@ const fs = require('fs');
 const { body } = require('express-validator');
 const path = require('path');
 const { json } = require('express');
-const moviesController = require("../../../da/30 de octubre/controllers/moviesController");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let readJSON = () => {
     return JSON.parse(fs.readFileSync(path.resolve(__dirname + '/data/productsDB.json')));
@@ -101,4 +100,3 @@ exports.modificarProducto = async (req, res) => {
     })
     res.render('products/list', {homeProductos: productosAll, title: nombre, toThousand});
 };
-
