@@ -4,9 +4,6 @@ const { body } = require('express-validator');
 const path = require('path');
 const { json } = require('express');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-let readJSON = () => {
-    return JSON.parse(fs.readFileSync(path.resolve(__dirname + '/data/productsDB.json')));
-};
 
 exports.obtenerProductos = async (req, res) => {
     try {

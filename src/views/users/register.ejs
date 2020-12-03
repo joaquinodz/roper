@@ -39,9 +39,14 @@
                     </div>
                     
                     <!-- ¡This is where the ACTUAL magic happens! xD -->
-                    <form action="/user/register" method="post" class="form">
+                    <form action="/user/register" method="post" class="form" enctype="multipart/form-data">
     
                         <div class="form__inputs">
+                            
+                            <label for="image">Foto de perfil:</label>
+						    <input type="file" name="image" id="" style="width: 175px">
+
+                            <br>
 
                             <input type="text" 
                                    name="name"

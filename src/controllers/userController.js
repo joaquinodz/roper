@@ -35,7 +35,8 @@ exports.processRegister = async (req, res) => {
             name: req.body.name,
             surname: req.body.surname,
             email: req.body.email,
-            pw_hash: passwordHash
+            pw_hash: passwordHash,
+            image: req.file.filename
         })
     res.json(usuario);
      } else { 
