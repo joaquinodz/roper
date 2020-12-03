@@ -130,7 +130,7 @@ CREATE TABLE `productos` (
   `talle_id` int(10) unsigned DEFAULT NULL,
   `image` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,8 +180,9 @@ CREATE TABLE `users` (
   `surname` varchar(255) COLLATE utf8_bin NOT NULL,
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `pw_hash` varchar(100) COLLATE utf8_bin NOT NULL,
+  `image` varchar(100) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +191,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$10$TfkISUZaNr.iMVkC0yhg/OOAZBGrq96w4yoxT8BxBBzZNiiz9/pnS');
+INSERT INTO `users` VALUES (16,'Lisandro','Brasolin','brasolinlisandro0@gmail.com','$2a$08$32Rnk4e1ZGTM/lE2CIWt2./MH7/hyOfEyqD23qEWaHKKZrDXsdKuO','image-1607025772835.gif');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -203,4 +204,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-11-27 21:49:19
+-- Dump completed on 2020-12-03 17:09:28
