@@ -19,11 +19,13 @@ exports.processLogin = async (req, res) => {
             email: {[Op.like]: req.body.email}
         }
     })
+    usuarioLogueado = usuarioLogueado[0].email;
     req.session.usuario = usuarioLogueado;
-    if(usuarioLogueado != "") {
-        res.send('bene');
+    if(req.body.remember) {
+        res.cookie("recordame", usuarioLogueado, { maxAge: 1000 * 60});
+        res.send('bien!');
     } else {
-        res.send('male')
+        res.send(':(')
     }
     // código súper, súper en proceso
 };
