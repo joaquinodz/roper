@@ -8,6 +8,7 @@ const methodOverride = require('method-override');
 const session = require('express-session');
 const cookie = require('cookie-parser');
 const midSession = require('./middlewares/session');
+const log = require('./middlewares/log')
 // Configuracion del motor de vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -20,6 +21,7 @@ app.use(session({
 })); 
 app.use(logger('dev'));
 app.use(midSession);
+app.use(log);
 app.use(cors());
 app.use(cookie());
 app.use(express.json());

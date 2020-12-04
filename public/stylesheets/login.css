@@ -193,7 +193,7 @@ label {
     }
 
     .form__remember input[type=checkbox] {
-        width: 0px;
+        width: 27px;
         margin-left: 20px;
     }
 

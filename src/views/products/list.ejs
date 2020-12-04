@@ -18,7 +18,10 @@
                 <% }) %>
             </div>
                 <div class="test">
-                    <button class="especifico"><a href="/productos/create">Crear</a></button>
+                    <%if (usuario) { %>
+                        <button class="especifico"><a href="/productos/create">Crear</a></button>
+                    <% } else {%>
+                    <% } %>
                 </div>
         </div>
     <footer>

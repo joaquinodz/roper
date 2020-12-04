@@ -8,10 +8,18 @@
     </form>
     
     <div class="usuario">
-        <img src="../../images/user.png" style="width: 100%" alt="">
-        <div class="nologin">
-            <a href="/user/register"><h4>Registrarse</h4></a>
-            <a href="/user/login"><p>Ingresar</p></a>
+        <% if (usuario) { %>
+            <img src="../../images/users/<%- usuario.image%>" style="width: 100%" alt="">
+            <div class="nologin">
+                <a href="/user/"><h4>Logout</h4></a>
+                <a href="/user/"><p>Bienvenido, <%- usuario.name %></p></a>
+            </div>
+        <% } else { %>
+            <img src="../../images/user.png" style="width: 100%" alt="">
+            <div class="nologin">
+                <a href="/user/register"><h4>Registrarse</h4></a>
+                <a href="/user/login"><p>Ingresar</p></a>
+        <% } %>
         </div>
         <img src="../../images/arrow.png" alt="" class="arrow">
         <a href="/carrito"><img src="../../images/cart.png" alt="" class="cart"></a>
