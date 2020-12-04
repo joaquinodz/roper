@@ -19,14 +19,23 @@ exports.showLogin = (req, res) => {
     }
 };
 exports.processLogin = async (req, res) => {
+    const errors = validationResult(req);
     let usuarioLogueado = await db.Users.findAll({
         where: {
             email: {[Op.like]: req.body.email}
         }
     })
     usuarioLogueado = usuarioLogueado[0];
-    req.session.usuario = usuarioLogueado;
-    await res.redirect('/');
+    bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
+        if(err || !result) {
+            res.send(errors);
+            return false;
+        } else {
+            req.session.usuario = usuarioLogueado;
+            res.redirect('/');
+            return true;
+        }
+    });
     // código súper, súper en proceso
 };
 exports.processRegister = async (req, res) => {

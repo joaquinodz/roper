@@ -17,7 +17,16 @@ var storage = multer.diskStorage({
 var upload = multer({storage: storage});
 
 router.get('/login', controller.showLogin);
-router.post('/login', controller.processLogin);
+router.post('/login', [
+    body("email")
+      .notEmpty()
+      .isEmail()
+      .withMessage('Ingresar un mail válido.'),
+    body("password")
+      .notEmpty()
+      .isLength({min: 8})
+      .withMessage('Ingresar una contraseña válida.')
+], controller.processLogin);
 
 router.get('/register', controller.showRegister);
 router.post('/register', upload.single('image'), [
@@ -30,7 +39,7 @@ router.post('/register', upload.single('image'), [
         .isEmail()
         .withMessage('Ingresar un mail válido'),
     body("password")
-        .isLength({min: 6})
+        .isLength({min: 8})
         .withMessage('Su contraseña es muy corta'),
 ], controller.processRegister);
 
