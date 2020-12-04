@@ -33,7 +33,7 @@ exports.crearProducto = (req, res) => {
     if(req.session.usuario) {
         res.render('products/create');
     } else {
-        res.send('No puede acceder a este contenido!');
+        res.render('users/login');
     }
 };
 
@@ -57,7 +57,7 @@ exports.generarProducto = async (req, res) => {
             console.log(error);
         }
     } else {
-        res.send('No puede acceder a este contenido!');
+        res.render('users/login')
     }
 };
     
@@ -79,7 +79,7 @@ exports.generarProducto = async (req, res) => {
         })
         res.render(await 'products/list', {homeProductos: productos, toThousand});
     } else {
-        res.send('No puede realizar esa acción!');
+        res.render('users/login')
     }
 };
 
@@ -91,7 +91,7 @@ exports.editarProducto = async (req, res) => {
         })
         await res.render('products/edit', {productoEditar: producto, toThousand});
     } else {
-        res.send('No puede acceder!');
+        res.render('users/login')
     }
 };
 

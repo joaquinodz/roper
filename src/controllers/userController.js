@@ -9,7 +9,7 @@ exports.showRegister = (req, res) => {
     if(!req.session.usuario) {
         res.render('users/login');
     } else {
-        res.send('Ya estás registrado!');
+        res.render('users/profile');
     }
 };
 
@@ -17,7 +17,7 @@ exports.showLogin = (req, res) => {
     if(!req.session.usuario) {
         res.render('users/login');
     } else {
-        res.send('Ya estás logueado!');
+        res.render('users/profile');
     }
 };
 
@@ -27,14 +27,9 @@ exports.processLogin = async (req, res) => {
             email: {[Op.like]: req.body.email}
         }
     })
-    req.session.usuario = usuarioLogueado[0];
-    console.log(req.session.usuario.name);
-    if(req.body.remember) {
-        res.cookie("recordame", usuarioLogueado, { maxAge: 1000 * 60});
-        res.render('views/index');
-    } else {
-        res.send('index')
-    }
+    usuarioLogueado = usuarioLogueado[0];
+    req.session.usuario = usuarioLogueado;
+    await res.render('index');
     // código súper, súper en proceso
 };
 
@@ -56,7 +51,7 @@ exports.processRegister = async (req, res) => {
                 image: req.file.filename
             })
         } else {
-            res.send('Error!');
+            res.render('error');
         }
     res.redirect('login');
      } else { 
