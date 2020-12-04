@@ -25,7 +25,7 @@ router.post('/login', [
     body("password")
       .notEmpty()
       .isLength({min: 8})
-      .withMessage('Ingresar una contraseña válida.')
+      .withMessage('Su mail o contraseña no concuerdan.')
 ], controller.processLogin);
 
 router.get('/register', controller.showRegister);

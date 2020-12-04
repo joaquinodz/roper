@@ -27,9 +27,16 @@
             <section>
     
                 <h2 class="form__title">Iniciar Sesión</h2>
-    
+
+                
                 <div class="form__container">
-                    
+                    <% if(typeof errors != "undefined") { %> 
+                            <li>
+                                <ul>
+                                    <p><% errors.msg %> </p>
+                                </ul>
+                            </li>
+                    <% } %>
                     <form action="" method="post">
     
                         <div class="form__inputs">

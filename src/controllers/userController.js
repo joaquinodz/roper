@@ -6,7 +6,7 @@ let db = require("../../database/models")
 let {Op} = require('sequelize')
 exports.showRegister = (req, res) => {
     if(!req.session.usuario) {
-        res.render('users/login');
+        res.render('users/register');
     } else {
         res.render('users/profile');
     }
@@ -20,26 +20,30 @@ exports.showLogin = (req, res) => {
 };
 exports.processLogin = async (req, res) => {
     const errors = validationResult(req);
-    let usuarioLogueado = await db.Users.findAll({
-        where: {
-            email: {[Op.like]: req.body.email}
-        }
-    })
-    usuarioLogueado = usuarioLogueado[0];
-    if(usuarioLogueado != undefined) {
-        bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
-            if(err || !result) {
-                res.send(errors);
-                return false;
-            } else {
-                req.session.usuario = usuarioLogueado;
-                res.redirect('/');
-                return true;
+    if(errors.isEmpty()) {
+        let usuarioLogueado = await db.Users.findAll({
+            where: {
+                email: {[Op.like]: req.body.email}
             }
-        });
-    } else {
-        res.send('Error!');
-    }
+        })
+        usuarioLogueado = usuarioLogueado[0];
+        if(usuarioLogueado != undefined) {
+            bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
+                if(err || !result) {
+                    res.render('users/login');
+                    return false;
+                } else {
+                    req.session.usuario = usuarioLogueado;
+                    res.redirect('/');
+                    return true;
+                }
+            });
+        } else {
+            res.send('Error!');
+        }
+} else {
+    res.render('users/login', {errors: errors});
+}
     // código súper, súper en proceso
 };
 exports.processRegister = async (req, res) => {
@@ -76,5 +80,5 @@ exports.showProfile = (req, res) => {
 };
 exports.logOut = (req, res) => {
     req.session.destroy();
-    res.redirect('/');
+    res.redirect('/')
 };
