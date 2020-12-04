@@ -4,7 +4,6 @@ const path = require('path');
 const { validationResult } = require('express-validator');
 let db = require("../../database/models")
 let {Op} = require('sequelize')
-
 exports.showRegister = (req, res) => {
     if(!req.session.usuario) {
         res.render('users/login');
@@ -12,15 +11,13 @@ exports.showRegister = (req, res) => {
         res.render('users/profile');
     }
 };
-
 exports.showLogin = (req, res) => {
-    if(!req.session.usuario) {
-        res.render('users/login');
-    } else {
+    if(req.session.usuario) {
         res.render('users/profile');
+    } else {
+        res.render('users/login')
     }
 };
-
 exports.processLogin = async (req, res) => {
     let usuarioLogueado = await db.Users.findAll({
         where: {
@@ -29,10 +26,9 @@ exports.processLogin = async (req, res) => {
     })
     usuarioLogueado = usuarioLogueado[0];
     req.session.usuario = usuarioLogueado;
-    await res.render('index');
+    await res.redirect('/');
     // código súper, súper en proceso
 };
-
 exports.processRegister = async (req, res) => {
     const errors = validationResult(req);
     let usuarioEncontrar = await db.Users.findAll({
@@ -53,12 +49,15 @@ exports.processRegister = async (req, res) => {
         } else {
             res.render('error');
         }
-    res.redirect('login');
+    res.redirect('/user/login')
      } else { 
         res.render('users/register', {errors: errors.errors})
      }
 };
-
 exports.showProfile = (req, res) => {
-    res.render('users/profile');
+    if(!req.session.usuario) {
+        res.redirect('/user/login')
+    } else {
+        res.render('users/profile');
+    }
 }

@@ -10,6 +10,26 @@
     margin-left: 92px;
 }
 
+.perfil {
+    justify-content: center;
+    display: flex;
+    height: 20em;
+}
+
+.fotoperfil {
+    width: 330px;
+    border: black;
+    border-style: solid;
+}
+
+.perfil h1{
+    margin-left: 20px;
+}
+
+.perfil h4 {
+    margin-left: 20px;
+}
+
 .error {
     justify-content: center;
     display: flex;
@@ -324,6 +344,12 @@ footer p {
 }
 
 @media all and (max-width: 992px) {
+    .perfil {
+        flex-direction: column;
+        display: flex;
+        margin-top: 70px;
+        justify-content: center;
+    }
     article.banner {
         display: none;
     }

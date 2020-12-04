@@ -33,7 +33,7 @@ exports.crearProducto = (req, res) => {
     if(req.session.usuario) {
         res.render('products/create');
     } else {
-        res.render('users/login');
+        res.redirect('/user/login')
     }
 };
 
@@ -57,12 +57,12 @@ exports.generarProducto = async (req, res) => {
             console.log(error);
         }
     } else {
-        res.render('users/login')
+        res.redirect('/user/login')
     }
 };
     
     exports.eliminarProducto = async (req, res) => {
-        if(req.session.usuario) {
+    if(req.session.usuario) {
         const productos = await db.Productos.findAll();
         const productoEncontrado = await db.Productos.findByPk(req.params.id)
         const path = './public/images/productos/' + productoEncontrado.image;
@@ -79,7 +79,7 @@ exports.generarProducto = async (req, res) => {
         })
         res.render(await 'products/list', {homeProductos: productos, toThousand});
     } else {
-        res.render('users/login')
+        res.redirect('/user/login')
     }
 };
 
@@ -91,7 +91,7 @@ exports.editarProducto = async (req, res) => {
         })
         await res.render('products/edit', {productoEditar: producto, toThousand});
     } else {
-        res.render('users/login')
+        res.redirect('/user/login')
     }
 };
 
