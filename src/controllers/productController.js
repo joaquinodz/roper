@@ -30,53 +30,69 @@ exports.listarProductos = async (req, res) => {
 }
 
 exports.crearProducto = (req, res) => {
-    res.render('products/create');
-};
-
-exports.generarProducto = async (req, res) => {
-    try {
-        const allProducts = await db.Productos.findAll();
-        const newProducto = await db.Productos.create({
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            cantidad: req.body.cantidad,
-            categoria_id: req.body.genero,
-            condicion_id: req.body.condicion,
-            color_id: req.body.color,
-            talle_id: req.body.talle,
-            image: req.file.filename
-        })
-        console.log(newProducto.image);
-        res.render(await 'products/list', {homeProductos: allProducts, toThousand});
-    } catch(error) {
-        console.log(error);
+    if(req.session.usuario) {
+        res.render('products/create');
+    } else {
+        res.send('No puede acceder a este contenido!');
     }
 };
 
-exports.eliminarProducto = async (req, res) => {
-    const productos = await db.Productos.findAll();
-    const productoEncontrado = await db.Productos.findByPk(req.params.id)
-    const path = './public/images/productos/' + productoEncontrado.image;
-    fs.unlink(path, (err) => {
-        if(err) {
-            console.error(err);
-            return;
+exports.generarProducto = async (req, res) => {
+    if(req.session.usuario) {
+        try {
+            const allProducts = await db.Productos.findAll();
+            const newProducto = await db.Productos.create({
+                nombre: req.body.nombre,
+                precio: req.body.precio,
+                cantidad: req.body.cantidad,
+                categoria_id: req.body.genero,
+                condicion_id: req.body.condicion,
+                color_id: req.body.color,
+                talle_id: req.body.talle,
+                image: req.file.filename
+            })
+            console.log(newProducto.image);
+            res.render(await 'products/list', {homeProductos: allProducts, toThousand});
+        } catch(error) {
+            console.log(error);
         }
-    })
-    await db.Productos.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-    res.render(await 'products/list', {homeProductos: productos, toThousand});
+    } else {
+        res.send('No puede acceder a este contenido!');
+    }
+};
+    
+    exports.eliminarProducto = async (req, res) => {
+        if(req.session.usuario) {
+        const productos = await db.Productos.findAll();
+        const productoEncontrado = await db.Productos.findByPk(req.params.id)
+        const path = './public/images/productos/' + productoEncontrado.image;
+        fs.unlink(path, (err) => {
+            if(err) {
+                console.error(err);
+                return;
+            }
+        })
+        await db.Productos.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.render(await 'products/list', {homeProductos: productos, toThousand});
+    } else {
+        res.send('No puede realizar esa acción!');
+    }
 };
 
 exports.editarProducto = async (req, res) => {
-    let id = req.params.id;
-    let producto = await db.Productos.findByPk(id, {
-        include: ['categoria', 'condicion', 'color', 'talle', 'users']
-    })
-    res.render('products/edit', {productoEditar: producto, toThousand});
+    if(req.session.usuario) {
+        let id = req.params.id;
+        let producto = await db.Productos.findByPk(id, {
+            include: ['categoria', 'condicion', 'color', 'talle', 'users']
+        })
+        await res.render('products/edit', {productoEditar: producto, toThousand});
+    } else {
+        res.send('No puede acceder!');
+    }
 };
 
 exports.modificarProducto = async (req, res) => {

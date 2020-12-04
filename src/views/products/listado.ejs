@@ -44,18 +44,21 @@
 					</select>
 				</form>
 				<a class="boton_personalizado" href="/productos/carrito">Agregar al Carrito</a>
-				<a class="boton_personalizado" href="/productos/<%= productoEspecifico.id %>/editar">Editar Producto</a>
-				<form action="/productos/<%= productoEspecifico.id %>/eliminar?_method=DELETE" method="POST">
-					<button type="submit" class="boton_personalizado">Borrar Producto</button>
-				</form>
-				<div class="Details">
-					<hr color="grey" class="hr-market">
-					<h2>Información</h3>
-					<% if(productoEspecifico.categoria.genero == null) { %>
-					<h4>Género: </h4>
-					<% } else {%>
-					<h4>Género: <%= productoEspecifico.categoria.genero %></h4>
-					<% } %>
+				<%if (usuario) { %>
+					<a class="boton_personalizado" href="/productos/<%= productoEspecifico.id %>/editar">Editar Producto</a>
+					<form action="/productos/<%= productoEspecifico.id %>/eliminar?_method=DELETE" method="POST">
+						<button type="submit" class="boton_personalizado">Borrar Producto</button>
+					</form>
+				<% } else { %> 
+				<% }%>
+					<div class="Details">
+						<hr color="grey" class="hr-market">
+						<h2>Información</h3>
+							<% if(productoEspecifico.categoria.genero == null) { %>
+								<h4>Género: </h4>
+								<% } else {%>
+									<h4>Género: <%= productoEspecifico.categoria.genero %></h4>
+									<% } %>
 					<% if(productoEspecifico.color.nombre == null) { %>
 					<h4>Color: </h4>
 					<% } else { %>
