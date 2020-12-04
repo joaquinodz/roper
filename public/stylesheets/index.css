@@ -20,6 +20,7 @@
     width: 330px;
     border: black;
     border-style: solid;
+    border-radius: 50%;
 }
 
 .perfil h1{
@@ -27,6 +28,10 @@
 }
 
 .perfil h4 {
+    margin-left: 20px;
+}
+
+.perfil h5 {
     margin-left: 20px;
 }
 
@@ -208,6 +213,10 @@ ul {
     font-family: 'Roboto', sans-serif;
     padding-left: 0px;
     text-transform: uppercase;
+}
+
+.ee {
+    border-radius: 50%;
 }
 
 input {

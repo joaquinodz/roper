@@ -26,16 +26,20 @@ exports.processLogin = async (req, res) => {
         }
     })
     usuarioLogueado = usuarioLogueado[0];
-    bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
-        if(err || !result) {
-            res.send(errors);
-            return false;
-        } else {
-            req.session.usuario = usuarioLogueado;
-            res.redirect('/');
-            return true;
-        }
-    });
+    if(usuarioLogueado != undefined) {
+        bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
+            if(err || !result) {
+                res.send(errors);
+                return false;
+            } else {
+                req.session.usuario = usuarioLogueado;
+                res.redirect('/');
+                return true;
+            }
+        });
+    } else {
+        res.send('Error!');
+    }
     // código súper, súper en proceso
 };
 exports.processRegister = async (req, res) => {
@@ -69,4 +73,8 @@ exports.showProfile = (req, res) => {
     } else {
         res.render('users/profile');
     }
-}
+};
+exports.logOut = (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+};
