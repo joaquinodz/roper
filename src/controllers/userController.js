@@ -58,3 +58,7 @@ exports.processRegister = async (req, res) => {
         res.render('users/register', {errors: errors.errors})
      }
 };
+
+exports.showProfile = (req, res) => {
+    res.render('users/profile');
+}

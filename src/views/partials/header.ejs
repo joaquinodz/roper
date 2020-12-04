@@ -11,8 +11,8 @@
         <% if (usuario) { %>
             <img src="../../images/users/<%- usuario.image%>" style="width: 100%" alt="">
             <div class="nologin">
-                <a href="#"><h4>Logout</h4></a>
-                <a href="#"><p style="font-size: 16px;"><%- usuario.name %></p></a>
+                <a href="/user/profile"><h4>Logout</h4></a>
+                <a href="/user/profile"><p style="font-size: 16px;"><%- usuario.name %></p></a>
             </div>
         <% } else { %>
             <img src="../../images/user.png" style="width: 100%" alt="">

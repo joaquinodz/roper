@@ -34,4 +34,6 @@ router.post('/register', upload.single('image'), [
         .withMessage('Su contraseña es muy corta'),
 ], controller.processRegister);
 
+router.get('/profile', controller.showProfile);
+
 module.exports = router;
