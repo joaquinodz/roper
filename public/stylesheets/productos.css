@@ -29,7 +29,9 @@
 	  flex-flow: column wrap;
 	  width: 284px;
   }
-
+.cart-page {
+	width: 60%;
+}
   /* Responsive Magic */
   @media all and (max-width: 992px) {
 

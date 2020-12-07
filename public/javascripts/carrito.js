@@ -1,6 +1,7 @@
 window.addEventListener('load', function() {
     let add = document.getElementById('add');
     let carrito = document.getElementById('carrito');
+    let precio = document.getElementById('precio');
     function loadStorage() {
         let storage = localStorage.getItem('carrito');
         if(storage == null) {
@@ -13,11 +14,14 @@ window.addEventListener('load', function() {
     let storage = loadStorage();
     storage.forEach(id => {
         add.innerHTML += `
-        <img src="${id}" alt="">
+        <a href="/productos/${id[3]}">
+        <img src="${id[0]}" alt="imagen de producto">
         <div class="texto-carrito">
-            <p>a</p>
-            <p>$200</p>
-        </div>`
+            <p>${id[1]}</p>
+            <p>$ ${id[2]}</p>
+        </div>
+        </a>`
+        
     });
     console.log('e');
 })

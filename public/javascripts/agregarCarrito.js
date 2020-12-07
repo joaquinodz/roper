@@ -1,7 +1,12 @@
 window.addEventListener('load', function() {
     const params = window.location.pathname.split('/');
     let carrito = document.getElementById('carrito');
+    let a = [];
     let url = document.querySelector('.item-product').src;
+    let name = document.querySelector('h2').innerHTML;
+    let price = document.getElementById('price').innerHTML;
+    console.log(name);
+    console.log(price);
     function loadStorage() {
         let storage = localStorage.getItem('carrito');
         if(storage == null) {
@@ -26,14 +31,14 @@ window.addEventListener('load', function() {
         }
         }
         let storage = loadStorage();
-        let search = storage.filter(id => id == params[2]);
-        if(search != "") {
-            carrito.innerHTML = 'Remover del Carrito';
-        } else {
-            carrito.innerHTML = 'Agregar al Carrito';
-        }
+        let search = storage.filter(id => id == a);
+        console.log(search);
         carrito.addEventListener('click', function(e) {
             e.preventDefault();
-            addCarrito(url,e);
+            a.push(url);
+            a.push(name);
+            a.push(price);
+            a.push(params[2]);
+            addCarrito(a,e);
         })
 })
