@@ -43,8 +43,8 @@
 						<option value="12">44</option>
 					</select>
 				</form>
-				<a class="boton_personalizado" href="/productos/carrito">Agregar al Carrito</a>
 				<%if (usuario) { %>
+					<a class="boton_personalizado" id="carrito" href="/productos/carrito">Agregar al Carrito</a>
 					<a class="boton_personalizado" href="/productos/<%= productoEspecifico.id %>/editar">Editar Producto</a>
 					<form action="/productos/<%= productoEspecifico.id %>/eliminar?_method=DELETE" method="POST">
 						<button type="submit" class="boton_personalizado">Borrar Producto</button>
