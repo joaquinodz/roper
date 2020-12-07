@@ -5,7 +5,11 @@ exports.showMainPage = (req, res) => res.render('index');
 
 
 exports.mostrarCarrito = (req, res) => {
-    res.render('products/carrito');
+    if(req.session.usuario) {
+        res.render('products/carrito');
+    } else {
+        res.redirect('/user/login');
+    }
 };
 
 exports.buscar = async(req, res) => {

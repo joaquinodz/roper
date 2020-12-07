@@ -351,6 +351,17 @@ footer p {
 .menu {
     width: 1149px;
 }
+#add {
+    display: flex;
+}
+#add .texto-carrito {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#add img {
+    width: 8%;
+}
 
 @media all and (max-width: 992px) {
     .perfil {
