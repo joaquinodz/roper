@@ -30,15 +30,21 @@ window.addEventListener('load', function() {
             console.log('removido!');
         }
         }
-        let storage = loadStorage();
-        let search = storage.filter(id => id == a);
-        console.log(search);
-        carrito.addEventListener('click', function(e) {
-            e.preventDefault();
-            a.push(url);
-            a.push(name);
-            a.push(price);
-            a.push(params[2]);
-            addCarrito(a,e);
-        })
+    let storage = loadStorage();
+    for(let i = 0; i < storage.length; i++) {
+        let a = storage.filter(id => id[i] == url);
+        if(a != "") {
+            carrito.innerHTML = 'Agregar al Carrito'
+        } else {
+            carrito.innerHTML = 'Remover del Carrito'
+        }
+    }
+    carrito.addEventListener('click', function(e) {
+        e.preventDefault();
+        a.push(url);
+        a.push(name);
+        a.push(price);
+        a.push(params[2])
+        addCarrito(a,e);
+    })
 })

@@ -12,16 +12,29 @@ window.addEventListener('load', function() {
         return storage;
     }
     let storage = loadStorage();
+    let suma = [];
+    let sumaFinal = [];
     storage.forEach(id => {
+        suma.push(id[2]);
         add.innerHTML += `
         <a href="/productos/${id[3]}">
         <img src="${id[0]}" alt="imagen de producto">
         <div class="texto-carrito">
-            <p>${id[1]}</p>
-            <p>$ ${id[2]}</p>
+        <p>${id[1]}</p>
+        <p>$ ${id[2]}</p>
         </div>
         </a>`
-        
     });
+    let reducer = (accumulator, currentValue) => accumulator + currentValue;
+    suma.forEach(element => {
+        let a = parseInt(element);
+        sumaFinal.push(a);
+    });
+    sumaFinal = sumaFinal.reduce(reducer)
+    if(sumaFinal) {
+        precio.innerHTML = `Total: $${sumaFinal}`;
+    } else {
+        precio.innerHTML = 'Total: $0';
+    }
     console.log('e');
 })
