@@ -217,6 +217,7 @@ ul {
 
 .ee {
     border-radius: 50%;
+    border: black solid 2px
 }
 
 input {

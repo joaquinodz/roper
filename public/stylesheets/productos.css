@@ -34,6 +34,15 @@
 }
   /* Responsive Magic */
   @media all and (max-width: 992px) {
+	.cart-page {
+		width: 100%;
+	}
+	#add {
+		justify-content: center;
+	}
+	#add img {
+		width: 20%;
+	}
 
 	.flex-container {
 		display: flex;
