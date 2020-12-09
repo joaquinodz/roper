@@ -18,16 +18,15 @@ var upload = multer({storage: storage});
 
 router.get('/login', controller.showLogin);
 router.post('/login', [
-    body("email")
-      .notEmpty()
-      .isEmail()
-      .withMessage('Email inválido.'),
-    body("password")
-      .notEmpty()
-      .isLength({min: 8})
-      .withMessage('Su mail o contraseña no concuerdan.')
+  body("email")
+    .notEmpty()
+    .isEmail()
+    .withMessage('Email inválido.'),
+  body("password")
+    .notEmpty()
+    .isLength({min: 8})
+    .withMessage('Su mail o contraseña no concuerdan.')
 ], controller.processLogin);
-
 router.get('/register', controller.showRegister);
 router.post('/register', upload.single('image'), [
     body("name")

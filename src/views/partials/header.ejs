@@ -9,7 +9,7 @@
     
     <div class="usuario">
         <% if (usuario) { %>
-            <img src="../../images/users/<%- usuario.image%>" style="width: 100%" alt="" class="ee">
+            <img src="../../images/users/<%- usuario.image%>" style="width: 87%" alt="" class="ee">
             <div class="nologin">
                 <a href="/user/logout"><h4>Logout</h4></a>
                 <a href="/user/profile"><p style="font-size: 16px;"><%- usuario.name %></p></a>
@@ -30,10 +30,15 @@
 
     <nav class="menu">
         <ul>
-            <li><a href="">Niños</a></li>
-            <li><a href="">Premium</a></li>
-            <li><a href="">Outlet</a></li>
-            <li><a href="">Hogar</a></li>
+            <%if (usuario) { %>
+                <li><a href="/productos/create">Vender</a></li>
+                <li><a href="">Premium</a></li>
+                <li><a href="">Hogar</a></li>
+                <li><a href="/user/profile">Mi Cuenta</a></li>
+            <% } else {%>
+                <li><a href="">Premium</a></li>
+                <li><a href="">Hogar</a></li>
+            <% } %>
         </ul>
     </nav>
     

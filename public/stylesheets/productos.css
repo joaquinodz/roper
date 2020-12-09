@@ -6,7 +6,9 @@
 	flex-wrap: wrap;
   }
 
-  
+  #price {
+	  display: none;
+  }
   
   .item {
 	width: 200px;
