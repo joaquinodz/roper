@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-    <%- include('partials/head', {title: 'Error!'}) %>
-<body>
-    <div class="todo">
-        <%- include('partials/header') %>
-        <p class="error">Ups! No se encontró la página que buscabas.</p>
-        <h1 class="error">:(</h1>
-    </div>
-</body>
-<%- include('partials/footer')%>
-</html>
+<h1><%= message %></h1>
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>

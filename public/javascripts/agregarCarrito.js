@@ -18,7 +18,7 @@ window.addEventListener('load', function() {
         }
     function addCarrito(id,event) {
         let storage = loadStorage();
-        if(!storage.includes(id)) {
+        if(!storage.includes(id[3])) {
             let newStorage = JSON.stringify([...storage, id]);
             localStorage.setItem('carrito',newStorage);
             event.target.innerHTML = 'Remover del Carrito';
@@ -31,14 +31,6 @@ window.addEventListener('load', function() {
         }
         }
     let storage = loadStorage();
-    for(let i = 0; i < storage.length; i++) {
-        let a = storage.filter(id => id[i] == url);
-        if(a != "") {
-            carrito.innerHTML = 'Agregar al Carrito'
-        } else {
-            carrito.innerHTML = 'Remover del Carrito'
-        }
-    }
     carrito.addEventListener('click', function(e) {
         e.preventDefault();
         a.push(url);

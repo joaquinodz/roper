@@ -30,7 +30,7 @@ exports.processLogin = async (req, res) => {
         if(usuarioLogueado != undefined) {
             bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
                 if(err || !result) {
-                    res.render('users/login');
+                    res.render('users/login', {errors: 'Email/Contraseña inválida.'});
                     return false;
                 } else {
                     req.session.usuario = usuarioLogueado;
@@ -39,11 +39,11 @@ exports.processLogin = async (req, res) => {
                 }
             });
         } else {
-            res.send('Error!');
+            res.render('users/login', {errors: 'Email no encontrado.'});
         }
-} else {
-    res.render('users/login', {errors: errors});
-}
+    } else {
+    res.render('users/login', errors);
+    }
     // código súper, súper en proceso
 };
 exports.processRegister = async (req, res) => {

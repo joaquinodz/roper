@@ -347,17 +347,21 @@ footer p {
     display: flex;
     color: white;
 }
-
 .menu {
     width: 1149px;
 }
 #add {
+    display: flex;
+    flex-direction: column;
+}
+#eeee{
     display: flex;
 }
 #add .texto-carrito {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-left: 15px;
 }
 #add img {
     width: 8%;

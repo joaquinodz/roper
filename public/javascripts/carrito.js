@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
     storage.forEach(id => {
         suma.push(id[2]);
         add.innerHTML += `
-        <a href="/productos/${id[3]}">
+        <a href="/productos/${id[3]}" id="eeee">
         <img src="${id[0]}" alt="imagen de producto">
         <div class="texto-carrito">
         <p>${id[1]}</p>

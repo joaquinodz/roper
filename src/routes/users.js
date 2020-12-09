@@ -21,7 +21,7 @@ router.post('/login', [
     body("email")
       .notEmpty()
       .isEmail()
-      .withMessage('Ingresar un mail válido.'),
+      .withMessage('Email inválido.'),
     body("password")
       .notEmpty()
       .isLength({min: 8})

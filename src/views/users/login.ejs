@@ -31,10 +31,9 @@
                 
                 <div class="form__container">
                     <% if(typeof errors != "undefined") { %> 
-                            <li>
-                                <ul>
-                                    <p><% errors.msg %> </p>
-                                </ul>
+                            <li>    
+                                <%= errors[0].msg %>
+                                <%= errors %>
                             </li>
                     <% } %>
                     <form action="" method="post">
