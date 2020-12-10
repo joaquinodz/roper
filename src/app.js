@@ -9,6 +9,7 @@ const session = require('express-session');
 const cookie = require('cookie-parser');
 const midSession = require('./middlewares/session');
 const log = require('./middlewares/log')
+const api = require('./routes/api/api');
 // Configuracion del motor de vistas
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -31,6 +32,7 @@ app.use(methodOverride('_method'));
 
 // Declaracion de rutas.
 app.use('/', require('./routes/index'));
+app.use('/api', api);
 app.use('/productos', require('./routes/products'));
 app.use('/user', require('./routes/users'));
 // Middleware (a nivel de aplicacion) que maneja los errores 404.
