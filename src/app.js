@@ -32,9 +32,15 @@ app.use(methodOverride('_method'));
 
 // Declaracion de rutas.
 app.use('/', require('./routes/index'));
+<<<<<<< HEAD
 app.use('/api', api);
+=======
+app.use('/api', require('./routes/api/api'));
+>>>>>>> af572a5858aed64aa7095c3a3678fe5abf4c582e
 app.use('/productos', require('./routes/products'));
 app.use('/user', require('./routes/users'));
+
+
 // Middleware (a nivel de aplicacion) que maneja los errores 404.
 app.use((req, res, next) => next(createError(404)));
 
