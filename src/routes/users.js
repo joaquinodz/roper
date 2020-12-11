@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/userController');
 const { body } = require('express-validator');
-
+const validator = require('../middlewares/validator');
 // Yerbas para subir fotitos
 const path = require('path');
 const multer = require('multer');
@@ -17,30 +17,9 @@ var storage = multer.diskStorage({
 var upload = multer({storage: storage});
 
 router.get('/login', controller.showLogin);
-router.post('/login', [
-  body("email")
-    .notEmpty()
-    .isEmail()
-    .withMessage('Email inválido.'),
-  body("password")
-    .notEmpty()
-    .isLength({min: 8})
-    .withMessage('Su mail o contraseña no concuerdan.')
-], controller.processLogin);
+router.post('/login', validator.login, controller.processLogin);
 router.get('/register', controller.showRegister);
-router.post('/register', upload.single('image'), [
-    body("name")
-        .notEmpty()
-        .isLength({min: 3})
-        .withMessage('Ingresar un nombre válido'),
-    body("email")
-        .notEmpty()
-        .isEmail()
-        .withMessage('Ingresar un mail válido'),
-    body("password")
-        .isLength({min: 8})
-        .withMessage('Su contraseña es muy corta'),
-], controller.processRegister);
+router.post('/register', upload.single('image'), validator.register, controller.processRegister);
 
 router.get('/logout', controller.logOut);
 
