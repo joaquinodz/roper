@@ -7,7 +7,6 @@ router.get('/products', controller.obtenerProductos);
 
 router.get('/naranja/products', async(req, res) => {
     let productos = await productosResource.getAll()
-    console.log(productos);
     res.json(productos.data);   
 })
 

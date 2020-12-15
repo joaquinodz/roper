@@ -2,7 +2,7 @@ const fs = require('fs');
 const bcrypt = require('bcryptjs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-let db = require("../../database/models")
+let db = require("../database/models")
 let {Op} = require('sequelize')
 exports.showRegister = (req, res) => {
     if(!req.session.usuario) {

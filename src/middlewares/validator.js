@@ -2,7 +2,7 @@ const path = require("path");
 const { body } = require("express-validator");
 const bcrypt = require("bcryptjs");
 
-let db = require("../../database/models")
+let db = require("../database/models")
 
 module.exports = {
     register: [

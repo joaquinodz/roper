@@ -1,4 +1,4 @@
-let db = require("../../database/models")
+let db = require("../database/models")
 const {Op} = require('sequelize');
 
 exports.showMainPage = (req, res) => res.render('index');
