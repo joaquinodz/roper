@@ -1,48 +1,47 @@
-// 20 de Noviembre - Inicio de Sprint 
+// 3 de Diciembre - Inicio de Sprint
 
-- Agregamos diagrama de DB.
-- Sumé primera versión de DB en MySQL.
+- Agregué Session.
+- Agregué Cookies.
+- Agregué Tabla a DB.
+- Implementé Multer.
 
-// 21 de Noviembre
+// 4 de Diciembre
 
-- Dependencias necesarias para trabajar con Sequelize.
+- Login view implementado.
+- Agregué lógica para desloguearse.
+- Terminé Login/Login validators.
+- Agregué vista nueva para los perfiles, responsive.
+- Vistas y lógica para invitados bloqueadas.
 
-// 22 de Noviembre
+// 7 de Diciembre
 
-- Agregué Bcrypt.
-- Agregué modelos.
+- Retiré Cookies, dejé Session terminado.
+- Mejoré vistas.
+- Empecé carrito.
 
-// 23 de Noviembre
+// 8 de Diciembre
 
-- Primera versión de relaciones.
+- Mejoré carrito.
 
-// 24 de Noviembre
+// 9 de Diciembre
 
-- Empezamos browse/read de BREAD.
-- Cambié background de Login/Register.
+- Quality of Life features para el CSS.
 
-// 25 de Noviembre
+// 10 de Diciembre
 
-- Agregué script de front-end para validar.
-- Agregamos Multer.
-- Agregué Search.
+- Indenté mejor el HTML.
+- Agregamos Endpoint API para obtener lista de productos.
 
-// 26 de Noviembre 
+// 11 de Diciembre
 
-- Modificamos Header.
+- Compartmentalizing validators.
 
-// 27 de Noviembre
+// 15 de Diciembre
 
-- Tercera versión de relaciones.
-- Empecé Login.
+- Mejoré posicionamiento de carpetas.
+- Axios incluido.
 
-// 30 de Noviembre
+// 21 de Diciembre
 
-- Login terminado.
-- Arreglados ciertos temas de CSS.
-- Finalización de Sprint.
-
-// 2 de Diciembre
-
-- Modificación de DAILY.md y README.md
-- Mejoré ubicación de archivos necesarios para la DB.
+- DAILY.md/RETRO.md modificados.
+- Sprint oficialmente terminado.

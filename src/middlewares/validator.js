@@ -1,6 +1,4 @@
-const path = require("path");
 const { body } = require("express-validator");
-const bcrypt = require("bcryptjs");
 
 let db = require("../database/models")
 
@@ -25,7 +23,8 @@ module.exports = {
                         return Promise.reject('Email ya registrado!');
                     }
                 })
-            }),
+            })
+            .withMessage('Email ya registrado!'),
         body("password")
             .isLength({min: 8})
             .withMessage('Su contraseña es muy corta'),

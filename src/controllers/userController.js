@@ -56,7 +56,7 @@ exports.processRegister = async (req, res) => {
     if(errors.isEmpty()) {
         if(usuarioEncontrar == "") {
             let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random(1) * 10));
-            let usuario = await db.Users.create({
+            await db.Users.create({
                 name: req.body.name,
                 surname: req.body.surname,
                 email: req.body.email,

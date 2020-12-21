@@ -31,12 +31,11 @@
                 <h2 class="form__title">¡Hazte una cuenta y empieza a vender!</h2>
     
                 <div class="form__container">
-
-                    <div class="errores">
-                        <ul>
-                            
-                        </ul>
-                    </div>
+                    <% if(typeof errors != "undefined") { %> 
+                        <li>    
+                            <%= errors[0].msg %>
+                        </li>
+                     <% } %>
                     
                     <!-- This is where the ACTUAL magic happens! xD -->
                     <form action="/user/register" method="post" enctype="multipart/form-data" class="form">
