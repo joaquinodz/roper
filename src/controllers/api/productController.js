@@ -31,3 +31,21 @@ exports.obtenerProductos = async (req, res) => {
         console.log(error);
     }
 };
+
+exports.obtenerProductoPorID = async (req, res) => {
+    try {
+        // Get requested user ID
+        const id = req.params.id;
+
+        // Get ALL users from the database.
+        let product = await db.Productos.findByPk(id, { include: { all: true } });
+
+        // Return an URL to where the profile picture is stored.
+        product.image = `/images/productos/${product.image}`;
+
+        // Send the database query result to the client.
+        return res.json(product);
+    } catch (error) {
+        console.error(error);
+    }
+};

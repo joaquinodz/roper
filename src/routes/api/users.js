@@ -5,6 +5,7 @@ const router = express.Router();
 const controller = require('../../controllers/api/userController');
 
 // Route declarations.
+router.get('/:id', controller.obtenerUsuarioPorID);
 router.get('/', controller.obtenerUsuarios);
 
 module.exports = router;

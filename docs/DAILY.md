@@ -49,4 +49,4 @@
 // 5 de Enero
 
 - Centralizo la declaración de rutas en ./routes/index
-- Nuevos endpoints: `/api/users` y `/api/products`
+- Nuevos endpoints: `/api/users`, `/api/users/:id`, `/api/products` y `/api/products/:id`
