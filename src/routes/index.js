@@ -1,11 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/indexController');
 
-router.get('/', controller.showMainPage);
+// Constrollers
+const staticController = require('../controllers/indexController');
 
-router.get('/carrito', controller.mostrarCarrito);
+// Route declarations.
+router.use('/api', require('./api/api'));
+router.use('/productos', require('./products'));
+router.use('/user', require('./users'));
 
-router.post('/search', controller.buscar);
+router.get('/', staticController.showMainPage);
+router.get('/carrito', staticController.mostrarCarrito);
+router.post('/search', staticController.buscar);
 
 module.exports = router;
