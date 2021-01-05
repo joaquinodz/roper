@@ -45,3 +45,7 @@
 
 - DAILY.md/RETRO.md modificados.
 - Sprint oficialmente terminado.
+
+// 5 de Enero
+
+- Centralizo la declaración de rutas en ./routes/index

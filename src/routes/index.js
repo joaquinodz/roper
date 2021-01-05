@@ -5,7 +5,7 @@ const router = express.Router();
 const staticController = require('../controllers/indexController');
 
 // Route declarations.
-router.use('/api', require('./api/api'));
+router.use('/api', require('./api'));
 router.use('/productos', require('./products'));
 router.use('/user', require('./users'));
 

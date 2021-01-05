@@ -1,15 +1,13 @@
 let db = require("../../database/models")
-const fs = require('fs');
-const { body } = require('express-validator');
-const path = require('path');
-const { json } = require('express');
-const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 exports.obtenerProductos = async (req, res) => {
     try {
+        // Get ALL users from the database.
         let products = await db.Productos.findAll({
             include: ['categoria', 'condicion', 'color', 'talle', 'users']
         })
+
+        // Craft the response structure.
         if(products.length > 0) {
             response = {
                 metadata: {
@@ -26,7 +24,9 @@ exports.obtenerProductos = async (req, res) => {
                 }
             }
         }
-        res.json({response})
+
+        // Send the structured response object to the client.
+        return res.json({response})
     } catch(error) {
         console.log(error);
     }
