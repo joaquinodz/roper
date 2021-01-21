@@ -85,7 +85,11 @@ exports.generarProducto = async (req, res) => {
             talle_id: req.body.talle,
             image: req.file.filename
         })
-        console.log(newProducto.image);
+
+        // Vinculamos el ID del producto con el del usuario en la tabla `product_user`
+        await newProducto.addUsers(req.session.usuario.id);
+
+        // Lo devuelvo a la lista de productos.
         return res.redirect('/productos');
     } catch(error) {
         console.log(error);
@@ -111,14 +115,24 @@ exports.eliminarProducto = async (req, res) => {
         }
     })
 
-    // Borramos el registro en la DB
-    await db.Productos.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
+    try {
+        // Borramos el registro en la DB
+        const producto = await db.Productos.findByPk(req.params.id, { include: ['users'] })
 
-    return res.redirect('/productos');
+        // Verifico que el producto pertenezca al usuario logueado.
+        if (producto.users[0].id === req.session.usuario.id) {
+            // Borramos los registros en la tabla `product_user`
+            await producto.removeUsers(req.session.usuario.id);
+
+            // Borramos los registros en la tabla `product`
+            await producto.destroy();
+        }
+
+        // Lo devuelvo a la lista de productos.
+        return res.redirect('/productos');
+    } catch (error) {
+        console.error(error)
+    }
 };
 
 exports.editarProducto = async (req, res) => {
@@ -127,28 +141,38 @@ exports.editarProducto = async (req, res) => {
         return res.redirect('/user/login')
     }
 
-    let id = req.params.id;
-    let producto = await db.Productos.findByPk(id, {
+    const id = req.params.id;
+    const producto = await db.Productos.findByPk(id, {
         include: ['categoria', 'condicion', 'color', 'talle', 'users']
     })
     return await res.render('products/edit', {productoEditar: producto, toThousand});    
 };
 
 exports.modificarProducto = async (req, res) => {
-    let id = req.params.id;
-    let productosAll = await db.Productos.findAll();
-    let productoCambiado = await db.Productos.findByPk(id, {
+    // Si no inició sesion...
+    if(!req.session.usuario) {
+        return res.redirect('/user/login')
+    }
+
+    // Busco la info. del producto
+    const id = req.params.id;
+    const productoCambiado = await db.Productos.findByPk(id, {
         include: ['categoria', 'condicion', 'color', 'talle', 'users']
     });
-    let nombre = productoCambiado.nombre;
-    await productoCambiado.update({
-        nombre: req.body.nombre,
-        precio: req.body.precio,
-        cantidad: req.body.cantidad,
-        categoria_id: req.body.genero,
-        condicion_id: req.body.condicion,
-        color_id: req.body.color,
-        talle_id: req.body.talle
-    })
-    return res.render('products/list', {homeProductos: productosAll, title: nombre, toThousand});
+
+    // Verifico que el producto pertenezca al usuario logueado.
+    if (productoCambiado.users[0].id === req.session.usuario.id) {
+        await productoCambiado.update({
+            nombre: req.body.nombre,
+            precio: req.body.precio,
+            cantidad: req.body.cantidad,
+            categoria_id: req.body.genero,
+            condicion_id: req.body.condicion,
+            color_id: req.body.color,
+            talle_id: req.body.talle
+        })
+    }
+    
+    // Lo devuelvo a la lista de productos.
+    return res.redirect('/productos');
 };
