@@ -59,7 +59,7 @@ CREATE TABLE `colores` (
 
 LOCK TABLES `colores` WRITE;
 /*!40000 ALTER TABLE `colores` DISABLE KEYS */;
-INSERT INTO `colores` VALUES (1,'Negro'),(2,'Blanco'),(3,'Verde'),(4,'Rosa'),(5,'Violeta');
+INSERT INTO `colores` VALUES (1,'Negro'),(2,'Blanco'),(3,'Verde'),(4,'Rosa'),(5,'Violeta'),(6,'Gris');
 /*!40000 ALTER TABLE `colores` ENABLE KEYS */;
 UNLOCK TABLES;
 

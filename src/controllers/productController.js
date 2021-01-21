@@ -30,6 +30,9 @@ exports.listarProductosCategoria = async (req, res) => {
     // Obtenemos el ID de la categoria
     let categoria;
     switch (req.params.categoria) {
+        case 'unisex':
+            categoria = 1
+            break;
         case 'hombre':
             categoria = 2
             break;
@@ -101,19 +104,12 @@ exports.eliminarProducto = async (req, res) => {
     if(!req.session.usuario) {
         return res.redirect('/user/login')
     }
+
     // Buscamos el producto existente en la DB
     const productoEncontrado = await db.Productos.findByPk(req.params.id)
 
     // Bucamos el path donde se encuentra la imagen
     const path = './public/images/productos/' + productoEncontrado.image;
-
-    // La borramos usando la path que averiguamos previamente
-    fs.unlink(path, (err) => {
-        if(err) {
-            console.error(err);
-            return;
-        }
-    })
 
     try {
         // Borramos el registro en la DB
@@ -128,10 +124,19 @@ exports.eliminarProducto = async (req, res) => {
             await producto.destroy();
         }
 
+        // La borramos usando la path que averiguamos previamente
+        fs.unlink(path, (err) => {
+            if(err) {
+                console.error(err);
+                return;
+            }
+        })
+
         // Lo devuelvo a la lista de productos.
         return res.redirect('/productos');
     } catch (error) {
         console.error(error)
+        return;
     }
 };
 
