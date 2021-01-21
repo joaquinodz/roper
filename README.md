@@ -1,7 +1,7 @@
 # Roper - Grupo 1
 *Proyecto integrador del Curso de Desarrollo Web Full Stack de Digital House. Grupo 1*
 
-**Roper** es una plataforma e-commerce para la venta de diseños de ropa ya sea de personas particulares o emprendedores. 
+**Roper** es una plataforma e-commerce para la venta de ropa ya sea de personas particulares o emprendedores. 
 En nuestra plataforma van a poder encontrar diseños de indumentaria tanto para hombres como para mujeres.
 
 Nuestro target se compone de cualquier género y edad, partiendo desde la preadolescencia en adelante.
