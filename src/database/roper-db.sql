@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `categorias`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `categorias` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `genero` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `genero` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=4 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -47,10 +47,10 @@ DROP TABLE IF EXISTS `colores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `colores` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `nombre` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=6 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,10 +71,10 @@ DROP TABLE IF EXISTS `condiciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `condiciones` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `estado` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `estado` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,11 +95,11 @@ DROP TABLE IF EXISTS `producto_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `producto_user` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `producto_id` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `producto_id` INT(10) UNSIGNED NOT NULL,
+    `user_id` INT(10) UNSIGNED NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,17 +120,17 @@ DROP TABLE IF EXISTS `productos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `productos` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(100) NOT NULL,
-  `precio` varchar(100) NOT NULL,
-  `cantidad` varchar(100) NOT NULL,
-  `categoria_id` int(10) unsigned DEFAULT NULL,
-  `condicion_id` int(10) unsigned DEFAULT NULL,
-  `color_id` int(10) unsigned DEFAULT NULL,
-  `talle_id` int(10) unsigned DEFAULT NULL,
-  `image` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `nombre` VARCHAR(100) NOT NULL,
+    `precio` VARCHAR(100) NOT NULL,
+    `cantidad` VARCHAR(100) NOT NULL,
+    `categoria_id` INT(10) UNSIGNED DEFAULT NULL,
+    `condicion_id` INT(10) UNSIGNED DEFAULT NULL,
+    `color_id` INT(10) UNSIGNED DEFAULT NULL,
+    `talle_id` INT(10) UNSIGNED DEFAULT NULL,
+    `image` VARCHAR(100) NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=65 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -151,10 +151,10 @@ DROP TABLE IF EXISTS `talles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `talles` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `numero` varchar(45) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `numero` VARCHAR(45) NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=13 DEFAULT CHARSET=UTF8MB4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,14 +175,14 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_bin NOT NULL,
-  `surname` varchar(255) COLLATE utf8_bin NOT NULL,
-  `email` varchar(255) COLLATE utf8_bin NOT NULL,
-  `pw_hash` varchar(100) COLLATE utf8_bin NOT NULL,
-  `image` varchar(100) COLLATE utf8_bin NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) COLLATE UTF8_BIN NOT NULL,
+    `surname` VARCHAR(255) COLLATE UTF8_BIN NOT NULL,
+    `email` VARCHAR(255) COLLATE UTF8_BIN NOT NULL,
+    `pw_hash` VARCHAR(100) COLLATE UTF8_BIN NOT NULL,
+    `image` VARCHAR(100) COLLATE UTF8_BIN NOT NULL,
+    PRIMARY KEY (`id`)
+)  ENGINE=INNODB AUTO_INCREMENT=17 DEFAULT CHARSET=UTF8 COLLATE = UTF8_BIN;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
