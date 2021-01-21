@@ -10,13 +10,21 @@
         <a href="#"><article class="banner"></article></a>
 
         <div class="products">
-            <% homeProductos.forEach(product => { %>
-                <article class="product">
-                    <a href="/productos/<%= product.id %>"><img src="../../../images/productos/<%= product.image %>" alt=""></a>
-                    <p>$ <%= product.precio %></p>
-                    <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
-                </article>
-            <% }) %>
+            <% if (homeProductos.length > 0) { %>
+
+                <% homeProductos.forEach(product => { %>
+                    <article class="product">
+                        <a href="/productos/<%= product.id %>"><img src="../../../images/productos/<%= product.image %>" alt=""></a>
+                        <p>$ <%= product.precio %></p>
+                        <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
+                    </article>
+                <% }) %>
+
+            <% } else { %>
+
+                <p>No hay productos en esta categoría.</p>
+                
+            <% } %>
         </div>
         <div class="test">
             <%if (usuario) { %>
