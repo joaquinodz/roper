@@ -8,8 +8,9 @@
     </form>
     
     <div class="usuario">
+        
         <% if (usuario) { %>
-            <img src="../../images/users/<%- usuario.image%>" style="width: 87%" alt="" class="ee">
+            <img src="../../images/users/<%- usuario.image %>" style="width: 87%" alt="" class="ee">
             <div class="nologin">
                 <a href="/user/logout"><h4>Logout</h4></a>
                 <a href="/user/profile"><p style="font-size: 16px;"><%- usuario.name %></p></a>
@@ -22,11 +23,12 @@
             </div>
             <img src="../../images/arrow.png" alt="" class="arrow">
         <% } %>
+
         <a href="/carrito"><img src="../../images/cart.png" alt="" class="cart"></a>
         <img src="../../images/arrow.png" alt="" class="arrow">
     </div>
     
-    <hr> </hr>
+    <hr></hr>
 
     <nav class="menu">
         <ul>
@@ -41,5 +43,7 @@
             <% } %>
         </ul>
     </nav>
-    <hr class="hr"> </hr>   
+
+    <hr class="hr"></hr>
+
  </header>

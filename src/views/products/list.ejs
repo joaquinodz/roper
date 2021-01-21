@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <%- include("../partials/head", {title: 'Listado de Productos'}) %>
 <body>
+    
     <div class="todo">
+
         <%- include("../partials/header") %>
 
-        <a href=""><article class="banner">
-            
-        </article></a>
+        <a href="#"><article class="banner"></article></a>
+
         <div class="products">
             <% homeProductos.forEach(product => { %>
                 <article class="product">
@@ -15,15 +16,16 @@
                     <p>$ <%= product.precio %></p>
                     <a href="/productos/<%= product.id %>"><%= product.nombre %></a>
                 </article>
-                <% }) %>
-            </div>
-                <div class="test">
-                    <%if (usuario) { %>
-                        <button class="especifico"><a href="/productos/create">Crear</a></button>
-                    <% } else {%>
-                    <% } %>
-                </div>
+            <% }) %>
         </div>
+        <div class="test">
+            <%if (usuario) { %>
+                <button class="especifico"><a href="/productos/create">Crear</a></button>
+            <% } %>
+        </div>
+
+    </div>
+
     <footer>
         <%- include("../partials/footer") %>
     </footer>
