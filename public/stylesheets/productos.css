@@ -101,7 +101,6 @@ h2 {
   border-radius: 6px;
   border: 2px solid #49d360;
   width: 132px;
-  margin-left: 62px;
   margin-top: 32px;
   margin-right: 0px;
   margin-bottom: 0px;
@@ -113,6 +112,10 @@ h2 {
 
 .item-detail {
   width: 100%;
+}
+
+.lsbotones {
+  display: flex;
 }
 
 * {
