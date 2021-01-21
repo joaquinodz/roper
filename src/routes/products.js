@@ -26,4 +26,6 @@ router.delete('/:id/eliminar', controller.eliminarProducto);
 router.get('/:id/editar', controller.editarProducto);
 router.put('/:id/modificar', controller.modificarProducto);
 
+router.get('/categoria/:categoria', controller.listarProductosCategoria)
+
 module.exports = router;
