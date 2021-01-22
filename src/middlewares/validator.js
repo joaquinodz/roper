@@ -53,9 +53,13 @@ module.exports = {
             .withMessage('Su mail o contraseña no concuerdan.')
     ],
     crearProductos: [
-        body("nombre").notEmpty(),
+        body("nombre")
+            .notEmpty()
+            .withMessage("Debes darle un nombre a tu producto!"),
     ],
     editarProductos: [
-        body("nombre").notEmpty(),
+        body("nombre")
+            .notEmpty()
+            .withMessage("Debes darle un nombre a tu producto!"),,
     ]
 }
