@@ -8,7 +8,7 @@ Nuestro target se compone de cualquier género y edad, partiendo desde la preado
 
 ### Integrantes
 - [Joaquín Ortiz de Zarate](https://github.com/jopiortiz): Me llamo Joaquín, soy estudiante de Ingeniería en Informática. Me gusta todo lo relacionado a la tecnología.
-- [Ivan](https://github.com/ivanalexisc): Mi nombre es Ivan, tengo 21 años y me gusta la programacion.
+- [Ivan Chanenko](https://github.com/ivanalexisc): Mi nombre es Ivan, tengo 21 años y me gusta la programacion.
 - [Lisandro Brasolin](https://github.com/LisandroB): Mi nombre es Lisandro, tengo 20 años y me encanta todo lo que tenga que ver con sonido, programación o literatura.
 
 ### Webs en las que nos inspiramos...
