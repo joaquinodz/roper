@@ -1,9 +1,9 @@
 module.exports = {
   "development": {
-    "username": "Ti8LcMpJTu",
-    "password": "84V2b4AkmX",
-    "database": "Ti8LcMpJTu",
-    "host": "remotemysql.com",
+    "username": "root",
+    "password": null,
+    "database": "roper_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "username": "Ti8LcMpJTu",
-    "password": "84V2b4AkmX",
-    "database": "Ti8LcMpJTu",
-    "host": "remotemysql.com",
+    "username": "root",
+    "password": null,
+    "database": "roper_db",
+    "host": "127.0.0.1",
     "dialect": "mysql"
   }
 }

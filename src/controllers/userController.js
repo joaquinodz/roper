@@ -45,17 +45,19 @@ exports.processLogin = async (req, res) => {
     }
 };
 exports.processRegister = async (req, res) => {
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.render('users/register', {errors: errors.errors})
+    }
+
     try {
-        const errors = validationResult(req);
-        if(!errors.isEmpty()) {
-            return res.render('users/register', {errors: errors.errors})
-        }
         let usuarioEncontrar = await db.Users.findOne({
             where: {
                 email: {[Op.like]: req.body.email}
             }
-        }) 
-        if(usuarioEncontrar == "") {
+        });
+
+        if(!usuarioEncontrar) {
             let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random(1) * 10));
             await db.Users.create({
                 name: req.body.name,
@@ -64,8 +66,6 @@ exports.processRegister = async (req, res) => {
                 pw_hash: passwordHash,
                 image: req.file.filename
             })
-        } else {
-            res.render('error');
         }
         return res.redirect('/user/login')
     } catch (error) {
