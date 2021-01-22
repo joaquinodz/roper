@@ -6,8 +6,12 @@ module.exports = {
     register: [
         body("name")
             .notEmpty()
-            .isLength({min: 3})
+            .isLength({min: 2})
             .withMessage('Ingresar un nombre válido'),
+        body("surname")
+            .notEmpty()
+            .isLength({min: 2})
+            .withMessage('Ingresar un apellido válido'),
         body("email")
             .notEmpty()
             .isEmail()
@@ -28,7 +32,17 @@ module.exports = {
         body("password")
             .isLength({min: 8})
             .withMessage('Su contraseña es muy corta'),
+        body('confirm__password')
+            .custom((value, { req }) => {
+                if (value !== req.body.password) {
+                  throw new Error('Las contraseñas no coinciden');
+                }
+            
+                // Indicates the success of this synchronous custom validator
+                return true;
+            }),
         ],
+        
     login: [
         body("email")
             .notEmpty()
