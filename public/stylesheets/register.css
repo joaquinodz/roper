@@ -92,6 +92,11 @@ input {
     color: red;
 }
 
+li {
+    color: yellowgreen;
+}
+  
+
 .form__remember input {
     width: 14px;
 }
