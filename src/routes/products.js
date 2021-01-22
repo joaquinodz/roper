@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const controller = require('../controllers/productController');
 const path = require('path');
+
+const controller = require('../controllers/productController');
+const validator = require('../middlewares/validator');
 
 // Multer config.
 const multer = require('multer');
@@ -18,12 +20,12 @@ var upload = multer({storage: storage});
 // Route declarations.
 router.get('/', controller.listarProductos)
 
-router.get('/create', controller.crearProducto);
+router.get('/create', validator.crearProductos, controller.crearProducto);
 router.post('/create', upload.single("image"), controller.generarProducto)
 
 router.get('/:id', controller.obtenerProductos);
 router.delete('/:id/eliminar', controller.eliminarProducto);
-router.get('/:id/editar', controller.editarProducto);
+router.get('/:id/editar', validator.editarProductos, controller.editarProducto);
 router.put('/:id/modificar', controller.modificarProducto);
 
 router.get('/categoria/:categoria', controller.listarProductosCategoria)

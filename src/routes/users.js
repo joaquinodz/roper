@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/userController');
-const { body } = require('express-validator');
 const validator = require('../middlewares/validator');
+
 // Yerbas para subir fotitos
 const path = require('path');
 const multer = require('multer');

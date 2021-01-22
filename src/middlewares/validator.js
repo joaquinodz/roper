@@ -41,8 +41,7 @@ module.exports = {
                 // Indicates the success of this synchronous custom validator
                 return true;
             }),
-        ],
-        
+    ],
     login: [
         body("email")
             .notEmpty()
@@ -52,5 +51,11 @@ module.exports = {
             .notEmpty()
             .isLength({min: 8})
             .withMessage('Su mail o contraseña no concuerdan.')
-        ]
+    ],
+    crearProductos: [
+        body("nombre").notEmpty(),
+    ],
+    editarProductos: [
+        body("nombre").notEmpty(),
+    ]
 }
