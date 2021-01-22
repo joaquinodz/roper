@@ -41,7 +41,7 @@ exports.processLogin = async (req, res) => {
             }
         });
     } else {
-        res.render('users/login', {errors: 'Email no encontrado.'});
+        return res.render('users/login', { errors: 'Email no encontrado.' });
     }
 };
 exports.processRegister = async (req, res) => {
@@ -51,23 +51,30 @@ exports.processRegister = async (req, res) => {
     }
 
     try {
+        // Trato de buscar en la DB si el usuario ya existe.
         let usuarioEncontrar = await db.Users.findOne({
             where: {
                 email: {[Op.like]: req.body.email}
             }
         });
 
+        // Si NO existe el usuario...
         if(!usuarioEncontrar) {
+            // Hasheamos la contraseña del usuario antes de guardarla en la DB
             let passwordHash = bcrypt.hashSync(req.body.password, Math.floor(Math.random(1) * 10));
+
+            // Agregamos los registros en la DB (con la pass hasheada)
             await db.Users.create({
                 name: req.body.name,
                 surname: req.body.surname,
                 email: req.body.email,
                 pw_hash: passwordHash,
                 image: req.file.filename
-            })
+            });   
         }
-        return res.redirect('/user/login')
+
+        // Lo envio a la pantalla del login
+        return res.redirect('/user/login');
     } catch (error) {
         console.log(error);
     }
