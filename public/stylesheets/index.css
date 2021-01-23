@@ -304,13 +304,16 @@ button {
   font-size: 13px;
   border-style: none;
 }
-
+html {
+  position: relative;
+  min-height: 100%;
+}
 footer {
   margin-top: 20px;
   width: 1150px;
   height: 67px;
   background-color: black;
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -345,6 +348,7 @@ footer p {
   justify-content: center;
   display: flex;
   color: white;
+  margin-bottom: 0px;
 }
 .menu {
   width: 1149px;
@@ -449,6 +453,9 @@ footer p {
 
   footer {
     margin-bottom: -24px;
+    overflow: hidden;
+    height: 100px;
+    width: 100%;
   }
 
   .article {
