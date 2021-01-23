@@ -1,4 +1,4 @@
-const { body } = require("express-validator");
+const { body } = require("express-validator");;
 
 let db = require("../database/models")
 
@@ -87,10 +87,6 @@ module.exports = {
         body('image')
             .custom((value, { req }) => {
                 if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-                    // Borramos el archivo con formato inválido
-                    fs.unlink('./public/images/productos/' + req.file.filename, (err) => {
-                        if(err) console.error(err);
-                    });
                     // Abortamos la ejecución de la petición
                     throw new Error('Solo se permiten formatos de imagen válidos');
                 }
