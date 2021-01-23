@@ -14,7 +14,7 @@
             <div class="forms">
 
                 <!-- Form -->
-                <form action="/productos/<%= productoEditar.id %>/modificar?_method=PUT" method="POST">
+                <form action="/productos/<%= productoEditar.id %>/modificar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div>
                         <img class="itemm" src="../../../images/productos/<%= productoEditar.image %>" alt="">
                     </div>
@@ -258,6 +258,13 @@
                         <% } %>
                     </select>
                     
+                    <br>
+
+                    <label for="image">Nueva imagen (opcional):</label> <br>
+                    <input type="file" name="image" id="" style="width: 175px">
+                    
+                    <br>
+
                     <!-- Submit button-->
                     <input type="submit" value="Editar">
 

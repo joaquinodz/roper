@@ -80,9 +80,9 @@ module.exports = {
                 return true;
             }),
     ],
-    editarProductos: [
+    editarProductos: [/*
         body("nombre")
             .notEmpty()
-            .withMessage("Debes darle un nombre a tu producto!")
+            .withMessage("Debes darle un nombre a tu producto!")*/
     ],
 }
