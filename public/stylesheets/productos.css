@@ -28,7 +28,6 @@
   display: flex;
   flex-flow: column wrap;
   width: 284px;
-  padding-left: 90px;
 }
 .cart-page {
   width: 60%;
@@ -50,7 +49,8 @@
     flex-direction: column;
   }
   .photo-container {
-    display: block;
+    display: flex;
+    justify-content: center;
   }
 
   .logo {

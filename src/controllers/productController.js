@@ -124,7 +124,7 @@ exports.eliminarProducto = async (req, res) => {
         const producto = await db.Productos.findByPk(req.params.id, { include: ['users'] })
 
         // Verifico que el producto pertenezca al usuario logueado.
-        if (producto.users[0].id === req.session.usuario.id) {
+        if (producto.users.id === req.session.usuario.id) {
             // Borramos los registros en la tabla `product_user`
             await producto.removeUsers(req.session.usuario.id);
 

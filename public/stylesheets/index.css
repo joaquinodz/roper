@@ -62,7 +62,6 @@
   flex-flow: wrap;
   border-radius: 10%;
   border-color: black;
-  width: 60%;
 }
 
 .product {
@@ -372,8 +371,22 @@ footer p {
   .perfil {
     flex-direction: column;
     display: flex;
-    margin-top: 87px;
+    
     justify-content: center;
+  }
+  .fotoperfil {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
+  footer {
+    position: sticky;
+    height: 99px;
+  }
+  .products{
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
   }
   article.banner {
     display: none;
