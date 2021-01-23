@@ -35,7 +35,7 @@ module.exports = {
         body('confirm__password')
             .custom((value, { req }) => {
                 if (value !== req.body.password) {
-                  throw new Error('Las contraseñas no coinciden');
+                    throw new Error('Las contraseñas no coinciden');
                 }
             
                 // Indicates the success of this synchronous custom validator
@@ -56,10 +56,16 @@ module.exports = {
         body("nombre")
             .notEmpty()
             .withMessage("Debes darle un nombre a tu producto!"),
+        body("precio")
+            .notEmpty()
+            .withMessage("Debes darle un precio a tu producto!"),
+        body("cantidad")
+            .notEmpty()
+            .withMessage("Debes declarar el stock que tienes de tu producto!"),
     ],
     editarProductos: [
         body("nombre")
             .notEmpty()
-            .withMessage("Debes darle un nombre a tu producto!"),,
-    ]
+            .withMessage("Debes darle un nombre a tu producto!")
+    ],
 }

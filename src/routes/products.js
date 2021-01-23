@@ -20,13 +20,13 @@ var upload = multer({storage: storage});
 // Route declarations.
 router.get('/', controller.listarProductos)
 
-router.get('/create', validator.crearProductos, controller.crearProducto);
-router.post('/create', upload.single("image"), controller.generarProducto)
+router.get('/create', controller.crearProducto);
+router.post('/create', upload.single("image"), validator.crearProductos, controller.generarProducto)
 
 router.get('/:id', controller.obtenerProductos);
 router.delete('/:id/eliminar', controller.eliminarProducto);
-router.get('/:id/editar', validator.editarProductos, controller.editarProducto);
-router.put('/:id/modificar', controller.modificarProducto);
+router.get('/:id/editar', controller.editarProducto);
+router.put('/:id/modificar', validator.editarProductos, controller.modificarProducto);
 
 router.get('/categoria/:categoria', controller.listarProductosCategoria)
 

@@ -1,5 +1,6 @@
-let db = require("../database/models")
 const fs = require('fs');
+const { validationResult } = require('express-validator');
+let db = require("../database/models")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 exports.obtenerProductos = async (req, res) => {
@@ -77,15 +78,22 @@ exports.generarProducto = async (req, res) => {
         return res.redirect('/user/login')
     }
 
+    // Chequeamos que los valores que envió en el form sean válidos
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.redirect(`/productos/create`);
+    }
+
     try {
+        const { nombre, precio, cantidad, genero, condicion, color, talle } = req.body;
         const newProducto = await db.Productos.create({
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            cantidad: req.body.cantidad,
-            categoria_id: req.body.genero,
-            condicion_id: req.body.condicion,
-            color_id: req.body.color,
-            talle_id: req.body.talle,
+            nombre: nombre,
+            precio: precio,
+            cantidad: cantidad,
+            categoria_id: genero,
+            condicion_id: condicion,
+            color_id: color,
+            talle_id: talle,
             image: req.file.filename
         })
 
@@ -122,15 +130,15 @@ exports.eliminarProducto = async (req, res) => {
 
             // Borramos los registros en la tabla `product`
             await producto.destroy();
-        }
 
-        // La borramos usando la path que averiguamos previamente
-        fs.unlink(path, (err) => {
-            if(err) {
-                console.error(err);
-                return;
-            }
-        })
+            // La borramos usando la path que averiguamos previamente
+            fs.unlink(path, (err) => {
+                if(err) {
+                    console.error(err);
+                    return;
+                }
+            });
+        }
 
         // Lo devuelvo a la lista de productos.
         return res.redirect('/productos');
@@ -157,6 +165,12 @@ exports.modificarProducto = async (req, res) => {
     // Si no inició sesion...
     if(!req.session.usuario) {
         return res.redirect('/user/login')
+    }
+
+    // Chequeamos que los valores que envió en el form sean válidos
+    const errors = validationResult(req);
+    if(!errors.isEmpty()) {
+        return res.redirect(`/productos/${req.params.id}/editar`);
     }
 
     // Busco la info. del producto
