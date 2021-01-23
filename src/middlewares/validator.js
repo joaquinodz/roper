@@ -58,10 +58,27 @@ module.exports = {
             .withMessage("Debes darle un nombre a tu producto!"),
         body("precio")
             .notEmpty()
-            .withMessage("Debes darle un precio a tu producto!"),
+            .withMessage("Debes darle un precio a tu producto!")
+            .isNumeric()
+            .withMessage("El precio debe ser numerico!"),
         body("cantidad")
             .notEmpty()
-            .withMessage("Debes declarar el stock que tienes de tu producto!"),
+            .withMessage("Debes declarar el stock que tienes de tu producto!")
+            .isNumeric()
+            .withMessage("La cantidad debe ser numerica!"),
+        body('image')
+            .custom((value, { req }) => {
+                if (!value) {
+                    throw new Error('Debes darle una imagen a este producto!');
+                }
+                
+                if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+                    throw new Error('Solo se permiten formatos de imagen válidos');
+                }
+
+                // Indicates the success of this synchronous custom validator
+                return true;
+            }),
     ],
     editarProductos: [
         body("nombre")
