@@ -32,7 +32,7 @@ exports.processLogin = async (req, res) => {
     if(usuarioLogueado != undefined) {
         bcrypt.compare(req.body.password, usuarioLogueado.pw_hash, (err, result) => {
             if(err || !result) {
-                res.render('users/login', { errors: 'Email/Contraseña inválida.' });
+                res.render('users/login', { errors: 'Email o Contraseña inválida.' });
                 return false;
             } else {
                 req.session.usuario = usuarioLogueado;

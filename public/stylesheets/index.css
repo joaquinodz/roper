@@ -418,6 +418,13 @@ footer p {
   margin-left: 23px;
   font-variant:normal
 }
+.create{
+  margin-top: 10px;
+  background-color: white;
+  font-size: 17px;
+  padding: 3px;
+}
+
 .compra {
   display: flex;
   justify-content: center;
@@ -427,8 +434,16 @@ footer p {
   justify-content: center;
   font-size: 23px;
 }
+.compra2 a {
+  display: flex;
+  justify-content: center;
+  font-size: 23px;
+}
 
 @media all and (max-width: 992px) {
+  .parent {
+    margin-top: 65px;
+  }
   .banner3 {
     margin-left: -248px;
     width: 608px;
@@ -592,11 +607,12 @@ td input {
   padding: 10px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #70e44d;
+  background-color: #000000;
   border-radius: 6px;
-  border: 2px solid #49d360;
+  border: 2px solid #000000;
   width: 100px;
   margin: 43px;
+  font-size: 13px;
 }
 
 .buttons {

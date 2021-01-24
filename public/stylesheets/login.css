@@ -49,7 +49,7 @@ header {
 }
 
 li {
-  color: yellowgreen;
+  color: #ff7171;
 }
 
 /* ------------------------ End - Header ------------------------- */
@@ -139,7 +139,7 @@ label {
 }
 
 .form__buttons button {
-  background: #f54785;
+  background: #000000;
   color: #fff;
   font-size: 14px;
   text-transform: uppercase;

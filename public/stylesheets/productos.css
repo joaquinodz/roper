@@ -23,7 +23,19 @@
   flex-direction: row;
   justify-content: center;
 }
-
+.listadoAction form{
+  margin-left: 0px;
+}
+.boton_personalizado2 {
+  padding: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  border-radius: 6px;
+  width: 132px;
+  margin-top: 32px;
+  margin-left: 43px;
+  padding-left: 0px;
+}
 .product-info-container {
   display: flex;
   flex-flow: column wrap;
@@ -51,6 +63,7 @@
   .photo-container {
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
   }
 
   .logo {
@@ -97,10 +110,8 @@ h2 {
   padding: 10px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #70e44d;
   border-radius: 6px;
-  border: 2px solid #49d360;
-  width: 132px;
+  width: 109px;
   margin-top: 32px;
   margin-right: 0px;
   margin-bottom: 0px;
