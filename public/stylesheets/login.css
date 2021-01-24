@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  margin: 0px;
   /* border: 1px solid red; */ /* Para fines de desarrollo */
 }
 
@@ -8,11 +9,7 @@
     Source: https://css-tricks.com/perfect-full-page-background-image/ 
 */
 .fixed-fullscreen {
-  /* Set up positioning */
-  /* position: fixed; */
-  top: 0;
-  left: 0;
-
+  position: fixed;
   /* Preserve aspect ratio */
   min-width: 100%;
   min-height: 100%;

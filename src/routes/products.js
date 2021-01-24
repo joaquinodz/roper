@@ -26,6 +26,7 @@ router.post('/create', upload.single("image"), validator.crearProductos, control
 router.get('/:id', controller.obtenerProductos);
 router.delete('/:id/eliminar', controller.eliminarProducto);
 router.get('/:id/editar', controller.editarProducto);
+
 router.put('/:id/modificar', upload.single("image"), validator.editarProductos, controller.modificarProducto);
 
 router.get('/categoria/:categoria', controller.listarProductosCategoria)

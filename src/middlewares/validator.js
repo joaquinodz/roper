@@ -66,21 +66,21 @@ module.exports = {
             .withMessage("Debes declarar el stock que tienes de tu producto!")
             .isNumeric()
             .withMessage("La cantidad debe ser numerica!"),
-        body('image')
-            .custom((value, { req }) => {
-                // Chequeamos que haya puesto una foto.
-                if (!value) {
-                    throw new Error('Debes darle una foto a tu producto!');
-                }
+        // body('image')
+        //     .custom((value, { req }) => {
+        //         // Chequeamos que haya puesto una foto.
+        //         if (!value) {
+        //             throw new Error('Debes darle una foto a tu producto!');
+        //         }
 
-                // Que tenga una extensión valida.
-                if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-                    throw new Error('Solo se permiten formatos de imagen válidos');
-                }
+        //         // Que tenga una extensión valida.
+        //         if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+        //             throw new Error('Solo se permiten formatos de imagen válidos');
+        //         }
 
-                // Llegado a este punto, está todo bien, podemos continuar.
-                return true;
-            }),
+        //         // Llegado a este punto, está todo bien, podemos continuar.
+        //         return true;
+        //     }),
     ],
     editarProductos: [
         body("nombre")

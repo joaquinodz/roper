@@ -64,6 +64,7 @@ exports.listarProductosCategoria = async (req, res) => {
     }
 }
 
+
 exports.crearProducto = (req, res) => {
     if(req.session.usuario) {
         return res.render('products/create');

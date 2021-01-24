@@ -2,6 +2,17 @@ window.addEventListener('load', function() {
     let add = document.getElementById('add');
     let carrito = document.getElementById('carrito');
     let precio = document.getElementById('precio');
+    let eliminar = document.getElementById('elim');
+    if(localStorage.getItem('carrito') === null) {
+        eliminar.style.display = 'none';
+    }
+    eliminar.addEventListener('click', function(e) {
+        if(localStorage.getItem('carrito') === null) {
+            e.preventDefault();
+        } else {
+            localStorage.removeItem('carrito');
+        }
+    })
     function loadStorage() {
         let storage = localStorage.getItem('carrito');
         if(storage == null) {

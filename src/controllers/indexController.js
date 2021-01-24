@@ -12,6 +12,14 @@ exports.mostrarCarrito = (req, res) => {
     }
 };
 
+exports.mostrarOfertas = (req, res) => {
+    return res.render('ofertas');
+}
+
+exports.comprar = (req, res) => {
+    return res.render('buy');
+}
+
 exports.buscar = async(req, res) => {
     let buscar = req.body.search;
     try {
