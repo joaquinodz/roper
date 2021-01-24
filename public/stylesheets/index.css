@@ -331,6 +331,9 @@ footer ul {
   font-family: "Roboto", sans-serif;
   padding-left: 0px;
 }
+.parent {
+  margin-top: 28px;
+}
 
 .boxes2 button {
   justify-content: center;
