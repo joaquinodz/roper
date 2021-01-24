@@ -29,4 +29,4 @@ Nuestro target se compone de cualquier género y edad, partiendo desde la preado
 - Sequelize
 
 ### Tablero de trabajo:
- - [GitHub Proyects](https://github.com/jopiortiz/grupo_1_roper/projects/3)
+ - [GitHub Proyects](https://github.com/joaquinodz/grupo_1_roper/projects/7)
