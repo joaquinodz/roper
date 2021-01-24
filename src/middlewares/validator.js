@@ -68,11 +68,17 @@ module.exports = {
             .withMessage("La cantidad debe ser numerica!"),
         body('image')
             .custom((value, { req }) => {
+                // Chequeamos que haya puesto una foto.
+                if (!value) {
+                    throw new Error('Debes darle una foto a tu producto!');
+                }
+
+                // Que tenga una extensión valida.
                 if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
                     throw new Error('Solo se permiten formatos de imagen válidos');
                 }
 
-                // Indicates the success of this synchronous custom validator
+                // Llegado a este punto, está todo bien, podemos continuar.
                 return true;
             }),
     ],
@@ -82,12 +88,14 @@ module.exports = {
             .withMessage("Debes darle un nombre a tu producto!"),
         body('image')
             .custom((value, { req }) => {
-                if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
-                    // Abortamos la ejecución de la petición
-                    throw new Error('Solo se permiten formatos de imagen válidos');
+                // Si ´value´ existe significa que completó el campo ´image´, ergo, quiere cambiar la imagen...
+                if (value) {
+                    // Validamos si la extensión del archivo es válida...
+                    if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+                        // Abortamos la ejecución de la petición, si no lo es.
+                        throw new Error('Solo se permiten formatos de imagen válidos');
+                    }
                 }
-
-                // Aprobo las validaciones, seguimos con la petición
                 return true;
             }),
     ],
