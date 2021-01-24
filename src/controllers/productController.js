@@ -179,6 +179,18 @@ exports.modificarProducto = async (req, res) => {
         include: ['categoria', 'condicion', 'color', 'talle', 'users']
     });
 
+    // Guardamos el nombre del archivo anterior, para borrar la imagen que tenia el producto anteriormente.
+    const anteriorImagen = productoCambiado.image;
+
+    // Si el usuario subió una imagen, significa que quiere cambiarla...
+    let nuevaImagen;
+    if (typeof req.file !== 'undefined') {
+        nuevaImagen = req.file.filename;
+    } else {
+        // Llegado a este punto, el usuario NO subió una imagen. Por ende, dejo la que estaba antes.
+        nuevaImagen = productoCambiado.image;
+    }
+    
     // Verifico que el producto pertenezca al usuario logueado.
     if (productoCambiado.users[0].id === req.session.usuario.id) {
         await productoCambiado.update({
@@ -188,8 +200,19 @@ exports.modificarProducto = async (req, res) => {
             categoria_id: req.body.genero,
             condicion_id: req.body.condicion,
             color_id: req.body.color,
-            talle_id: req.body.talle
-        })
+            talle_id: req.body.talle,
+            image: nuevaImagen
+        }).then(() => {
+            if (anteriorImagen !== nuevaImagen) {
+                // Borramos la foto del producto que tenia antes.
+                fs.unlink('./public/images/productos/' + anteriorImagen, (err) => {
+                    if(err) {
+                        console.error(err);
+                        return;
+                    }
+                });
+            }
+        });
     }
     
     // Lo devuelvo a la lista de productos.

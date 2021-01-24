@@ -1,4 +1,4 @@
-const { body } = require("express-validator");
+const { body } = require("express-validator");;
 
 let db = require("../database/models")
 
@@ -79,6 +79,16 @@ module.exports = {
     editarProductos: [
         body("nombre")
             .notEmpty()
-            .withMessage("Debes darle un nombre a tu producto!")
+            .withMessage("Debes darle un nombre a tu producto!"),
+        body('image')
+            .custom((value, { req }) => {
+                if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
+                    // Abortamos la ejecución de la petición
+                    throw new Error('Solo se permiten formatos de imagen válidos');
+                }
+
+                // Aprobo las validaciones, seguimos con la petición
+                return true;
+            }),
     ],
 }
