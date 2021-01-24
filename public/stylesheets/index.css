@@ -315,8 +315,8 @@ footer {
   margin-top: auto;
   position: absolute;
   bottom:0;
-  width:99%;
   height:64px;
+  margin-left: -8px;
 }
 
 footer ul {
@@ -397,6 +397,7 @@ footer p {
   footer {
     position: sticky;
     height: 99px;
+    width: 104.5%;
   }
   .products{
     display: flex;
@@ -468,7 +469,7 @@ footer p {
     margin-bottom: -24px;
     overflow: hidden;
     height: 100px;
-    width: 100%;
+    width: 104.5%;
   }
 
   .article {
