@@ -81,30 +81,30 @@ exports.generarProducto = async (req, res) => {
     // Chequeamos que los valores que envió en el form sean válidos
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        return res.redirect(`/productos/create`);
+        res.render('products/create', {errors: errors.errors});
+    } else {
+        try {
+            const { nombre, precio, cantidad, genero, condicion, color, talle } = req.body;
+            const newProducto = await db.Productos.create({
+                nombre: nombre,
+                precio: precio,
+                cantidad: cantidad,
+                categoria_id: genero,
+                condicion_id: condicion,
+                color_id: color,
+                talle_id: talle,
+                image: req.file.filename
+            })
+    
+            // Vinculamos el ID del producto con el del usuario en la tabla `product_user`
+            await newProducto.addUsers(req.session.usuario.id);
+    
+            // Lo devuelvo a la lista de productos.
+            return res.redirect('/productos');
+        } catch(error) {
+            console.log(error);
+        }  
     }
-
-    try {
-        const { nombre, precio, cantidad, genero, condicion, color, talle } = req.body;
-        const newProducto = await db.Productos.create({
-            nombre: nombre,
-            precio: precio,
-            cantidad: cantidad,
-            categoria_id: genero,
-            condicion_id: condicion,
-            color_id: color,
-            talle_id: talle,
-            image: req.file.filename
-        })
-
-        // Vinculamos el ID del producto con el del usuario en la tabla `product_user`
-        await newProducto.addUsers(req.session.usuario.id);
-
-        // Lo devuelvo a la lista de productos.
-        return res.redirect('/productos');
-    } catch(error) {
-        console.log(error);
-    }  
 };
     
 exports.eliminarProducto = async (req, res) => {
@@ -124,7 +124,7 @@ exports.eliminarProducto = async (req, res) => {
         const producto = await db.Productos.findByPk(req.params.id, { include: ['users'] })
 
         // Verifico que el producto pertenezca al usuario logueado.
-        if (producto.users.id === req.session.usuario.id) {
+        if (producto.users[0].id === req.session.usuario.id) {
             // Borramos los registros en la tabla `product_user`
             await producto.removeUsers(req.session.usuario.id);
 

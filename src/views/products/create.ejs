@@ -8,6 +8,17 @@
 			<%- include('../partials/header') %>
 			<div class="tests">
 				<div class="forms">
+					<div id="listst">
+						<% if(typeof errors != "undefined") { %> 
+							<% errors.forEach(error => { %>
+								<ul>    
+									<li>
+										<%= error.msg %>
+									</li>
+								</ul>
+								<% }) %>
+								<% } %>
+							</div>
 					<!-- Form -->
 					<form action="/productos/create" method="post" enctype="multipart/form-data">
 						Nombre del producto: <br>
@@ -63,6 +74,8 @@
 				</div>
 			</div>
 		</div>
-		<%- include('../partials/footer') %> 
+		<div class="parent">
+			<%- include('../partials/footer') %> 
+		</div>
 	</body>
 </html>

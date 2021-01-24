@@ -68,10 +68,6 @@ module.exports = {
             .withMessage("La cantidad debe ser numerica!"),
         body('image')
             .custom((value, { req }) => {
-                if (!value) {
-                    throw new Error('Debes darle una imagen a este producto!');
-                }
-                
                 if (!req.file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG|gif|GIF)$/)) {
                     throw new Error('Solo se permiten formatos de imagen válidos');
                 }

@@ -310,13 +310,13 @@ html {
 }
 footer {
   margin-top: 20px;
-  width: 1150px;
-  height: 67px;
   background-color: black;
-  position: absolute;
-  left: 0;
-  bottom: 0;
   width: 100%;
+  margin-top: auto;
+  position: absolute;
+  bottom:0;
+  width:99%;
+  height:64px;
 }
 
 footer ul {
@@ -370,6 +370,14 @@ footer p {
 #add img {
   width: 8%;
 }
+#listst li{
+  list-style-type: square;
+  color: red;
+  font-size: 15px;
+  padding: 5px;
+  margin-left: 23px;
+  font-variant:normal
+}
 
 @media all and (max-width: 992px) {
   .perfil {
@@ -400,6 +408,8 @@ footer p {
     padding-top: 15px;
     padding-bottom: 50px;
   }
+
+
   .header {
     display: flex;
     flex-flow: column wrap;
@@ -569,6 +579,7 @@ td input {
 .tests {
   display: flex;
   justify-content: center;
+  margin-bottom: 55px;
 }
 
 .itemm {
