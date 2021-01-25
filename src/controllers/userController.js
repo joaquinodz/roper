@@ -10,6 +10,23 @@ exports.showRegister = (req, res) => {
         res.render('users/profile');
     }
 };
+exports.myProducts = async (req, res) => {
+    if(req.session.usuario) {
+        try {
+            let find = await db.Productos.findAll({
+                where: {
+                    '$users.id$': req.session.usuario.id
+                },
+                include:['users']
+            })
+            res.render('products/misProductos', {result: find, name: req.session.usuario.name});
+        } catch(error) {
+            console.log(error);
+        }
+    } else {
+        res.redirect('login');
+    }
+}
 exports.showLogin = (req, res) => {
     if(req.session.usuario) {
         res.render('users/profile');

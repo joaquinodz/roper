@@ -458,9 +458,10 @@ footer p {
     justify-content: center;
   }
   .fotoperfil {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: center;
+    margin-left: 93px;
   }
   footer {
     position: sticky;

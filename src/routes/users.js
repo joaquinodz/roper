@@ -22,7 +22,7 @@ router.get('/register', controller.showRegister);
 router.post('/register', upload.single('image'), validator.register, controller.processRegister);
 
 router.get('/logout', controller.logOut);
-
+router.get('/misproductos', controller.myProducts);
 router.get('/profile', controller.showProfile);
 
 module.exports = router;

@@ -49,7 +49,6 @@ module.exports = {
             .withMessage('Email inválido.'),
         body("password")
             .notEmpty()
-            .isLength({min: 8})
             .withMessage('Su mail o contraseña no concuerdan.')
     ],
     crearProductos: [
