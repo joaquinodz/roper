@@ -17,7 +17,11 @@ exports.mostrarOfertas = (req, res) => {
 }
 
 exports.comprar = (req, res) => {
-    return res.render('buy');
+    if(req.session.usuario) {
+        return res.render('buy');
+    } else {
+        res.redirect('user/login')
+    }
 }
 
 exports.buscar = async(req, res) => {

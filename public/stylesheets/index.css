@@ -91,7 +91,7 @@
 
 .products {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-flow: wrap;
   border-radius: 10%;
   border-color: black;
