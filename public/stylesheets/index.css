@@ -83,12 +83,40 @@
   text-decoration: none;
   color: rgb(134, 130, 130);
 }
-
+.losotro {
+  width: 19%;
+  height: 20%;
+}
 .products img {
   width: 100%;
   height: 62%;
 }
-
+#no {
+  width: auto;
+  border-radius: 0px;
+  border: none;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  margin-left: 87px;
+  margin-top: 10px;
+}
+.nosotros {
+  display: flex;
+  justify-content: space-around;
+  width: 1149px;
+}
+.nosotros img{
+  width: 96%;
+  border-radius: 211px;
+  border: solid;
+  height: 60%;
+}
+.losotro p {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
 .products {
   display: flex;
   justify-content: space-evenly;
@@ -96,7 +124,11 @@
   border-radius: 10%;
   border-color: black;
 }
-
+.logos {
+  width: 8%;
+  border: none;
+  border-radius: 10px;
+}
 .product {
   margin-top: 20px;
   justify-content: center;

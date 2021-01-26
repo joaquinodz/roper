@@ -1,3 +1,4 @@
+const { static } = require('express');
 const express = require('express');
 const router = express.Router();
 
@@ -13,6 +14,7 @@ router.get('/', staticController.showMainPage);
 router.get('/carrito', staticController.mostrarCarrito);
 router.get('/ofertas', staticController.mostrarOfertas);
 router.get('/buy', staticController.comprar);
+router.get('/nosotros', staticController.contactenos);
 router.post('/search', staticController.buscar);
 
 module.exports = router;

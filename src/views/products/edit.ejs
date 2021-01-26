@@ -12,7 +12,17 @@
         <div class="tests">
 
             <div class="forms">
-
+                <div id="listst">
+						<% if(typeof errors != "undefined") { %> 
+							<% errors.forEach(error => { %>
+								<ul>    
+									<li>
+										<%= error.msg %>
+									</li>
+								</ul>
+								<% }) %>
+								<% } %>
+							</div>
                 <!-- Form -->
                 <form action="/productos/<%= productoEditar.id %>/modificar?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div>

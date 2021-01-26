@@ -24,6 +24,10 @@ exports.comprar = (req, res) => {
     }
 }
 
+exports.contactenos = (req, res) => {
+    return res.render('contactus');
+}
+
 exports.buscar = async(req, res) => {
     let buscar = req.body.search;
     try {

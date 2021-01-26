@@ -172,6 +172,7 @@ exports.modificarProducto = async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
         return res.redirect(`/productos/${req.params.id}/editar`);
+        res.send({errors: errors});
     }
 
     // Busco la info. del producto
