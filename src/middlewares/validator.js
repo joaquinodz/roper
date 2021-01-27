@@ -54,7 +54,9 @@ module.exports = {
     crearProductos: [
         body("nombre")
             .notEmpty()
-            .withMessage("Debes darle un nombre a tu producto!"),
+            .withMessage("Debes darle un nombre a tu producto!")
+            .isLength({min: 3})
+            .withMessage("Debes ingresar un nombre más largo!"),
         body("precio")
             .notEmpty()
             .withMessage("Debes darle un precio a tu producto!")
