@@ -14,13 +14,11 @@
             <div class="forms">
                 <div id="listst">
 						<% if(typeof errors != "undefined") { %> 
-							<% errors.forEach(error => { %>
 								<ul>    
 									<li>
-										<%= error.msg %>
+										<%= errors %>
 									</li>
 								</ul>
-								<% }) %>
 								<% } %>
 							</div>
                 <!-- Form -->

@@ -10,7 +10,8 @@ exports.obtenerProductos = async (req, res) => {
             include: ['categoria', 'condicion', 'color', 'talle', 'users']
         })
         let title = search.nombre
-        return res.render('products/listado', {productoEspecifico: search, title});
+        let confirmar = search.users[0].id;
+        return res.render('products/listado', {productoEspecifico: search, title, confirmar});
     } catch(error) {
         console.log(error);
     }
@@ -154,12 +155,24 @@ exports.editarProducto = async (req, res) => {
     if(!req.session.usuario) {
         return res.redirect('/user/login')
     }
-
     const id = req.params.id;
+    
     const producto = await db.Productos.findByPk(id, {
-        include: ['categoria', 'condicion', 'color', 'talle', 'users']
+        include: ['categoria', 'condicion', 'color', 'talle', 'users'],
+        where: {
+            '$users.id$': req.session.usuario.id
+        }
     })
+    let check = producto.users[0].id;
+    if(!req.session.usuario) {
+        return res.redirect('/user/login')
+    }
+    if(check != req.session.usuario.id) {
+        res.send('Este producto no te pertenece!')
+    }
+    
     return await res.render('products/edit', {productoEditar: producto, toThousand});    
+    
 };
 
 exports.modificarProducto = async (req, res) => {
@@ -167,14 +180,28 @@ exports.modificarProducto = async (req, res) => {
     if(!req.session.usuario) {
         return res.redirect('/user/login')
     }
-
+    
     // Chequeamos que los valores que envió en el form sean válidos
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
-        return res.redirect(`/productos/${req.params.id}/editar`);
-        res.send({errors: errors});
+        const id = req.params.id;
+        const producto = await db.Productos.findByPk(id, {
+            include: ['categoria', 'condicion', 'color', 'talle', 'users'],
+            where: {
+                '$users.id$': req.session.usuario.id
+            }
+        })
+        let check = producto.users[0].id;
+        if(!req.session.usuario) {
+            return res.redirect('/user/login')
+        }
+        if(check != req.session.usuario.id) {
+            res.send('Este producto no te pertenece!')
+        }
+        
+        return await res.render('products/edit', {productoEditar: producto, errors: errors.errors[0].msg}); 
     }
-
+    
     // Busco la info. del producto
     const id = req.params.id;
     const productoCambiado = await db.Productos.findByPk(id, {

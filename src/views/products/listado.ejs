@@ -51,12 +51,14 @@
 				<!-- Boton `Comprar` (solo si estas logueado) -->
 				<%if (usuario) { %>
 					<a class="boton_personalizado" id="carrito" href="/productos/carrito">Agregar al Carrito</a>
+					<% if(confirmar == usuario.id) { %> 
 					<a class="boton_personalizado" href="/productos/<%= productoEspecifico.id %>/editar">Editar Producto</a>
 					<div class="listadoAction">
 						<form action="/productos/<%= productoEspecifico.id %>/eliminar?_method=DELETE" method="POST">
 							<button type="submit" class="boton_personalizado2">Borrar Producto</button>
 						</form>		
 					</div>
+					<% } %>
 				<% } %>
 
 				<div class="Details">

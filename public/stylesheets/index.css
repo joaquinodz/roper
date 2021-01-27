@@ -110,7 +110,6 @@
   width: 96%;
   border-radius: 211px;
   border: solid;
-  height: 60%;
 }
 .losotro p {
   display: flex;
@@ -522,7 +521,9 @@ footer p {
     align-content: center;
     width: 360px;
   }
-
+  .nosotros img {
+    margin-top: 30px;
+  }
   .logo {
     margin-left: 91px;
   }
@@ -603,6 +604,22 @@ footer p {
 
   input[type="search"] {
     width: 185px;
+  }
+  .nosotros{
+    width: 100%;
+    flex-direction: column;
+  }
+  #no {
+    margin-left: 160px
+  }
+  .losotro {
+    width: 105%;
+  }
+  .bu {
+    margin-left: 5px;
+  }
+  .jee {
+    height: 313px;
   }
 }
 
