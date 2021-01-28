@@ -455,7 +455,10 @@ footer p {
   font-size: 17px;
   padding: 3px;
 }
-
+.article2 a {
+  text-decoration: none;
+  color: black;
+}
 .compra {
   display: flex;
   justify-content: center;
@@ -469,6 +472,10 @@ footer p {
   display: flex;
   justify-content: center;
   font-size: 23px;
+}
+.article a {
+  text-decoration: none;
+  color: black;
 }
 
 @media all and (max-width: 992px) {
