@@ -1,0 +1,60 @@
+div {
+    display: block;
+}
+.header {
+    display: flex;
+    margin-top: 30px;
+    width: 1149px;
+    flex-wrap: wrap;
+}
+.line {
+    margin-left: 50px;
+    border: 1px solid rgb(156, 156, 156);
+}
+.buscar {
+    display: flex;
+    justify-content: center;
+    margin-left: 68px;
+}
+.usuario {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    margin-left: 70px;
+    margin-top: 5px;
+}
+.usuario p {
+    margin: 0 0 0 8px;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+}
+.usuario h4 {
+    margin: 0 0 0 8px;
+    font-size: 10px;
+    font-family: "Roboto", sans-serif;
+}
+hr {
+    border-top: 1px solid rgb(156, 156, 156);
+    margin-top: 10px;
+    width: 1150px;
+}
+.menu {
+    width: 1149px;
+    justify-content: space-evenly;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    font-family: "Roboto", sans-serif;
+    padding-left: 0px;
+    text-transform: uppercase;
+}
+li {
+    list-style-type: none;
+}
+.cart {
+    width: 37px;
+}
