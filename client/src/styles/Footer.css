@@ -1,0 +1,34 @@
+footer {
+    position: sticky;
+    background-color: black;
+    height: 99px;
+    width: 104.5%;
+    margin-top: 28px;
+}
+footer ul {
+    color: white;
+    margin-top: 8px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    flex-wrap: wrap;
+    padding-left: 0px;
+}
+footer p {
+    justify-content: center;
+    display: flex;
+    color: white;
+    margin-bottom: 0px;
+}
+li {
+    list-style-type: none;
+}
+@media (max-width: 992px) {
+    footer {
+        margin-bottom: -24px;
+        overflow: hidden;
+        height: 100px;
+        width: 104.5%;
+    }
+}

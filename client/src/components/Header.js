@@ -6,26 +6,26 @@ class Header extends Component {
     render () {
         return (
             <header>
-                <a href="/"><img src="./images/logo-roper.svg" alt="avatar" class="logo" /></a>
-                <div class="line"></div>
+                <a href="/"><img src="./images/logo-roper.svg" alt="avatar" className="logo" /></a>
+                <div className="line"></div>
                 
-                <form action="/search" method="POST" class="buscar">
+                <form action="/search" method="POST" className="buscar">
                     <input type="search" name="search" id="search" placeholder="Buscar..." />
                 </form>
                 
                 <div class="usuario">
                     <img src="./images/user.png" alt="avatar" />
-                    <div class="nologin">
+                    <div className="nologin">
                         <a href="/user/register"><h4>Registrarse</h4></a>
                         <a href="/user/login"><p>Ingresar</p></a>
                     </div>
 
-                    <a href="/carrito"><img src="./images/cart.png" alt="carrito" class="cart" /></a>
+                    <a href="/carrito"><img src="./images/cart.png" alt="carrito" className="cart" /></a>
                 </div>
                 
                 <hr></hr>
 
-                <nav class="menu">
+                <nav className="menu">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/productos">Productos</a></li>
