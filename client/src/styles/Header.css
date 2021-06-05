@@ -1,0 +1,189 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    width: 1149px;
+}
+header a {
+    text-decoration: none;
+    color: black;
+}
+.perfil {
+    justify-content: center;
+    display: flex;
+    height: 20em;
+}
+.fotoperfil {
+    width: 26%;
+    border: black;
+    border-style: solid;
+    border-radius: 50%;
+}
+.perfil h1 {
+    margin-left: 20px;
+}
+.perfil h4 {
+    margin-left: 20px;
+}
+.perfil h5 {
+    margin-left: 20px;
+}
+.line {
+    margin-left: 50px;
+    border: 1px solid rgb(156, 156, 156);
+}
+.buscar {
+    display: flex;
+    justify-content: center;
+    margin-left: 68px;
+}
+input {
+    outline: none;
+}
+input[type="search"] {
+    font-size: 100%;
+}
+input: : -webkit-search-decoration,input: : -webkit-search-cancel-button {
+    display: none;
+}
+input[type="search"] {
+    background: #ededed url("https: //static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
+    border: solid 1px #ccc;
+    padding: 9px 10px 9px 32px;
+    width: 511px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+input: -moz-placeholder {
+    color: #999;
+}
+input: : -webkit-input-placeholder {
+    color: #999;
+}
+.usuario {
+    display: flex;
+    width: 35px;
+    height: 35px;
+    margin-left: 70px;
+    margin-top: 5px;
+}
+.usuario p {
+    margin: 0 0 0 8px;
+    font-size: 20px;
+}
+.usuario h4 {
+    margin: 0 0 0 8px;
+    font-size: 10px;
+}
+.cart {
+    width: 37px;
+    height: 37px;
+    margin-left: 85px;
+}
+hr {
+    border-top: 1px solid rgb(156, 156, 156);
+    margin-top: 10px;
+    width: 1150px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+.header a {
+    text-decoration: none;
+    color: black;
+}
+footer a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    text-transform: uppercase;
+}
+input {
+    padding-right: 450px;
+}
+li {
+    list-style-type: none;
+}
+.menu {
+    width: 1149px;
+    justify-content: space-evenly;
+}
+
+@media all and (max-width: 992px) {
+    .perfil {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+    }
+    .fotoperfil {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        margin-left: 93px;
+    }
+    header {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+        width: 360px;
+    }
+    .logo {
+        margin-left: 91px;
+    }
+    .menu {
+        display: flex;
+        flex-flow: column;
+        align-self: center;
+        flex-wrap: wrap;
+        width: 360px;
+    }
+    .line {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+    .usuario {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 38px;
+    }
+    .usuario img {
+        height: 100%;
+    }
+    input {
+        margin-right: 67px;
+        margin-bottom: 10px;
+    }
+    .menu ul {
+        display: grid;
+        justify-content: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        flex-wrap: wrap;
+        padding-left: 0px;
+        text-transform: uppercase;
+    }
+    hr {
+        width: 360px;
+    }
+    input[type="search"] {
+        width: 185px;
+    }
+}

@@ -1,41 +1,31 @@
 import React, { Component } from 'react';
 
-import './Header.css';
+import '../styles/Header.css';
 
 class Header extends Component {
     render () {
         return (
             <header>
-
-                {/* Logo + Linea que lo separa con la barra de búsqueda */}
-                <div className="logo__line">
-                    <a href="/">
-                        <img src="./images/logo-roper.svg" alt="" className="logo" />
-                    </a>
-
-                    <div className="line"></div>
-                </div>
-
-                {/* Barra de Busqueda */}
-                <form action="/search" method="POST" className="buscar">
+                <a href="/"><img src="./images/logo-roper.svg" alt="avatar" class="logo" /></a>
+                <div class="line"></div>
+                
+                <form action="/search" method="POST" class="buscar">
                     <input type="search" name="search" id="search" placeholder="Buscar..." />
                 </form>
                 
-                {/* Iniciar Sesion - Registrarse - Avatar */}
-                {/* TODO: Convertir en componente */}
-                <div className="usuario">
+                <div class="usuario">
                     <img src="./images/user.png" alt="avatar" />
-                    <div className="nologin">
+                    <div class="nologin">
                         <a href="/user/register"><h4>Registrarse</h4></a>
                         <a href="/user/login"><p>Ingresar</p></a>
                     </div>
 
-                    <a href="/carrito"><img src="../../images/cart.png" alt="carrito" className="cart" /></a>
+                    <a href="/carrito"><img src="./images/cart.png" alt="carrito" class="cart" /></a>
                 </div>
                 
                 <hr></hr>
 
-                <nav className="menu">
+                <nav class="menu">
                     <ul>
                         <li><a href="/">Home</a></li>
                         <li><a href="/productos">Productos</a></li>
@@ -44,7 +34,8 @@ class Header extends Component {
                 </nav>
 
                 <hr></hr>
-            </header>
+
+             </header>
         );
     }
 }
