@@ -1,0 +1,79 @@
+button {
+    justify-content: center;
+    display: flex;
+    margin-left: 116px;
+    color: white;
+    background-color: black;
+    font-size: 13px;
+    border-style: none;
+}
+.article {
+    width: 1149px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+.texto {
+    margin-top: 150px;
+}
+.article a {
+    text-decoration: none;
+    color: black;
+}
+.article2 {
+    width: 1149px;
+    display: flex;
+    justify-content: center;
+}
+.boxes {
+    width: 300px;
+    height: 500px;
+    border: solid gray 1px;
+    background-image: url(../assets/images/male-model.png);
+}
+.boxes p {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 420px;
+    text-transform: uppercase;
+    background-color: white;
+}
+.boxes2 {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    width: 510px;
+    height: 200px;
+    border: solid gray 1px;
+    background-image: url(../assets/images/male-female-model.png);
+}
+.boxes2 p {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: white;
+}
+.boxes2 button {
+    justify-content: center;
+    display: flex;
+    margin-left: 220px;
+    color: white;
+    background-color: black;
+    font-size: 13px;
+    top: -10px;
+    position: relative;
+}
+.boxes3 {
+    width: 300px;
+    height: 500px;
+    border: solid gray 1px;
+    background-image: url(../assets/images/female-model.png);
+}
+.boxes3 p {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 420px;
+    text-transform: uppercase;
+    background-color: white;
+}
