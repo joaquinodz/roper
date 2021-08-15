@@ -10,8 +10,8 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Main />
-      <Footer />
+      {/* <Main />
+      <Footer /> */}
     </Fragment>
   );
 }

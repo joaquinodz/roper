@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import '../../styles/Index.css';
 
-class Index extends Component {
+export default class Index extends Component {
     render () {
         return (
             <Fragment>
@@ -34,5 +34,3 @@ class Index extends Component {
         );
     }
 }
-
-export default Index;

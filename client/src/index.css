@@ -11,8 +11,8 @@ code {
 }
 
 #root {
-  display: flex;
-  flex-flow: row wrap;
+  /* display: flex;
+  flex-flow: column wrap;
   justify-content: center;
-  align-content: center;
+  align-content: center; */
 }
