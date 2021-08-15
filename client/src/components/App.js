@@ -6,14 +6,12 @@ import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
 
-function App() {
+export default function App() {
   return (
     <Fragment>
       <Header />
-      {/* <Main />
-      <Footer /> */}
+      {/* <Main /> */}
+      <Footer />
     </Fragment>
   );
 }
-
-export default App;

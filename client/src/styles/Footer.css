@@ -1,25 +1,27 @@
 footer {
-    position: sticky;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
     background-color: black;
-    height: 99px;
-    width: 104.5%;
-    margin-top: 28px;
+    height: 6rem;
+    margin-top: 3rem;
 }
 footer ul {
-    color: white;
-    margin-top: 8px;
-    flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    margin-bottom: 0px;
     flex-wrap: wrap;
+    margin-top: 8px;
+    margin-bottom: 0px;
     padding-left: 0px;
+    text-transform: uppercase;
 }
 footer p {
-    justify-content: center;
-    display: flex;
     color: white;
     margin-bottom: 0px;
+    text-align: center;
+}
+footer a {
+    color: white;
 }
 li {
     list-style-type: none;
