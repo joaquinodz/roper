@@ -1,8 +1,8 @@
 {
-  "name": "client",
+  "name": "roper",
   "version": "0.1.0",
-  "private": true,
-  "homepage":"https://joaquinodz.github.io/roper",
+  "repository": "github:joaquinodz/roper",
+  "homepage":"https://joaquinodz.github.io/roper/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
