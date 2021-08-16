@@ -1,0 +1,47 @@
+article {
+    /* Positioning */
+    position: relative;
+}
+
+.vertical {
+    /* Apparence */
+    border: solid gray 1px;
+    /* Dimensions */
+    width: 19rem;
+    height: 30rem;
+}
+
+.horizontal {
+    /* Apparence */
+    border: solid gray 1px;
+    background-position: center;
+    /* Dimensions */
+    width: 32rem;
+    height: 22rem;
+    /* Positioning */
+    margin-top: 7rem;
+}
+
+.link {
+    /* Apparence */
+    background-color: white;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    text-transform: uppercase;
+    text-align: center;
+    /* Positioning */
+    position: absolute;
+    bottom: 10%;
+    /* Dimmensions */
+    width: 100%;
+}
+
+@media all and (max-width: 992px) {
+    .vertical, 
+    .horizontal {
+        margin-top: 2rem;
+    }
+    .horizontal {
+        width: 90%;
+    }
+}

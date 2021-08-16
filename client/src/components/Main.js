@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 
-import Index from "./Main/Index";
+import Index from "./Index";
 
 export default class Main extends Component {
 	render() {

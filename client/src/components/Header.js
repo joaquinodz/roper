@@ -4,7 +4,7 @@ import logo from "assets/images/logo-roper.svg";
 import carrito from "assets/images/cart.png";
 import userAvatar from "assets/images/user.png";
 
-import "styles/Header/Header.css";
+import "styles/components/Header/Header.css";
 
 export default class Header extends Component {
 	render() {
