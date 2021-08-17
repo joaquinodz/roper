@@ -1,0 +1,31 @@
+@import url(../_Flexbox.css);
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.center {
+    align-items: center;
+    justify-content: center;
+    flex: 2 0;
+}
+
+.half {
+    width: 50%;
+}
+
+.bg {
+    background-image: url(../../assets/images/login-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+@media all and (max-width: 992px) {
+    .bg {
+        display: none;
+    }
+    .half {
+        width: 100%;
+    }
+}
