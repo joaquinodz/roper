@@ -19,9 +19,9 @@ export default class App extends Component {
 					</Route>
 
 					{/* Error 404 */}
-					<Route>
+					<Route path="*">
 						<Header />
-						<p className="flex center">La ruta solicitada no existe.</p>
+							<p className="flex center">La ruta solicitada no existe.</p>
 						<Footer />
 					</Route>
 				</Switch>
