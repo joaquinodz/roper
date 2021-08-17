@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import logo from "assets/images/logo-roper.svg";
 import carrito from "assets/images/cart.png";
@@ -12,9 +13,9 @@ export default class Header extends Component {
 			<header>
 				<div className="row s-around" style={{ marginTop: "2rem" }}>
 					<div className="col" style={{ textAlign: "center" }}>
-						<a href="/">
+						<Link to="/">
 							<img src={logo} alt="avatar" className="logo" />
-						</a>
+						</Link>
 					</div>
 
 					<div className="col">
@@ -28,12 +29,12 @@ export default class Header extends Component {
 						<div className="row">
 							<div className="col">
 								<div className="nologin">
-									<a href="/user/register">
+									<Link to="/user/register">
 										<h4>Registrarse</h4>
-									</a>
-									<a href="/user/login">
+									</Link>
+									<Link to="/user/login">
 										<p>Ingresar</p>
-									</a>
+									</Link>
 								</div>
 							</div>
 
@@ -42,9 +43,9 @@ export default class Header extends Component {
 							</div>
 
 							<div className="col">
-								<a href="/carrito">
+								<Link to="/carrito">
 									<img src={carrito} alt="carrito" id="cart" />
-								</a>
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -54,13 +55,13 @@ export default class Header extends Component {
 					<nav id="menu">
 						<ul>
 							<li>
-								<a href="/">Home</a>
+								<Link to="/">Inicio</Link>
 							</li>
 							<li>
-								<a href="/productos">Productos</a>
+								<Link to="/productos">Productos</Link>
 							</li>
 							<li>
-								<a href="/nosotros">Nosotros</a>
+								<Link to="/nosotros">Nosotros</Link>
 							</li>
 						</ul>
 					</nav>

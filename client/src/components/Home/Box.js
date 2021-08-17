@@ -8,7 +8,7 @@ export default class Box extends Component {
 		const { type, image, title, redirectTo } = this.props;
 		return (
 			<article className={`${type} col center`} style={{ backgroundImage: `url(${image})` }}>
-				<Link to={redirectTo} className="link">
+				<Link to={redirectTo}>
 					{title}
 				</Link>
 			</article>

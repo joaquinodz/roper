@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "styles/Footer.css";
 
@@ -8,19 +9,19 @@ class Footer extends Component {
 			<footer>
 				<ul>
 					<li>
-						<a href="#">Términos · </a>
+						<Link to="#">Términos · </Link>
 					</li>
 					<li>
-						<a href="#">· Privacidad ·</a>
+						<Link to="#">· Privacidad ·</Link>
 					</li>
 					<li>
-						<a href="/nosotros">· Nosotros ·</a>
+						<Link to="#">· Nosotros ·</Link>
 					</li>
 					<li>
-						<a href="/api/products">· API ·</a>
+						<Link to="#">· API ·</Link>
 					</li>
 					<li>
-						<a href="">· Trabajos</a>
+						<Link to="#">· Trabajos</Link>
 					</li>
 				</ul>
 				<p>Ⓒ 2021 Roper, Inc.</p>

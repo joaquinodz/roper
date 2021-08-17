@@ -22,7 +22,7 @@ article {
     margin-top: 7rem;
 }
 
-.link {
+article a {
     /* Apparence */
     background-color: white;
     border-top: 1px solid;
