@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/roper/static/css/main.6e113204.chunk.css",
-    "main.js": "/roper/static/js/main.53a9f661.chunk.js",
-    "main.js.map": "/roper/static/js/main.53a9f661.chunk.js.map",
+    "main.css": "/roper/static/css/main.9bb74340.chunk.css",
+    "main.js": "/roper/static/js/main.a978115f.chunk.js",
+    "main.js.map": "/roper/static/js/main.a978115f.chunk.js.map",
     "runtime-main.js": "/roper/static/js/runtime-main.613254a8.js",
     "runtime-main.js.map": "/roper/static/js/runtime-main.613254a8.js.map",
-    "static/js/2.8b98776e.chunk.js": "/roper/static/js/2.8b98776e.chunk.js",
-    "static/js/2.8b98776e.chunk.js.map": "/roper/static/js/2.8b98776e.chunk.js.map",
+    "static/js/2.dee7bbfa.chunk.js": "/roper/static/js/2.dee7bbfa.chunk.js",
+    "static/js/2.dee7bbfa.chunk.js.map": "/roper/static/js/2.dee7bbfa.chunk.js.map",
     "index.html": "/roper/index.html",
-    "static/css/main.6e113204.chunk.css.map": "/roper/static/css/main.6e113204.chunk.css.map",
-    "static/js/2.8b98776e.chunk.js.LICENSE.txt": "/roper/static/js/2.8b98776e.chunk.js.LICENSE.txt",
+    "static/css/main.9bb74340.chunk.css.map": "/roper/static/css/main.9bb74340.chunk.css.map",
+    "static/js/2.dee7bbfa.chunk.js.LICENSE.txt": "/roper/static/js/2.dee7bbfa.chunk.js.LICENSE.txt",
+    "static/media/User.css": "/roper/static/media/login-bg.0a6f01bf.jpg",
     "static/media/logo-roper.8dc9de78.svg": "/roper/static/media/logo-roper.8dc9de78.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.613254a8.js",
-    "static/js/2.8b98776e.chunk.js",
-    "static/css/main.6e113204.chunk.css",
-    "static/js/main.53a9f661.chunk.js"
+    "static/js/2.dee7bbfa.chunk.js",
+    "static/css/main.9bb74340.chunk.css",
+    "static/js/main.a978115f.chunk.js"
   ]
 }
