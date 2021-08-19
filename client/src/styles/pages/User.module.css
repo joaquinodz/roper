@@ -1,5 +1,3 @@
-@import url(../_Flexbox.css);
-
 .container {
     display: flex;
     height: 100vh;

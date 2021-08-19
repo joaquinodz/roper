@@ -6,6 +6,8 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import User from "pages/User";
 
+import "styles/App.css";
+
 export default class App extends Component {
 	render() {
 		return (

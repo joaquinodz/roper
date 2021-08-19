@@ -2,20 +2,17 @@ import { Fragment } from "react";
 
 import Box from "components/Home/Box";
 
-import "styles/pages/Home.css";
+import maleModel from "assets/images/male-model.png";
+import femaleModel from "assets/images/female-model.png";
+import unisexModel from "assets/images/male-female-model.png";
 
 export default function Home() {
 	return (
 		<Fragment>
 			<div className="row s-even">
-				<Box type="vertical" image="images/male-model.png" title="Hombre" redirectTo="/productos/categoria/hombre" />
-				<Box
-					type="horizontal"
-					image="images/male-female-model.png"
-					title="Unisex"
-					redirectTo="/productos/categoria/unisex"
-				/>
-				<Box type="vertical" image="images/female-model.png" title="Mujer" redirectTo="/productos/categoria/mujer" />
+				<Box type="vertical" image={maleModel} title="Hombre" redirectTo="/productos/categoria/hombre" />
+				<Box type="horizontal" image={unisexModel} title="Unisex" redirectTo="/productos/categoria/unisex" />
+				<Box type="vertical" image={femaleModel} title="Mujer" redirectTo="/productos/categoria/mujer" />
 			</div>
 		</Fragment>
 	);

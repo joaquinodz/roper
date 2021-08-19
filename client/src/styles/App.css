@@ -1,0 +1,24 @@
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+.col {
+    display: flex;
+    flex-flow: column wrap;
+}
+.row {
+    display: flex;
+    flex-flow: row wrap;
+}
+.center {
+    justify-content: center;
+}
+.s-even {
+    justify-content: space-evenly;
+}
+.s-around {
+    justify-content: space-around;
+}
+.text-center {
+    text-align: center;
+}
