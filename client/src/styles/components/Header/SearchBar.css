@@ -1,14 +1,10 @@
-input {
-    outline: none;
-}
-input[type="search"] {
-    font-size: 100%;
-}
 input :-webkit-search-decoration,
 input :-webkit-search-cancel-button {
     display: none;
 }
 input[type="search"] {
+    outline: none;
+    font-size: 100%;
     background: #ededed url("https: //static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png") no-repeat 9px center;
     border: solid 1px #ccc;
     padding: 1rem 1rem;
@@ -20,19 +16,15 @@ input[type="search"] {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
-input :-moz-placeholder {
-    color: #999;
-}
+input :-moz-placeholder,
 input :-webkit-input-placeholder {
     color: #999;
 }
 
 @media all and (max-width: 992px) {
-    input {
+    input[type="search"] {
         margin-right: 67px;
         margin-bottom: 10px;
-    }
-    input[type="search"] {
         width: 100%;
     }
 }

@@ -7,49 +7,4 @@ a {
     text-decoration: none !important;
 }
 
-header {
-    display: flex;
-    flex-flow: column wrap;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-nav#menu ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-transform: uppercase;
-    width: 100%; /* play with this number to get spacings correct */
-}
-
-nav#menu li {
-    list-style: none;
-    padding: 10px;
-}
-
-img#cart {
-    width: 37px;
-    height: 37px;
-    margin-left: 85px;
-}
-
-img#avatar,
-img#cart {
-    width: 35px;
-    height: 35px;
-    margin: 2rem 2rem;
-}
-
-.upper-lower-border {
-    border: 1px solid rgb(156, 156, 156);
-}
-
-@media all and (max-width: 992px) {
-    nav#menu ul {
-        flex-flow: column wrap;
-    }
-    img#avatar {
-        width: 2rem;
-    }
-}
 @import url(SearchBar.css);

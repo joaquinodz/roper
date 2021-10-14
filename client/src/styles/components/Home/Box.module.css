@@ -1,8 +1,3 @@
-article {
-    /* Positioning */
-    position: relative;
-}
-
 .vertical {
     /* Apparence */
     border: solid gray 1px;
@@ -23,17 +18,9 @@ article {
 }
 
 article a {
-    /* Apparence */
-    background-color: white;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-    text-transform: uppercase;
-    text-align: center;
     /* Positioning */
     position: absolute;
     bottom: 10%;
-    /* Dimmensions */
-    width: 100%;
 }
 
 @media all and (max-width: 992px) {

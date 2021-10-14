@@ -1,7 +1,9 @@
+/*
 .flex {
     display: flex;
     flex-flow: row wrap;
 }
+*/
 .col {
     display: flex;
     flex-flow: column wrap;
