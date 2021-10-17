@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/roper/static/css/main.bc6c0fe1.chunk.css",
-    "main.js": "/roper/static/js/main.f069e016.chunk.js",
-    "main.js.map": "/roper/static/js/main.f069e016.chunk.js.map",
+    "main.css": "/roper/static/css/main.7c5f2f54.chunk.css",
+    "main.js": "/roper/static/js/main.0e2ad731.chunk.js",
+    "main.js.map": "/roper/static/js/main.0e2ad731.chunk.js.map",
     "runtime-main.js": "/roper/static/js/runtime-main.613254a8.js",
     "runtime-main.js.map": "/roper/static/js/runtime-main.613254a8.js.map",
     "static/js/2.b1e21d44.chunk.js": "/roper/static/js/2.b1e21d44.chunk.js",
     "static/js/2.b1e21d44.chunk.js.map": "/roper/static/js/2.b1e21d44.chunk.js.map",
     "index.html": "/roper/index.html",
-    "static/css/main.bc6c0fe1.chunk.css.map": "/roper/static/css/main.bc6c0fe1.chunk.css.map",
+    "static/css/main.7c5f2f54.chunk.css.map": "/roper/static/css/main.7c5f2f54.chunk.css.map",
     "static/js/2.b1e21d44.chunk.js.LICENSE.txt": "/roper/static/js/2.b1e21d44.chunk.js.LICENSE.txt",
     "static/media/female-model.1834fddc.png": "/roper/static/media/female-model.1834fddc.png",
     "static/media/login-bg.a1376b5c.jpg": "/roper/static/media/login-bg.a1376b5c.jpg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.613254a8.js",
     "static/js/2.b1e21d44.chunk.js",
-    "static/css/main.bc6c0fe1.chunk.css",
-    "static/js/main.f069e016.chunk.js"
+    "static/css/main.7c5f2f54.chunk.css",
+    "static/js/main.0e2ad731.chunk.js"
   ]
 }
