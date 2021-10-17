@@ -51,7 +51,7 @@ export default class Header extends Component {
 				</div>
 
 				<nav className="flex flex-row border-t border-b border-black">
-					<ul className="flex justify-evenly items-center uppercase w-full">
+					<ul className="flex flex-wrap justify-evenly items-center uppercase w-full">
 						<li className="list-none p-2">
 							<Link to="/">Inicio</Link>
 						</li>
