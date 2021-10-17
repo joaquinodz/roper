@@ -15,7 +15,7 @@ export default class Header extends Component {
 				<div className="flex flex-row flex-wrap justify-around mt-8">
 					<div className="flex flex-col text-center">
 						<Link to="/">
-							<img src={logo} alt="avatar" />
+							<img src={logo} alt="logo" />
 						</Link>
 					</div>
 

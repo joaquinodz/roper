@@ -1,37 +1,39 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import formStyle from "styles/components/User/Form.module.css";
-import userStyle from "styles/pages/User.module.css";
+import logo from "assets/images/logo-roper.svg";
+import loginBackground from "assets/images/login-bg.jpg";
 
-import LoginForm from "components/User/LoginForm";
-
-// Wraps all CSS module classes in a function so that i can use them without compromising code readability
-import classLister from "css-module-class-lister";
-const formClasses = classLister(formStyle);
-const userClasses = classLister(userStyle);
+import Login from "components/User/Login";
 
 export default function User() {
 	return (
-		<div className={userClasses("container")}>
-			<div className={userClasses("col half")}>
-				{/* Form wrapper */}
-				<div className={formClasses("limiter")}>
-					<div className={formClasses("container-login100")}>
-						<div className={formClasses("wrap-login100")}>
-							<Router basename="/user">
-								<Switch>
-									<Route path="/login">
-										<LoginForm />
-									</Route>
-								</Switch>
-							</Router>
-						</div>
+		<main className="bg-white font-family-karla h-screen">
+			<div className="w-full flex flex-wrap">
+				{/* Left Column */}
+				<div className="w-full md:w-1/2 flex flex-col">
+					<div className="flex justify-center md:justify-start pt-12 md:pl-12 md:-mb-24">
+						<Link to="/" className="">
+							<img src={logo} alt="logo" />
+						</Link>
+					</div>
+
+					<div className="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32">
+						<Router basename="/user">
+							<Switch>
+								<Route path="/login">
+									<Login />
+								</Route>
+							</Switch>
+						</Router>
 					</div>
 				</div>
-				{/* END - Form wrapper */}
+
+				{/* Right Column */}
+				<div class="w-1/2 shadow-2xl">
+					<img className="object-cover w-full h-screen hidden md:block" alt="foto" src={loginBackground} />
+				</div>
 			</div>
-			<div className={userClasses("col half bg")}></div>
-		</div>
+		</main>
 	);
 }
