@@ -8,14 +8,10 @@ const schema = Yup.object().shape({
 	password: Yup.string().required("Debes ingresar una contraseña válida"),
 });
 
-function setErrorMessage(field, errors) {
-	document.forms["login"].elements[field].setCustomValidity(errors[field]);
-}
-
 export default function Login() {
 	return (
 		<Fragment>
-			<p class="text-center text-3xl">Bienvenido.</p>
+			<p class="text-center text-3xl">¡Me alegra volver a verte!</p>
 
 			<Formik
 				initialValues={{
@@ -40,7 +36,7 @@ export default function Login() {
 								placeholder="tu@correo.com"
 								className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
 							/>
-							{touched.email && errors.email && setErrorMessage("email", errors)}
+							<span className="text-red-400">{touched.email && errors.email}</span>
 						</div>
 
 						<div className="flex flex-col pt-4">
@@ -53,7 +49,7 @@ export default function Login() {
 								placeholder="Contraseña"
 								className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mt-1 leading-tight focus:outline-none focus:shadow-outline"
 							/>
-							{touched.password && errors.password && setErrorMessage("password", errors)}
+							<span className="text-red-400">{touched.password && errors.password}</span>
 						</div>
 
 						<div className="flex flex-col">

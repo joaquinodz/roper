@@ -5,6 +5,7 @@ import logo from "assets/images/logo-roper.svg";
 import loginBackground from "assets/images/login-bg.jpg";
 
 import Login from "components/User/Login";
+import Register from "components/User/Register";
 
 export default function User() {
 	return (
@@ -23,6 +24,9 @@ export default function User() {
 							<Switch>
 								<Route path="/login">
 									<Login />
+								</Route>
+								<Route path="/register">
+									<Register />
 								</Route>
 							</Switch>
 						</Router>
